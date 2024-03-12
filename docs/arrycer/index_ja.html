@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Arrycerドキュメント</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" integrity="sha512-0aPQyyeZrWj9sCA46UlmWgKOP0mUipLQ6OZXu8l4IcAmD2u31EPEy9VcIMvl7SoAaKe8bLXZhYoMaE/in+gcgA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body>
+    <nav class="navbar fixed-top navbar-light bg-danger container-fluid">
+      <ul class="nav mr-auto">
+        <li><a href="index_ja.html" class="nav-item nav-link text-light">Arrycer</a></li>
+        <li class="menu"><a href="docs/index_ja.html" class="nav-item nav-link text-light">ドキュメント</a></li>
+        <li class="menu"><a href="trial_ja.html" class="nav-item nav-link text-light">お試し</a></li>
+        <li class="menu nav-item dropdown">
+          <a class="nav-item nav-link dropdown-toggle text-light" href="#" data-toggle="dropdown">言語</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item active" href="index.html">English</a>
+            <a class="dropdown-item" href="index_ja.html">日本語</a>
+          </div>
+        </li>
+        <li class="menu"><a href="https://github.com/y-moriguchi/arrycer" class="nav-item nav-link text-light">GitHub</a>
+      </ul>
+      <ul class="nav">
+        <li class="humberger nav-item dropdown">
+          <a class="nav-item nav-link dropdown-toggle text-light" href="#" data-toggle="dropdown">≡</a>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a href="docs/index_ja.html" class="dropdown-item active">ドキュメント</a>
+            <a href="trial_ja.html" class="dropdown-item">お試し</a>
+            <a href="gallery/index.html" class="dropdown-item">ギャラリー</a>
+            <a class="dropdown-item" href="index.html">English</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div class="container">
+      <div class="home">
+        <h2>Arrycer</h2>
+        <p>Arrycerは配列ライブラリです。<br />
+           APLやNumPyのような軸ベースの処理に対応しています。<br />
+           Arrycerに使用できる配列の要素は数値に限りません。
+
+        <h3>使用方法</h3>
+        <pre><code>const A = Arrycer();</code></pre>
+
+        <h3>例</h3>
+        <pre><code class="javascript">
+const A = Arrycer();
+
+// multiply matrices
+A.inner([[1, 2], [3, 4]], [[5, 6], [7, 8]], (accum, x) => accum + x, (accum, x) => accum * x);
+// -> [[19, 23], [43, 50]]
+
+// calculate times table
+A.outer([1, 2, 3, 4, 5, 6, 7, 8, 9], [1, 2, 3, 4, 5, 6, 7, 8, 9], (x, y) => x * y);
+// -> [[1, 2, 3, 4, 5, 6, 7, 8, 9],
+//     [2, 4, 6, 8, 10, 12, 14, 16, 18],
+//     [3, 6, 9, 12, 15, 18, 21, 24, 27],
+//     ...]
+
+// transpose
+A.T([[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [2, 3, 4]]]);
+// -> [[[1, 7], [4, 2]], [[2, 8], [5, 3]], [[3, 9], [6, 4]]]
+
+// concatenate arrays by axis
+A.concatDeep(1, [[1, 2], [3, 4]], [[5, 6, 7], [8, 9, 0]]);
+// -> [[1, 2, 5, 6, 7], [3, 4, 8, 9, 0]]
+A.concatDeep(0.5, [[1, 2], [3, 4]], [[5, 6], [8, 9]]);
+// -> [[[1, 2], [5, 6]], [[3, 4], [8, 9]]]
+
+// map arrays
+A.mapDeep((a, x) => a + x, 100, [[1, 2], [3, 4]], [[5, 6], [7, 8]]);
+// [[6, 8], [10, 12]]
+A.mapDeep((a, x) => a + x, 100, [[1, 2]], [[3], [4]]);  // broadcasting like NumPy
+// [[4, 5], [5, 6]]
+
+// reshape array
+A.reshape([2, 3], [[1, 2], [3, 4]]);
+// -> [[1, 2, 3], [4, 1, 2]]
+
+// take and drop array
+A.take([[1, 2, 3], [4, 5, 6], [7, 8, 9]], [-2, 2]);
+// -> [[4, 5], [7, 8]]
+A.drop([[1, 2, 3], [4, 5, 6], [7, 8, 9]], [1, -1]);
+// -> [[4, 5], [7, 8]]
+        </code></pre>
+
+        <h3>用語</h3>
+        <h4>整形式の配列</h4>
+        <p>整形式の配列とは、各要素の配列の長さが等しく、深さが同じ配列のことです。<br />
+           例えば、[[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [2, 3, 4]]]は整形式ですが、
+           [[1, 2], [3, [4, 5], 6]]は整形式ではありません。
+
+        <h3>ドキュメント</h3>
+        <p>Arrycerのドキュメントは<a href="docs/index_ja.html">ここ</a>にあります。
+      </div>
+    </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  </body>
+</html>

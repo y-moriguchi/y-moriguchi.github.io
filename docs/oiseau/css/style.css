@@ -1,0 +1,17 @@
+.textbody {
+  position:absolute;
+  top: 50px;
+}
+
+.input-font {
+  font-size: 10pt;
+}
+
+#log {
+  height: 150px;
+  overflow: auto;
+}
+
+textarea.test {
+  height: 300px;
+}

@@ -1,0 +1,26 @@
+.home {
+  position: relative;
+  top: 60px;
+}
+
+.main {
+  position: fixed;
+  top: 60px;
+  bottom: 0;
+  display: block;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+@media screen and (min-width: 701px) {
+  .pc { display: visible; }
+  .phone { display: none; }
+}
+
+@media screen and (max-width: 700px) {
+  .pc { display: none; }
+  .phone { display: visible; }
+  h3 { font-size: 20px; }
+  body { font-size: 14px; }
+  .morilib { font-size: 18px; }
+}

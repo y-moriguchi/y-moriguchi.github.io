@@ -1,0 +1,46 @@
+.body-font {
+  font-family: sans-serif;
+}
+
+.apltable {
+  border: solid 1px #000;
+  border-collapse: collapse;
+  padding: 5px 5px 5px 5px;
+}
+
+.apltableHide {
+  border: solid 0px #000;
+  border-collapse: collapse;
+}
+
+table td tr {
+  border: initial;
+}
+
+.aplTree1 {
+  font-size: 10pt;
+  cursor: pointer;
+  padding: 5px 10px 5px 0;
+  margin: 0px 0px 0px 0px;
+  border: solid 1px #000;
+}
+
+.aplTree2 {
+  display: none;
+  padding: 0 10px 5px 10px;
+}
+
+.apl-pallete-btn {
+  display: inline-block;
+  font-size: 12pt;
+  background-color: #ddd;
+  margin: 2px 2px 2px 2px;
+  width: 24px;
+  height: 15x;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.errormsg {
+  color: #f00;
+}

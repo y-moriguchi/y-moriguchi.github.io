@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Arrycer Document</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" integrity="sha512-0aPQyyeZrWj9sCA46UlmWgKOP0mUipLQ6OZXu8l4IcAmD2u31EPEy9VcIMvl7SoAaKe8bLXZhYoMaE/in+gcgA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body>
+    <nav class="navbar fixed-top navbar-light bg-danger container-fluid">
+      <ul class="nav mr-auto">
+        <li><a href="../index.html" class="nav-item nav-link text-light">Arrycer</a></li>
+        <li class="menu"><a href="index.html" class="nav-item nav-link text-light">Document</a></li>
+        <li class="menu"><a href="../trial.html" class="nav-item nav-link text-light">Trial</a></li>
+        <li class="menu nav-item dropdown">
+          <a class="nav-item nav-link dropdown-toggle text-light" href="#" data-toggle="dropdown">Language</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item active" href="index.html">English</a>
+            <a class="dropdown-item" href="index_ja.html">日本語</a>
+          </div>
+        </li>
+        <li class="menu"><a href="https://github.com/y-moriguchi/arrycer" class="nav-item nav-link text-light">GitHub</a>
+      </ul>
+      <ul class="nav">
+        <li class="humberger nav-item dropdown">
+          <a class="nav-item nav-link dropdown-toggle text-light" href="#" data-toggle="dropdown">≡</a>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a href="index.html" class="dropdown-item active">Document</a>
+            <a href="../trial.html" class="dropdown-item">Trial</a>
+            <a class="dropdown-item" href="../index_ja.html">日本語</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xl-2 col-md-3 sidebar">
+          <ul class="nav nav-sidebar flex-column">
+<li><a href='#inner' class='nav-item'>inner</a></li>
+<li><a href='#outer' class='nav-item'>outer</a></li>
+<li><a href='#T' class='nav-item'>T</a></li>
+<li><a href='#transpose' class='nav-item'>transpose</a></li>
+<li><a href='#reduceAxis' class='nav-item'>reduceAxis</a></li>
+<li><a href='#reduceDeep' class='nav-item'>reduceDeep</a></li>
+<li><a href='#reduceAll' class='nav-item'>reduceAll</a></li>
+<li><a href='#reverseAxis' class='nav-item'>reverseAxis</a></li>
+<li><a href='#rotateAxis' class='nav-item'>rotateAxis</a></li>
+<li><a href='#shiftAxis' class='nav-item'>shiftAxis</a></li>
+<li><a href='#reverseDeep' class='nav-item'>reverseDeep</a></li>
+<li><a href='#concatAxis' class='nav-item'>concatAxis</a></li>
+<li><a href='#mapDeep' class='nav-item'>mapDeep</a></li>
+<li><a href='#map' class='nav-item'>map</a></li>
+<li><a href='#mapScalar' class='nav-item'>mapScalar</a></li>
+<li><a href='#replicateAxis' class='nav-item'>replicateAxis</a></li>
+<li><a href='#scanAxis' class='nav-item'>scanAxis</a></li>
+<li><a href='#scanAxisLast' class='nav-item'>scanAxisLast</a></li>
+<li><a href='#decode' class='nav-item'>decode</a></li>
+<li><a href='#encode' class='nav-item'>encode</a></li>
+<li><a href='#equalsDeep' class='nav-item'>equalsDeep</a></li>
+<li><a href='#reshape' class='nav-item'>reshape</a></li>
+<li><a href='#vectorize' class='nav-item'>vectorize</a></li>
+<li><a href='#isEmpty' class='nav-item'>isEmpty</a></li>
+<li><a href='#first' class='nav-item'>first</a></li>
+<li><a href='#rank' class='nav-item'>rank</a></li>
+<li><a href='#sortIndex' class='nav-item'>sortIndex</a></li>
+<li><a href='#sortIndexDesc' class='nav-item'>sortIndexDesc</a></li>
+<li><a href='#subarray' class='nav-item'>subarray</a></li>
+<li><a href='#set' class='nav-item'>set</a></li>
+<li><a href='#indexOfArray' class='nav-item'>indexOfArray</a></li>
+<li><a href='#lastIndexOfArray' class='nav-item'>lastIndexOfArray</a></li>
+<li><a href='#generate' class='nav-item'>generate</a></li>
+<li><a href='#iterate' class='nav-item'>iterate</a></li>
+<li><a href='#atArray' class='nav-item'>atArray</a></li>
+<li><a href='#member' class='nav-item'>member</a></li>
+<li><a href='#sliceDeep' class='nav-item'>sliceDeep</a></li>
+<li><a href='#take' class='nav-item'>take</a></li>
+<li><a href='#drop' class='nav-item'>drop</a></li>
+<li><a href='#findArray' class='nav-item'>findArray</a></li>
+          </ul>
+        </div>
+        <div class="col-xl-10 col-md-9 offset-xl-2 offset-sm-3 main">
+<h3 id='inner'>inner</h3>
+<p>inner(array1, array2, f, g, initf, initg, depthf, depthg)</p>
+<p>
+Calculates inner product of two arrays.<br />
+Arrays must be proper.<br />
+initf, initg are optional, then first value of array is used as initial value.
+</p>
+<pre><code class='javascript'>A.inner([[1, 2], [3, 4]], [[5, 6], [7, 8]], (accum, x) => accum + x, (accum, x) => accum * x))
+// -> [[19, 22], [43, 50]]
+</code></pre>
+<h3 id='outer'>outer</h3>
+<p>outer(array1, array2, f, depth)</p>
+<p>
+Calculates outer product of two arrays.<br />
+depth is optional.
+</p>
+<pre><code class='javascript'>A.outer([1, 2, 3, 4, 5], [1, 2, 3, 4, 5], (x, y) => x * y)
+// -> [[1, 2, 3, 4, 5],
+//     [2, 4, 6, 8, 10],
+//     [3, 6, 9, 12, 15],
+//     [4, 8, 12, 16, 20],
+//     [5, 10, 15, 20, 25]]
+</code></pre>
+<h3 id='T'>T</h3>
+<p>T(anArray)</p>
+<p>
+Transposes the given array.<br />
+Array must be proper.
+</p>
+<pre><code class='javascript'>A.T([[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [2, 3, 4]]])
+// -> [[[1, 7], [4, 2]], [[2, 8], [5, 3]], [[3, 9], [6, 4]]]
+</code></pre>
+<h3 id='transpose'>transpose</h3>
+<p>transpose(anArray, ...axes)</p>
+<p>
+Transposes axes as arguments axes.
+<pre><code class='javascript'>A.transpose([[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [2, 3, 4]]], 1, 2, 0)
+// -> [[[1, 7], [2, 8], [3, 9]], [[4, 2], [5, 3], [6, 4]]]
+</code></pre>
+<h3 id='reduceAxis'>reduceAxis</h3>
+<p>reduceAxis(anArray, f, axis, init, pad)</p>
+<p>
+Reduces the given array along the given axis.<br />
+Array must be proper.
+</p>
+<pre><code class='javascript'>A.reduceAxis([[1, 2], [3, 4]], (accum, x) => accum + x, 0)
+// -> [4, 6]
+</code></pre>
+<h3 id='reduceDeep'>reduceDeep</h3>
+<p>reduceDeep(anArray, f, depth, init)</p>
+<p>
+Reduces the given array in the given depth.<br />
+depth and init are optional.
+</p>
+<h3 id='reduceAll'>reduceAll</h3>
+<p>reduceAll(anArray, f, init)</p>
+<p>
+Reduces all elements of the array.<br />
+</p>
+<pre><code class='javascript'>A.reduceAll([[2, 3], [4, [5, 6], 7], 8, [9, 10]], (accum, x) => accum + x, 1)
+// -> 55
+</code></pre>
+<h3 id='reverseAxis'>reverseAxis</h3>
+<p>reverseAxis(array1, ...axes)</p>
+<p>
+Reverses array along to argument axes.
+</p>
+<pre><code class='javascript'>A.reverseAxis([[[1, 2], [3, 4], [1, 2]], [[3, 4], [1, 2], [3, 4]]], 0, 2)
+// -> [[[4, 3], [2, 1], [4, 3]], [[2, 1], [4, 3], [2, 1]]]
+</code></pre>
+<h3 id='rotateAxis'>rotateAxis</h3>
+<p>rotateAxis(array1, rotate, axis)</p>
+<p>
+Rotates array along to given axis.<br />
+Argument rotate must be scalar number or proper array of numbers.
+</p>
+<pre><code class='javascript'>A.rotateAxis([[1, 2], [3, 4], [5, 6]], [2, 1], 0)
+// -> [[5, 4], [1, 6], [3, 2]]
+</code></pre>
+<h3 id='shiftAxis'>shiftAxis</h3>
+<p>shiftAxis(array1, shift, axis, pad)</p>
+<p>
+Shifts array along to given axis.<br />
+Argument rotate must be scalar number or proper array of numbers.
+</p>
+<pre><code class='javascript'>A.shiftAxis([[1, 2, 3], [4, 5, 6]], [2, 1], 1, 0)
+// -> [[3, 0, 0], [5, 6, 0]]
+</code></pre>
+<h3 id='reverseDeep'>reverseDeep</h3>
+<p>reverseDeep(anArray, depth)</p>
+<p>
+Reverses array until the given depth.
+</p>
+<pre><code class='javascript'>A.reverseDeep([[1, 2], [3, 4]], 100)
+// -> [[2, 1], [4, 3]]
+</code></pre>
+<pre><code class='javascript'>A.reduceDeep([[1, 2], [3, 4]], addf, 100)
+// -> [3, 7]
+</code></pre>
+<h3 id='concatAxis'>concatAxis</h3>
+<p>concatAxis(axis, ...arrays)</p>
+<p>
+Concatenates the given arrays along the given axis.<br />
+If axis is decimal, concatenates the array between floor(axis) and ceil(axis)
+and cardinality increses.<br />
+If axis is negative number, concatenates first axis and cardinaity increses.
+</p>
+<pre><code class='javascript'>A.concatAxis(1, [[1, 2], [3, 4]], [[5, 6, 7], [8, 9, 0]])
+// -> [[1, 2, 5, 6, 7], [3, 4, 8, 9, 0]]
+A.concatAxis(0.5, [[1, 2], [3, 4]], [[5, 6], [8, 9]])
+// -> [[[1, 2], [5, 6]], [[3, 4], [8, 9]]]
+A.concatAxis(-0.5, [1, 2, 3], [4, 5, 6])
+// -> [[1, 2, 3], [4, 5, 6]]
+</code></pre>
+<h3 id='mapDeep'>mapDeep</h3>
+<p>function mapDeep(f, depth, ...arrays)</p>
+<p>
+Maps the given arrays in the given depth.<br />
+depth is not optional.<br />
+mapDeep broadcasts like NumPy, but mapDeep can not broadcast if cardinality of arrays are different.
+</p>
+<pre><code class='javascript'>A.mapDeep((accum, x) => accum + x, 100, [[1, 2], [3, 4]], [[5, 6], [7, 8]])
+// -> [[6, 8], [10, 12]]
+A.mapDeep((accum, x) => accum + x, 100, [[1, 2]], [[3], [4]])
+// -> [[4, 5], [5, 6]]
+</code></pre>
+<h3 id='map'>map</h3>
+<p>map(f, ...arrays)</p>
+<p>
+Equivalent to mapDeep(f, Number.MAX_SAFE_INTEGER, ...arrays).
+</p>
+<pre><code class='javascript'A.map((a, x) => a + x, [[1, 2], [3, 4]], [[5, 6], [7, 8]])
+// -> [[6, 8], [10, 12]]
+</code></pre>
+<h3 id='mapScalar'>mapScalar</h3>
+<p>mapScalar(anObject, f, scalar, depth)</p>
+<p>
+Maps the each element of array and scalar.<br />
+depth is optional.
+</p>
+<pre><code class='javascript'>A.mapScalar([[1, 2], [3, 4]], (a, x) => a + x, 3)
+// -> [[4, 5], [6, 7]]
+</code></pre>
+<h3 id='replicateAxis'>replicateAxis</h3>
+<p>replicateAxis(array1, vector, axis, pad)</p>
+<p>
+Replicates the array along to the axis.
+</p>
+<pre><code class='javascript'>A.replicateAxis([[1, 2, 3], [4, 5, 6]], [0, 2, 1], 1)
+// -> [[2, 2, 3], [5, 5, 6]]
+</code></pre>
+<h3 id='scanAxis'>scanAxis</h3>
+<p>scanAxis(anArray, f, axis, init, depth)</p>
+<p>
+Scans the array along to the given axis.
+</p>
+<pre><code class='javascript'>A.scanAxis([1, 2, 3], (accum, x) => accum + x, 0)
+// -> [1, 3, 6]
+</code></pre>
+<h3 id='scanAxisLast'>scanAxisLast</h3>
+<p>scanAxisLast(anArray, f, init, depth)</p>
+<p>
+Scans the array along to the last axis.
+</p>
+<pre><code class='javascript'>A.scanAxisLast([[1, 2, 3], [4, 5, 6], [7, 8, 9]], (accum, x) => accum - x, 0)
+// -> [[2, 1, 0], [3, 3, 3], [7, 8, 9]]
+</code></pre>
+<h3 id='decode'>decode</h3>
+<p>decode(array1, array2)</p>
+<p>
+Decodes the array.
+</p>
+<pre><code class='javascript'>A.decode([2, 2, 2, 2], [1, 1, 1, 1])
+// -> 15
+</code></pre>
+<h3 id='encode'>encode</h3>
+<p>encode(array1, array2)</p>
+<p>
+Encodes the array.
+</p>
+<pre><code class='javascript'>A.encode([1760, 3, 12], 75)
+// -> [2, 0, 3]
+</code></pre>
+<h3 id='equalsDeep'>equalsDeep</h3>
+<p>equalsDeep(...arrays)</p>
+<p>
+Returns true if all arrays are equal.
+</p>
+<pre><code class='javascript'>A.equalsDeep([[1, 2], [3, 4]], [[1, 2], [3, 4]], [[1, 2], [3, 4]])
+// -> true
+</code></pre>
+<h3 id='reshape'>reshape</h3>
+<p>reshape(shape, anArray)</p>
+<p>
+Reshapes the given array specified the given shape vector.
+</p>
+<pre><code class='javascript'>A.reshape([2, 3], [[1, 2], [3, 4]])
+// -> [[1, 2, 3], [4, 1, 2]]
+</code></pre>
+<h3 id='vectorize'>vectorize</h3>
+<p>vectorize(anArray, depth)</p>
+<p>
+Vectorize the array until the given depth.
+</p>
+<pre><code class='javascript'>A.vectorize([[1, 2], 3])
+// -> [1, 2, 3]
+</code></pre>
+<h3 id='isEmpty'>isEmpty</h3>
+<p>isEmpty(anArray)</p>
+<p>
+Returns true if the given array has no elements.
+</p>
+<pre><code class='javascript'>A.isEmpty([[], [[], []], []])
+// -> true
+A.isEmpty([[], [[], [2]], []])
+// -> false
+</code></pre>
+<h3 id='first'>first</h3>
+<p>first(anArray)</p>
+<p>
+Returns the first value of the array.
+</p>
+<pre><code class='javascript'>A.first([[[1], 2, [3, 4]]])
+// -> 1
+</code></pre>
+<h3 id='rank'>rank</h3>
+<p>rank(anArray)</p>
+<p>
+Returns rank of the ginven array by shape vector.<br />
+If the array is not proper, returns null.
+</p>
+<pre><code class='javascript'>A.rank([[1, 2, 3], [4, 5, 6]])
+// -> [2, 3]
+A.rank([1, [2, 3]])
+// -> null
+</code></pre>
+<h3 id='sortIndex'>sortIndex</h3>
+<p>sortIndex(aVector, cmp)</p>
+<p>
+Sorts the given vector and returns vector consists of indices.<br />
+cmp is optional.
+</p>
+<pre><code class='javascript'>A.sortIndex([30, 50, 10, 90, 70])
+// -> [2, 0, 1, 4, 3]
+</code></pre>
+<h3 id='sortIndexDesc'>sortIndexDesc</h3>
+<p>sortIndexDesc(aVector)</p>
+<p>
+Same as sortIndex(aVector, (x, y) => x > y ? -1 : x < y ? 1 : 0).
+</p>
+<h3 id='subarray'>subarray</h3>
+<p>subarray(anArray, indices)</p>
+<p>
+Returns subarray specified the given indices vector.<br />
+Each element of indices is null, integer, array of integer or function.<br />
+If the element is null, all elements are got in the dimension.<br />
+If the element is integer, element specified as integer is got and cardinality decreses.<br />
+If the element is array of integer, elements specified as integers are got.<br />
+If the element is function, elements fulfilled the condition are got.
+</p>
+<pre><code class='javascript'>A.subarray([[1, 2], [3, 4]], [null, 0])
+// -> [1, 3]
+A.subarray([[1, 2, 3], [4, 5, 6]], [(x, index) => index > 0, [1, 2]])
+// -> [[5, 6]]
+</code></pre>
+<h3 id='set'>set</h3>
+<p>subarray(anArray, indices, rvalue, depth)</p>
+<p>
+Set subarray of the array specified vector indices to the rvalue.<br />
+Each element of indices is null, integer, array of integer or function.<br />
+If the element is null, all elements are got in the dimension.<br />
+If the element is integer, element specified as integer is got and cardinality decreses.<br />
+If the element is array of integer, elements specified as integers are got.<br />
+If the element is function, elements fulfilled the condition are got.
+</p>
+<pre><code class='javascript'>A.set(x, [0, null], [9, 8, 7])
+// -> [[1, 2, 3], [4, 5, 6]], [[9, 8, 7], [4, 5, 6]]
+</code></pre>
+<h3 id='indexOfArray'>indexOfArray</h3>
+<p>indexOfArray(aVector, anArray)</p>
+<p>
+Returns the array consists of indices of the given vector.
+</p>
+<pre><code class='javascript'>A.indexOfArray([1, 2, 3], [[0, 1], [2, 3]])
+// -> [[-1, 0], [1, 2]]
+</code></pre>
+<h3 id='lastIndexOfArray'>lastIndexOfArray</h3>
+<p>lastIndexOfArray(aVector, anArray)</p>
+<p>
+Returns the array consists of indices of the given vector from right to left.
+</p>
+<pre><code class='javascript'>A.lastIndexOfArray([1, 1, 0], [[0, 1], [2, 3]])
+// -> [[2, 1], [-1, -1]]
+</code></pre>
+<h3 id='generate'>generate</h3>
+<p>generate(g, size)</p>
+<p>
+Generates the array which size is the given size and values are results of g().
+</p>
+<pre><code class='javascript'>A.generate(x => 1, 3)
+// -> [1, 1, 1]
+</code></pre>
+<h3 id='iterate'>iterate</h3>
+<p>iterate(f, seed, size)</p>
+<p>
+Generates the array which size is the given size and value are result of seed, f(seed), f(f(seed)), ....
+</p>
+<pre><code class='javascript'>A.iterate(x => x * 2, 1, 3)
+// -> [1, 2, 4]
+</code></pre>
+<h3 id='atArray'>atArray</h3>
+<p>atArray(aVector, anArray)</p>
+<p>
+Returns the array consists of values of the given vector.
+</p>
+<pre><code class='javascript'>A.atArray([1, 2, 3], [[0, 1], [2, -1]])
+// -> [[1, 2], [3, 3]]
+</code></pre>
+<h3 id='member'>member</h3>
+<p>member(anArray, dest)</p>
+<p>
+Returns the array if the element is in argument dest is 1, otherwise 0.
+</p>
+<pre><code class='javascript'>A.member([[2, 8], [7, -1]], [[2], [[7]]])
+// -> [[1, 0], [1, 0]]
+</code></pre>
+<h3 id='sliceDeep'>sliceDeep</h3>
+<p>sliceDeep(anArray, aVector)</p>
+<p>
+Slices the given values by the given vector.
+</p>
+<pre><code class='javascript'>A.sliceDeep([[1, 2, 3], [4, 5, 6], [7, 8, 9]], [1, -2])
+// -> [[5, 6], [8, 9]]
+</code></pre>
+<h3 id='take'>take</h3>
+<p>take(anArray, aVector)</p>
+<p>
+Takes the given values by the given vector.
+</p>
+<pre><code class='javascript'>A.take([[1, 2, 3], [4, 5, 6], [7, 8, 9]], [-2, 2])
+// -> [[4, 5], [7, 8]]
+</code></pre>
+<h3 id='drop'>drop</h3>
+<p></p>
+<p>
+Drops the given values by the given vector.
+</p>
+<pre><code class='javascript'>A.drop([[1, 2, 3], [4, 5, 6], [7, 8, 9]], [1, -1])
+// -> [[4, 5], [7, 8]]
+</code></pre>
+<h3 id='findArray'>findArray</h3>
+<p>findArray(array, arraySearch, f)</p>
+<p>
+Finds the arraySearch from the array.
+</p>
+<pre><code class='javascript'>A.findArray("SUNDAY".split(""), "DAY".split(""))
+// -> [0, 0, 0, 1, 0, 0]
+</code></pre>
+        </div>
+      </div>
+    </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  </body>
+</html>

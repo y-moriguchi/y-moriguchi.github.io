@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Arrycer Trial</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css" integrity="sha512-uf06llspW44/LZpHzHT6qBOIVODjWtv4MxCricRxkzvopAlSWnTf6hpZTFxuuZcuNE9CBQhqE0Seu1CoRk84nQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar fixed-top navbar-light bg-danger container-fluid">
+      <ul class="nav mr-auto">
+        <li><a href="index.html" class="nav-item nav-link text-light">Arrycer</a></li>
+        <li class="menu"><a href="docs/index.html" class="nav-item nav-link text-light">Document</a></li>
+        <li class="menu"><a href="trial.html" class="nav-item nav-link text-light">Trial</a></li>
+        <li class="menu nav-item dropdown">
+          <a class="nav-item nav-link dropdown-toggle text-light" href="#" data-toggle="dropdown">Language</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item active" href="index.html">English</a>
+            <a class="dropdown-item" href="index_ja.html">日本語</a>
+          </div>
+        </li>
+        <li class="menu"><a href="https://github.com/y-moriguchi/arrycer" class="nav-item nav-link text-light">GitHub</a>
+      </ul>
+      <ul class="nav">
+        <li class="humberger nav-item dropdown">
+          <a class="nav-item nav-link dropdown-toggle text-light" href="#" data-toggle="dropdown">≡</a>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a href="docs/index.html" class="dropdown-item active">Document</a>
+            <a href="trial.html" class="dropdown-item">Trial</a>
+            <a class="dropdown-item" href="index_ja.html">日本語</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div class="container">
+      <div class="home">
+        <h2>Try Arrycer</h2>
+        <p><textarea id="code"></textarea>
+        <p><button id="exec" class="btn btn-primary">Execute</button>&nbsp;<button id="clear" class="btn btn-primary">Clear</button>
+        <p><h3>Result</h3>
+        <textarea id="result" class="form-control resulttext"></textarea>
+      </div>
+    </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js" integrity="sha512-OeZ4Yrb/W7d2W4rAMOO0HQ9Ro/aWLtpW9BUSR2UOWnSV2hprXLkkYnnCGc9NeLUxxE4ZG7zN16UuT1Elqq8Opg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="mode/javascript.js"></script>
+  <script src="lib/arrycer.js"></script>
+  <script src="lib/trial.js"></script>
+  </body>
+</html>
