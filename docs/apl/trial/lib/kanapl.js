@@ -662,7 +662,7 @@
         "min": "」",
         "**": "★",
         "log": "☆",
-        "tri": "〇",
+        "tri": "○",
         ">=": "≧",
         "<=": "≦",
         "!=": "≠",
@@ -2774,6 +2774,8 @@
             var result,
                 resultOp,
                 resultAxis,
+                funcName,
+                funcInfo,
                 outerOp,
                 ch;
 
@@ -2840,6 +2842,20 @@
                     lastIndex: result.lastIndex,
                     attr: {
                         apply: [outerProduct(outerOp), attr, result.attr]
+                    }
+                };
+            } else if(!!(funcName = parseRegex(VARIABLE, K, index, attr)) && (funcInfo = env["f." + funcName.attr]) && funcInfo.arg2) {
+                result = walk(skipBlankIndex(funcName.lastIndex), []);
+                return {
+                    lastIndex: result.lastIndex,
+                    attr: {
+                        func: {
+                            name: funcName.attr,
+                            arg1: attr,
+                            arg2: result.attr
+                        },
+                        isFunc: true,
+                        funcValue: funcInfo.funcValue
                     }
                 };
             } else {
@@ -2964,6 +2980,7 @@
         function walkAfterMonadic(index, attr) {
             var result,
                 resultConcat,
+                funcInfo,
                 ch;
 
             ch = program.charAt(index);
@@ -2983,6 +3000,15 @@
             } else if(!!(result = parseRegex(VARIABLE, getVariable, index, attr)) && !env["f." + result.attr]) {
                 resultConcat = attr.concat([{
                     variable: result.attr
+                }]);
+                return walkAfterMonadic(result.lastIndex, resultConcat);
+            } else if(!!(result = parseRegex(VARIABLE, getVariable, index, attr)) && (funcInfo = env["f." + result.attr]) && !funcInfo.arg1) {
+                resultConcat = attr.concat([{
+                    func: {
+                        name: result.attr
+                    },
+                    isFunc: true,
+                    funcValue: funcInfo.funcValue
                 }]);
                 return walkAfterMonadic(result.lastIndex, resultConcat);
             } else {
@@ -3038,6 +3064,8 @@
                 resultFold,
                 resultAxis,
                 resultEval,
+                funcName,
+                funcInfo,
                 ch,
                 toEval;
 
@@ -3087,24 +3115,7 @@
                         eval: result.attr
                     }
                 };
-            } else if(!!(funcName = parseRegex(VARIABLE, K, index, attr)) && env["f." + funcName.attr]) {
-                return {
-                    lastIndex: skipBlankIndex(index),
-                    attr: attr
-                };
-            } else {
-                return walkAfterMonadic(index, attr);
-            }
-        }
-
-        function walkUserFunction(index, attr) {
-            var funcName,
-                result,
-                result2,
-                funcInfo;
-
-            if(!!(funcName = parseRegex(VARIABLE, K, index, attr)) && env["f." + funcName.attr]) {
-                funcInfo = env["f." + funcName.attr];
+            } else if(!!(funcName = parseRegex(VARIABLE, K, index, attr)) && (funcInfo = env["f." + funcName.attr]) && funcInfo.funcValue) {
                 if(funcInfo.arg1) {
                     result = walk(skipBlankIndex(funcName.lastIndex), []);
                     return {
@@ -3131,28 +3142,10 @@
                     };
                 }
             } else {
-                result = walk(index, attr);
-                if(!!(funcName = parseRegex(VARIABLE, K, result.lastIndex, attr)) && env["f." + funcName.attr]) {
-                    funcInfo = env["f." + funcName.attr];
-                    result2 = walk(skipBlankIndex(funcName.lastIndex), []);
-                    return {
-                        lastIndex: result2.lastIndex,
-                        attr: {
-                            func: {
-                                name: funcName.attr,
-                                arg1: result.attr,
-                                arg2: result2.attr
-                            },
-                            isFunc: true,
-                            funcValue: funcInfo.funcValue
-                        }
-                    };
-                } else {
-                    return result;
-                }
+                return walkAfterMonadic(index, attr);
             }
         }
-        return walkUserFunction(0, []).attr;
+        return walk(0, []).attr;
     }
 
     function execFunction(func, env) {
@@ -3328,7 +3321,8 @@
         if(!internal.isFunc && !ASSIGN.test(converted) && !isBranch) {
             consoleLog(outputHook(result));
         } else if(internal.isFunc && internal.funcValue) {
-            consoleLog(outputHook(innerEnv[internal.funcValue]));
+            result = innerEnv[internal.funcValue];
+            consoleLog(outputHook(result));
             innerEnv[internal.funcValue] = value;
         }
         return result;
