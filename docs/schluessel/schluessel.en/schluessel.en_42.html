@@ -1,0 +1,1544 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created on August 9, 2012 by texi2html 5.0
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Schluessel: 3.36 Swing support</title>
+
+<meta name="description" content="Schluessel: 3.36 Swing support">
+<meta name="keywords" content="Schluessel: 3.36 Swing support">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 5.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smalllisp {margin-left: 3.2em}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nocodebreak {white-space:pre}
+span.nolinebreak {white-space:pre}
+span.roman {font-family:serif; font-weight:normal}
+span.sansserif {font-family:sans-serif; font-weight:normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Swing-support"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_41.html#Turtle-graphics" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Generic-components" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section">3.36 Swing support</h2>
+
+<p>Procedures for constructing a GUI with Swing.
+</p>
+<hr>
+<a name="Generic-components"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing-support" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing-support" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Buttons" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">3.36.1 Generic components</h3>
+
+<dl>
+<dt><a name="index-get_002dgui_002delement_002dwidth"></a>Function: <strong>get-gui-element-width</strong><em> gui-component</em></dt>
+<dd><p>gets width of the GUI component.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-get_002dgui_002delement_002dheight"></a>Function: <strong>get-gui-element-height</strong><em> gui-component</em></dt>
+<dd><p>gets height of the GUI component.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-set_002dbackground_002dcolor_0021"></a>Function: <strong>set-background-color!</strong><em> gui-component color</em></dt>
+<dd><p>sets color of the component to the given color.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-set_002dpreferred_002dwidth_0021"></a>Function: <strong>set-preferred-width!</strong><em> gui-component width</em></dt>
+<dd><p>gets preffered width of the GUI component.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-set_002dpreferred_002dheight_0021"></a>Function: <strong>set-preferred-height!</strong><em> gui-component height</em></dt>
+<dd><p>gets preffered height of the GUI component.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-get_002dbounds_002dx"></a>Function: <strong>get-bounds-x</strong><em> gui-component</em></dt>
+<dd><p>gets X-coordinate of the component.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-get_002dbounds_002dy"></a>Function: <strong>get-bounds-y</strong><em> gui-component</em></dt>
+<dd><p>gets Y-coordinate of the component.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-set_002dbounds_002dx_0021"></a>Function: <strong>set-bounds-x!</strong><em> gui-component x</em></dt>
+<dd><p>sets X-coordinate of the component to the given number.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-set_002dbounds_002dy_0021"></a>Function: <strong>set-bounds-y!</strong><em> gui-component y</em></dt>
+<dd><p>sets Y-coordinate of the component to the given number.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-get_002dtext"></a>Function: <strong>get-text</strong><em> has-text</em></dt>
+<dd><p>gets a text from the component which has a text
+e.g. textfields.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-set_002dtext_0021"></a>Function: <strong>set-text!</strong><em> has-text str</em></dt>
+<dd><p>sets the given text to the component which has a text.
+</p></dd></dl>
+
+
+<hr>
+<a name="Buttons"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Generic-components" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing-support" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Canvases" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">3.36.2 Buttons</h3>
+
+<dl>
+<dt><a name="index-make_002dbutton"></a>Function: <strong>make-button</strong><em> text action</em></dt>
+<dd><p>creates a button with the given text.<br>
+<var>action</var> specified the procedure with one argument
+when button is pressed.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dbutton_002dwith_002daction"></a>Function: <strong>make-button-with-action</strong><em> accelerator-key: accelerator-key long-description: long-description mnemonic-key: mnemonic-key name: name short-description: short-description small-icon: small-icon</em></dt>
+<dd><p>creates a button with an action.<br>
+Available actions show as follows.
+</p><table>
+<tr><td width="25%">action</td><td width="70%">specify a procedure with one argument when the action is executed</td></tr>
+<tr><td width="25%">accelerator-key</td><td width="70%">specify an accelerator key</td></tr>
+<tr><td width="25%">long-description</td><td width="70%">specify a long description</td></tr>
+<tr><td width="25%">mnemonic-key</td><td width="70%">specify a mnemonic key</td></tr>
+<tr><td width="25%">name</td><td width="70%">specify a name</td></tr>
+<tr><td width="25%">short-description</td><td width="70%">specify a short description</td></tr>
+<tr><td width="25%">small-icon</td><td width="70%">specify a small icon</td></tr>
+</table>
+</dd></dl>
+
+
+<hr>
+<a name="Canvases"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Buttons" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing-support" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Labels" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">3.36.3 Canvases</h3>
+
+<dl>
+<dt><a name="index-make_002dcanvas"></a>Function: <strong>make-canvas</strong><em> [x-begin y-begin x-end y-end]</em></dt>
+<dd><p>creates a canvas which can be painted by the painter framework.<br>
+Window coordinate can be specified
+with <var>x-begin</var>, <var>y-begin</var>, <var>x-end</var> and <var>y-end</var>.
+If you specify <var>x-begin</var> and so on
+coordinate system of the window has direction which is used in mathematics
+(x-axis is right directed and y-axis is up directed).
+If you don&rsquo;t specify <var>x-begin</var> and so on
+coordinate system has direction which is used in computer graphics
+(x-axis is right directed and y-axis is down directed).
+</p></dd></dl>
+
+
+<hr>
+<a name="Labels"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Canvases" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing-support" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Containers" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">3.36.4 Labels</h3>
+
+<dl>
+<dt><a name="index-make_002dlabel"></a>Function: <strong>make-label</strong><em> name</em></dt>
+<dd><p>creates a label with the given name.
+</p></dd></dl>
+
+
+<hr>
+<a name="Containers"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Labels" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing-support" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Texts" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">3.36.5 Containers</h3>
+
+<dl>
+<dt><a name="index-make_002dpanel"></a>Function: <strong>make-panel</strong></dt>
+<dd><p>creates a panel which can contain GUI components.
+</p></dd></dl>
+
+
+<hr>
+<a name="Texts"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Containers" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing-support" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Windows" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">3.36.6 Texts</h3>
+
+<dl>
+<dt><a name="index-make_002dtext_002dfield"></a>Function: <strong>make-text-field</strong><em> size [text]</em></dt>
+<dd><p>creates a textfield with the given size.
+Initial text can be specified with <var>text</var>.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dtext_002darea"></a>Function: <strong>make-text-area</strong><em> [row-size column-size]</em></dt>
+<dd><p>creates a text area with <var>row-size</var> and <var>column-size</var>.
+</p></dd></dl>
+
+
+<hr>
+<a name="Windows"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Texts" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing-support" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Dialogs" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">3.36.7 Windows</h3>
+
+<dl>
+<dt><a name="index-make_002dwindow"></a>Function: <strong>make-window</strong><em> title [xsize ysize [menus]]</em></dt>
+<dd><p>create a window with <var>xsize</var> and <var>ysize</var>.
+The window is not displayed when this procedure is executed.<br>
+<var>menus</var> specifies properties of menubar shown as follows.
+</p>
+<table>
+<tr><td width="35%">(&quot;menu1&quot; proc)</td><td width="60%">a menu with procedure <var>proc</var>. <var>proc</var> has one argument.</td></tr>
+<tr><td width="35%">(&quot;menu1&quot; proc key key2)</td><td width="60%">a menu with procedure <var>proc</var> and short cut keys.</td></tr>
+<tr><td width="35%">(&quot;menu1&quot; seperator)</td><td width="60%">a menu separator.</td></tr>
+<tr><td width="35%">(&quot;menu1&quot; (submenu))</td><td width="60%">a sub menu.</td></tr>
+</table>
+</dd></dl>
+
+<dl>
+<dt><a name="index-show_002dwindow"></a>Function: <strong>show-window</strong><em> window</em></dt>
+<dd><p>shows the window.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-hide_002dwindow"></a>Function: <strong>hide-window</strong><em> window</em></dt>
+<dd><p>hides the window.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-exec_002dwindow"></a>Function: <strong>exec-window</strong><em> window</em></dt>
+<dd><p>shows the window. Program exits when the window is closed.
+</p></dd></dl>
+
+
+<hr>
+<a name="Dialogs"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Windows" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing-support" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Comboboxes_002flistboxes" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">3.36.8 Dialogs</h3>
+
+<dl>
+<dt><a name="index-make_002dmodal_002ddialog"></a>Function: <strong>make-modal-dialog</strong><em> parent-window title x y</em></dt>
+<dd><p>creates a modal dialog component.
+The dialog is not displayed when this procedure is executed.
+Please use show-window.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dmodeless_002ddialog"></a>Function: <strong>make-modeless-dialog</strong><em> parent-window title x y</em></dt>
+<dd><p>creates a modeless dialog component.
+The dialog is not displayed when this procedure is executed.
+Please use show-window.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-show_002dyes_002dno_002ddialog"></a>Function: <strong>show-yes-no-dialog</strong><em> parent-component message title message-type</em></dt>
+<dd><p>shows a yes-no dialog and returns #t if the response is yes.
+<var>parent-component</var> specifies a parent component of the dialog
+or #f if no parent components specify.<br>
+<var>message-type</var> specifies a message type
+such as error, warning and information.
+Symbols shown as follows is available as <var>message-type</var>.
+</p>
+<ul>
+<li> error: error
+</li><li> information: information
+</li><li> warning: warning
+</li><li> question: question
+</li><li> plain: no icons
+</li></ul>
+</dd></dl>
+
+<dl>
+<dt><a name="index-show_002dyes_002dno_002dcancel_002ddialog"></a>Function: <strong>show-yes-no-cancel-dialog</strong><em> parent-component message title message-type</em></dt>
+<dd><p>shows a yes-no-cancel dialog
+and returns #t if the response is yes,
+#f if the response is no
+or symbol &rsquo;canceled if the dialog is canceled.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-show_002dinput_002ddialog"></a>Function: <strong>show-input-dialog</strong><em> parent-component message title message-type</em></dt>
+<dd><p>shows a input dialog and returns a string which is inputed
+or #f if the dialog is canceled.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-show_002dmessage_002ddialog"></a>Function: <strong>show-message-dialog</strong><em> parent-component message title message-type</em></dt>
+<dd><p>shows a message dialog.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-set_002ddialog_002dresizable_0021"></a>Function: <strong>set-dialog-resizable!</strong><em> dialog resize?</em></dt>
+<dd><p>sets whether size of the dialog is variable.
+</p></dd></dl>
+
+
+<hr>
+<a name="Comboboxes_002flistboxes"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Dialogs" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing-support" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Checkboxes_002fradio-buttons" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">3.36.9 Comboboxes/listboxes</h3>
+
+<dl>
+<dt><a name="index-make_002dcombobox"></a>Function: <strong>make-combobox</strong><em> item-list</em></dt>
+<dd><p>creates a combobox with <var>item-list</var>.
+A value of the combobox is editable.<br>
+<var>item-list</var> is an associative list whose element is
+(value to be displayed . value to be gotten by get-selected-item-value).
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dlistbox"></a>Function: <strong>make-listbox</strong><em> item-list</em></dt>
+<dd><p>creates a listbox with <var>item-list</var>.
+A value of the listbox is not editable.<br>
+<var>item-list</var> is an associative list whose element is
+(value to be displayed . value to be gotten by get-selected-item-value).
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-get_002dselected_002ditem_002dvalue"></a>Function: <strong>get-selected-item-value</strong><em> selectable</em></dt>
+<dd><p>gets a value from the selectable component
+e.g. listbox and combobox.
+</p></dd></dl>
+
+
+<hr>
+<a name="Checkboxes_002fradio-buttons"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Comboboxes_002flistboxes" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing-support" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#File-choosers" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">3.36.10 Checkboxes/radio buttons</h3>
+
+<dl>
+<dt><a name="index-make_002dcheckbox"></a>Function: <strong>make-checkbox</strong><em> text</em></dt>
+<dd><p>creates a checkbox component.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-checkbox_002dchecked_003f"></a>Function: <strong>checkbox-checked?</strong><em> checkbox</em></dt>
+<dd><p>returns #t if the checkbox is checked.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-set_002dcheckbox_002dchecked_0021"></a>Function: <strong>set-checkbox-checked!</strong><em> checkbox check</em></dt>
+<dd><p>checks/unchecks the checkbox.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dradio_002dbutton"></a>Function: <strong>make-radio-button</strong><em> text [action-proc]</em></dt>
+<dd><p>creates a radio button component.<br>
+<var>action-proc</var> specifies a procedure with one argument.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dbutton_002dgroup"></a>Function: <strong>make-button-group</strong><em> radio-button-list</em></dt>
+<dd><p>creates a button group.
+<var>radio-button-list</var> specifies buttons included in the group.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-get_002dselected_002dbutton_002dvalue"></a>Function: <strong>get-selected-button-value</strong><em> button-group</em></dt>
+<dd><p>returns a value which is selected in the button group.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-set_002dselected_002dbutton_002dvalue_0021"></a>Function: <strong>set-selected-button-value!</strong><em> button-group datum</em></dt>
+<dd><p>changes the value which is selected in the button group.
+</p></dd></dl>
+
+
+<hr>
+<a name="File-choosers"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Checkboxes_002fradio-buttons" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing-support" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Color-choosers" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">3.36.11 File choosers</h3>
+
+<dl>
+<dt><a name="index-make_002dfile_002dchooser"></a>Function: <strong>make-file-chooser</strong><em> extension-filters</em></dt>
+<dd><p>creates a file chooser.<br>
+<var>extension-filters</var> specifies a list to be filtered.
+Syntax of <var>extension-filters</var> shows as follows.
+</p>
+<div class="example">
+<pre class="example">((&quot;extension[,extension &hellip;]&quot; . a string to display the file chooser
+ &hellip;)
+</pre></div>
+
+<p>The dialog is not displayed when this procedure is executed.
+Please call show-xxx-file-chooser.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-set_002dfile_002dselection_002dmode_0021"></a>Function: <strong>set-file-selection-mode!</strong><em> filechooser mode</em></dt>
+<dd><p>changes the selection mode of the file chooser.
+Available modes are shown as follows.
+</p><table>
+<tr><td width="30%">files</td><td width="60%">files only</td></tr>
+<tr><td width="30%">directories</td><td width="60%">directories only</td></tr>
+<tr><td width="30%">files-and-directories</td><td width="60%">files and directories</td></tr>
+</table>
+</dd></dl>
+
+<dl>
+<dt><a name="index-set_002daccept_002dall_002dfile_002dfilter_002dused_0021"></a>Function: <strong>set-accept-all-file-filter-used!</strong><em> filechooser use?</em></dt>
+<dd><p>sets whether &quot;selects all files&quot; is used as a filter.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-show_002dopen_002dfile_002dchooser"></a>Function: <strong>show-open-file-chooser</strong><em> filechooser parent-component</em></dt>
+<dd><p>shows the filechooser as &quot;open&quot;
+and returns the chosen file or #f(canceled).
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-show_002dsave_002dfile_002dchooser"></a>Function: <strong>show-save-file-chooser</strong><em> filechooser parent-component</em></dt>
+<dd><p>shows the filechooser as &quot;save&quot;
+and returns the chosen file or #f(canceled).
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-show_002dfile_002dchooser"></a>Function: <strong>show-file-chooser</strong><em> filechooser parent-component approve-button-text</em></dt>
+<dd><p>shows the filechooser whose button is specified by <var>approve-button-text</var>
+and returns the chosen file or #f(canceled).
+</p></dd></dl>
+
+
+<hr>
+<a name="Color-choosers"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#File-choosers" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing-support" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Menus" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">3.36.12 Color choosers</h3>
+<dl>
+<dt><a name="index-show_002dcolor_002dchooser"></a>Function: <strong>show-color-chooser</strong><em> [color] [parent-component]</em></dt>
+<dd><p>shows a color chooser.
+</p></dd></dl>
+
+
+<hr>
+<a name="Menus"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Color-choosers" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing-support" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Clipboards" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">3.36.13 Menus</h3>
+
+<dl>
+<dt><a name="index-make_002dmenu_002ditem"></a>Function: <strong>make-menu-item</strong><em> title action-proc [mnenomic-key mnenomic-key-modifier]</em></dt>
+<dd><p>creates a menu item component.<br>
+<var>action-proc</var> specifies a procedure with one argument.
+<var>mnenomic-key</var> and <var>mnenomic-key-modifier</var> specify a mnenomic key.
+</p></dd></dl>
+
+
+<hr>
+<a name="Clipboards"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Menus" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing-support" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Scroll-bars" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">3.36.14 Clipboards</h3>
+
+<dl>
+<dt><a name="index-copy_002dto_002dsystem_002dclipboard_0021"></a>Function: <strong>copy-to-system-clipboard!</strong><em> datum</em></dt>
+<dd><p>copies the object to the system clipboard.
+</p></dd></dl>
+
+
+<hr>
+<a name="Scroll-bars"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Clipboards" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing-support" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Spinners" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">3.36.15 Scroll bars</h3>
+
+<dl>
+<dt><a name="index-make_002dhorizontal_002dscroll_002dbar"></a>Function: <strong>make-horizontal-scroll-bar</strong><em> value extent min max [real-min real-max]</em></dt>
+<dd><p>creates a horizontal scroll bar component.<br>
+The arguements means shown as follows.
+</p><table>
+<tr><td width="20%">value</td><td width="70%">initial value</td></tr>
+<tr><td width="20%">extent</td><td width="70%">step</td></tr>
+<tr><td width="20%">min</td><td width="70%">maximum</td></tr>
+<tr><td width="20%">max</td><td width="70%">minimum</td></tr>
+<tr><td width="20%">real-min</td><td width="70%">scaled maximum</td></tr>
+<tr><td width="20%">real-max</td><td width="70%">scaled minimum</td></tr>
+</table>
+</dd></dl>
+
+<dl>
+<dt><a name="index-make_002dvertical_002dscroll_002dbar"></a>Function: <strong>make-vertical-scroll-bar</strong><em> value extent min max [real-min real-max]</em></dt>
+<dd><p>creates a vertical scroll bar component.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-get_002dscroll_002dbar_002dvalue"></a>Function: <strong>get-scroll-bar-value</strong><em> scroll-bar</em></dt>
+<dd><p>gets the value which the scroll bar indicates.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-get_002dscroll_002dbar_002drelative_002dvalue"></a>Function: <strong>get-scroll-bar-relative-value</strong><em> scroll-bar</em></dt>
+<dd><p>gets the relative value which the scroll bar indicates.
+Its maximum is 1 and minimum is 0.
+</p></dd></dl>
+
+
+<hr>
+<a name="Spinners"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Scroll-bars" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing-support" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Tabbed-panes" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">3.36.16 Spinners</h3>
+
+<dl>
+<dt><a name="index-make_002dnumber_002dspinner"></a>Function: <strong>make-number-spinner</strong><em> value min max step [format]</em></dt>
+<dd><p>creates a number spinner component.<br>
+If <var>max</var>(<var>min</var>) is #f, there is no upper(lower) bound.
+The form of <var>format</var> is under java.text.DecimalFormat.
+</p></dd></dl>
+
+
+<hr>
+<a name="Tabbed-panes"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Spinners" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing-support" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Icons" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">3.36.17 Tabbed panes</h3>
+
+<dl>
+<dt><a name="index-make_002dtabbed_002dpane"></a>Function: <strong>make-tabbed-pane</strong><em> component &hellip;</em></dt>
+<dd><p>creates a tabbed pane.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-get_002dselected_002dtab"></a>Function: <strong>get-selected-tab</strong><em> tabbed-pane</em></dt>
+<dd><p>gets the component which is selected in the tabbed pane.
+</p></dd></dl>
+
+
+<hr>
+<a name="Icons"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Tabbed-panes" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing-support" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Text-pane" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">3.36.18 Icons</h3>
+
+<dl>
+<dt><a name="index-make_002dimage_002dicon"></a>Function: <strong>make-image-icon</strong><em> image-file-name</em></dt>
+<dd><p>creates an image icon.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dframe_002dicon"></a>Function: <strong>make-frame-icon</strong><em> width height [x-begin y-begin x-end y-end]</em></dt>
+<dd><p>creates an icon which can be painted by the painter framework.<br>
+The coordinate can be specified
+with <var>x-begin</var>, <var>y-begin</var>, <var>x-end</var> and <var>y-end</var>.
+If you specify <var>x-begin</var> and so on
+coordinate system of the window has direction which is used in mathematics
+(x-axis is right directed and y-axis is up directed).
+If you don&rsquo;t specify <var>x-begin</var> and so on
+coordinate system has direction which is used in computer graphics
+(x-axis is right directed and y-axis is down directed).<br>
+</p>
+<p>Coordinate which you specify is conserved when the window is resized.<br>
+The window is disposed when it is closed.
+</p></dd></dl>
+
+
+<hr>
+<a name="Text-pane"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Icons" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing-support" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Layouts" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">3.36.19 Text pane</h3>
+
+<dl>
+<dt><a name="index-make_002dtext_002dpane"></a>Function: <strong>make-text-pane</strong></dt>
+<dd><p>creates a text pane.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-set_002ddefault_002dkey_002daction_0021"></a>Function: <strong>set-default-key-action!</strong><em> text-pane action &hellip;</em></dt>
+<dd><p>sets a default action when a key is pressed.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-add_002dkey_002daction_0021"></a>Function: <strong>add-key-action!</strong><em> text-pane key key-modifier action &hellip;</em></dt>
+<dd><p>adds a key action when a key is pressed.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-set_002dstyle_0021"></a>Function: <strong>set-style!</strong><em> text-pane offset length [[attribute-key attribute] &hellip;]</em></dt>
+<dd><p>sets a style of characters between <var>offset</var> to <var>offset</var> + <var>length</var>.
+</p>
+<p>Available symbols for <var>attribute-key</var> are shown as follows.
+</p><table>
+<tr><td width="25%">keyword</td><td width="70%">description</td></tr>
+<tr><td width="25%">font-family</td><td width="70%">specifies a kind of font</td></tr>
+<tr><td width="25%">font-size</td><td width="70%">specifies size of font</td></tr>
+<tr><td width="25%">bold</td><td width="70%">specifies bold</td></tr>
+<tr><td width="25%">italic</td><td width="70%">specifies italic</td></tr>
+<tr><td width="25%">underline</td><td width="70%">specifies underline</td></tr>
+<tr><td width="25%">strike</td><td width="70%">specifies strike</td></tr>
+<tr><td width="25%">superscript</td><td width="70%">specifies superscript</td></tr>
+<tr><td width="25%">subscript</td><td width="70%">specifies subscript</td></tr>
+<tr><td width="25%">color</td><td width="70%">specifies color</td></tr>
+<tr><td width="25%">background-color</td><td width="70%">specifies background color</td></tr>
+</table>
+</dd></dl>
+
+
+<hr>
+<a name="Layouts"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Text-pane" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing-support" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Progress-bars_002fmonitors" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">3.36.20 Layouts</h3>
+
+<dl>
+<dt><a name="index-layout_002dgrid_002dbag"></a>Function: <strong>layout-grid-bag</strong><em> panel constraint</em></dt>
+<dd><p>layouts the panel by GridBagLayout.<br>
+Syntax of <var>constraint</var> is shown as follows.
+</p>
+<div class="example">
+<pre class="example">(((GUI component [(attribute . value) &hellip;])
+  &hellip;
+ [((GUI component [(attribute . value) &hellip;])
+  &hellip;)]
+ &hellip;)
+</pre></div>
+
+<p>Available symbols as attribute are shown as follows.
+</p><table>
+<tr><td width="15%">attribute</td><td width="80%">description</td></tr>
+<tr><td width="15%">weightx</td><td width="80%">weight of component width of a cell</td></tr>
+<tr><td width="15%">weighty</td><td width="80%">weight of component height of a cell</td></tr>
+<tr><td width="15%">fill</td><td width="80%">specify whether the component is extended. Symbol shown as follows are available.</td></tr>
+<tr><td width="15%">none</td><td width="80%">not extend</td></tr>
+<tr><td width="15%">horizontal</td><td width="80%">extends horizontally</td></tr>
+<tr><td width="15%">vertical</td><td width="80%">extends vertically</td></tr>
+<tr><td width="15%">both</td><td width="80%">extends horizontally and vertically</td></tr>
+<tr><td width="15%">gridx</td><td width="80%">specifies x-coordinate</td></tr>
+<tr><td width="15%">gridwidth</td><td width="80%">specifies horizontal merged cells (same as colspan in &lt;table&gt; of HTML)</td></tr>
+<tr><td width="15%">gridheight</td><td width="80%">specifies vertical merged cells (same as rowspan in &lt;table&gt; of HTML)</td></tr>
+</table>
+</dd></dl>
+
+<dl>
+<dt><a name="index-layout_002dgrid"></a>Function: <strong>layout-grid</strong><em> panel layout [xgap ygap]</em></dt>
+<dd><p>layouts the panel by GridLayout.<br>
+Syntax of <var>layout</var> is shown as follows.
+</p>
+<div class="example">
+<pre class="example">(((component-of-the-first-column component-of-the-second-column &hellip;) ; This is first row
+ ((component-of-the-first-column component-of-the-second-column &hellip;) ;This is second row
+ &hellip;)
+</pre></div>
+</dd></dl>
+
+<dl>
+<dt><a name="index-layout_002dborder"></a>Function: <strong>layout-border</strong><em> panel layout [xgap ygap]</em></dt>
+<dd><p>layouts the panel by BorderLayout.<br>
+Components to be layouted is specified by <var>layout</var>
+as an associative list whose value is a component
+and key is shows as follows.
+</p><table>
+<tr><td width="22%">symbol of the key</td><td width="70%">description</td></tr>
+<tr><td width="22%">center</td><td width="70%">center</td></tr>
+<tr><td width="22%">north</td><td width="70%">north</td></tr>
+<tr><td width="22%">south</td><td width="70%">south</td></tr>
+<tr><td width="22%">east</td><td width="70%">east</td></tr>
+<tr><td width="22%">west</td><td width="70%">west</td></tr>
+</table>
+</dd></dl>
+
+<dl>
+<dt><a name="index-layout_002dflow"></a>Function: <strong>layout-flow</strong><em> component &hellip;</em></dt>
+<dd><p>layouts the panel by FlowLayout.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-layout_002dgroup"></a>Function: <strong>layout-group</strong><em> component layout</em></dt>
+<dd><p>layouts the panel by GroupLayout.<br>
+Layout is specified by a list of components
+or a vector which specifies a gap.
+</p>
+<p>Vertical gap is specified by #(vertical min prefer max)
+and horizontal gap is specified by #(horizontal min prefer max).
+</p>
+<p>Here is an example.
+</p><div class="example">
+<pre class="example">(layout-group
+  *window1*
+  `((,a #(,b vertical 20 25 30))
+    (,c ((,d ,e)
+         (,f ,g)))
+    (,h #(horizontal 5 10 20 vertical 20 25 30))))
+</pre></div>
+</dd></dl>
+
+<dl>
+<dt><a name="index-layout_002dnull"></a>Function: <strong>layout-null</strong><em> component layout</em></dt>
+<dd><p>layouts the panel without any layout.
+This procedure should not use as possible.<br>
+</p>
+<p>This procedure layouts components with coordinates.
+Here is an example.
+</p><div class="example">
+<pre class="example">(layout-null
+  *window1*
+  `((,a 100 100 50 30)    ; x-coodinate y-coordinate width height
+    (,b 200 200 100 20)))
+</pre></div>
+</dd></dl>
+
+
+<hr>
+<a name="Progress-bars_002fmonitors"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Layouts" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing-support" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing-lists" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">3.36.21 Progress bars/monitors</h3>
+
+<dl>
+<dt><a name="index-make_002dprogress_002dbar"></a>Function: <strong>make-progress-bar</strong><em> [orientation] [max min]</em></dt>
+<dd><p>creates a progress bar.
+<var>orientation</var> must be the symbol &rsquo;horizontal or &rsquo;vertical.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-prograss_002dbar_002dmaximum"></a>Function: <strong>prograss-bar-maximum</strong><em> progress-bar</em></dt>
+<dt><a name="index-prograss_002dbar_002dminimum"></a>Function: <strong>prograss-bar-minimum</strong><em> progress-bar</em></dt>
+<dd><p>gets maximum(minimum) of the progress bar.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-progress_002dbar_002dvalue"></a>Function: <strong>progress-bar-value</strong><em> progress-bar</em></dt>
+<dd><p>gets current value of the progress bar.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-progress_002dbar_002dpercent_002dcomplete"></a>Function: <strong>progress-bar-percent-complete</strong><em> progress-bar</em></dt>
+<dd><p>gets ratio of the progress bar.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-progress_002dbar_002dstring"></a>Function: <strong>progress-bar-string</strong><em> progress-bar</em></dt>
+<dd><p>gets the string which is displayed in the progress bar.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-progress_002dbar_002dorientation"></a>Function: <strong>progress-bar-orientation</strong><em> progress-bar</em></dt>
+<dd><p>gets the orientation of the progress bar.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-prograss_002dbar_002dmaximum_002dset_0021"></a>Function: <strong>prograss-bar-maximum-set!</strong><em> progress-bar value</em></dt>
+<dt><a name="index-prograss_002dbar_002dminimum_002dset_0021"></a>Function: <strong>prograss-bar-minimum-set!</strong><em> progress-bar value</em></dt>
+<dd><p>sets maximum(minimum) of the progress bar.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-progress_002dbar_002dvalue_002dset_0021"></a>Function: <strong>progress-bar-value-set!</strong><em> progress-bar value</em></dt>
+<dd><p>sets current value of the progress bar.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-progress_002dbar_002dstring_002dset_0021"></a>Function: <strong>progress-bar-string-set!</strong><em> progress-bar string</em></dt>
+<dd><p>sets the string which is displayed in the progress bar.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-progress_002dbar_002dindeterminate_002dset_0021"></a>Function: <strong>progress-bar-indeterminate-set!</strong><em> progress-bar</em></dt>
+<dd><p>sets the indeterminate mode to the progress bar.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dprogress_002dmonitor"></a>Function: <strong>make-progress-monitor</strong><em> millis component message note max min</em></dt>
+<dd><p>creates a progress monitor.<br>
+The progress monitor is a dialog window which is not displayed initially
+but displayed when a process has not been terminated.<br>
+<var>millis</var>, <var>component</var>, <var>message</var>, <var>note</var>,
+<var>max</var> and <var>min</var> specify millisecond to display,
+a parent component(or #f), a note, maximum and minimum respectively.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-progress_002dmonitor_002dprogress_002dset_0021"></a>Function: <strong>progress-monitor-progress-set!</strong><em> progress-monitor value</em></dt>
+<dd><p>sets the progress value to the progress monitor.<br>
+The progress monitor is closed automatically
+when the value is more than its maximum.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-progress_002dmonitor_002dnote"></a>Function: <strong>progress-monitor-note</strong><em> progress-monitor</em></dt>
+<dd><p>gets the note of the progress monitor.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-progress_002dmonitor_002dnote_002dset_0021"></a>Function: <strong>progress-monitor-note-set!</strong><em> progress-monitor string</em></dt>
+<dd><p>sets the note of the progress monitor.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-progress_002dmonitor_002dclose"></a>Function: <strong>progress-monitor-close</strong><em> progress-monitor</em></dt>
+<dd><p>closes the progress monitor.
+</p></dd></dl>
+
+
+<hr>
+<a name="Swing-lists"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Progress-bars_002fmonitors" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing-support" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing-trees" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">3.36.22 Swing lists</h3>
+
+<dl>
+<dt><a name="index-make_002djlist"></a>Function: <strong>make-jlist</strong><em> vector</em></dt>
+<dt><a name="index-make_002djlist-1"></a>Function: <strong>make-jlist</strong><em> list</em></dt>
+<dd><p>creates a Swing list.
+Values of the list are specified by first argument.<br>
+When the argument is a vector, the Swing list is immutable.<br>
+When the argument is a Scheme list, the Swing list is mutable.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-jlist_002dselected_002dvalue_002dlist"></a>Function: <strong>jlist-selected-value-list</strong><em> jlist</em></dt>
+<dd><p>gets a list of the objects which are selected in the Swing list.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-jlist_002dselection_002dmode_002dset_0021"></a>Function: <strong>jlist-selection-mode-set!</strong><em> jlist mode</em></dt>
+<dd><p>sets the selection mode of the Swing list.
+Symbols shown as follows are available as <var>mode</var>.
+</p><table>
+<tr><td width="22%">symbol</td><td width="70%">description</td></tr>
+<tr><td width="22%">single</td><td width="70%">only single value can be selected</td></tr>
+<tr><td width="22%">interval</td><td width="70%">an interval of values can be selected</td></tr>
+<tr><td width="22%">multiple</td><td width="70%">multiple values can be selected</td></tr>
+</table>
+</dd></dl>
+
+<dl>
+<dt><a name="index-jlist_002dselection_002dmode"></a>Function: <strong>jlist-selection-mode</strong><em> jlist</em></dt>
+<dd><p>gets the selection mode of the Swing list.
+</p></dd></dl>
+
+
+<hr>
+<a name="Swing-trees"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing-lists" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing-support" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Changing-look-and-feels" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">3.36.23 Swing trees</h3>
+
+<p>Nodes(leaves) of the Swing tree consist of abstract node objects.
+Structure of the tree is changed by the abstract node object.
+</p>
+<dl>
+<dt><a name="index-make_002djtree"></a>Function: <strong>make-jtree</strong><em> tree-structure</em></dt>
+<dd><p>creates a Swing tree.<br>
+Initial tree structure is specified by a list or a vector.<br>
+When the argument is a vector, the structure is immutable.
+When the argument is a Scheme list, the structure is mutable.<br>
+Syntax of <var>tree-structure</var> is shown as follows.
+</p><div class="example">
+<pre class="example">(node
+ (node leaf1
+      leaf2
+      (node subleaf1 subleaf2 subleaf3)
+      leaf3)
+ (node leaf1 leaf2))
+</pre></div>
+</dd></dl>
+
+<dl>
+<dt><a name="index-jtree_002dselected_002dlast_002dpath"></a>Function: <strong>jtree-selected-last-path</strong><em> jtree</em></dt>
+<dd><p>gets a node which includes the object which selected first.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-jtree_002dselected_002dlast_002dpaths"></a>Function: <strong>jtree-selected-last-paths</strong><em> jtree</em></dt>
+<dd><p>gets a list of nodes which selected in the Swing tree.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-jtree_002dselected_002dpath_002dlist"></a>Function: <strong>jtree-selected-path-list</strong><em> jtree</em></dt>
+<dd><p>gets a path which includes the object which selected first.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-jtree_002dselected_002dpath_002dlists"></a>Function: <strong>jtree-selected-path-lists</strong><em> jtree</em></dt>
+<dd><p>gets a list of lists of paths which selected in the Swing tree.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-jtree_002droot"></a>Function: <strong>jtree-root</strong><em> jtree</em></dt>
+<dd><p>gets the root object of the Swing tree.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-jtree_002droot_002dnode"></a>Function: <strong>jtree-root-node</strong><em> jtree</em></dt>
+<dd><p>gets the root node of the Swing tree.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-jtree_002droot_002dset_0021"></a>Function: <strong>jtree-root-set!</strong><em> jtree tree-structure</em></dt>
+<dd><p>sets the structure of the Swing tree.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-jtree_002dlast_002dpath_002dfor_002dlocation"></a>Function: <strong>jtree-last-path-for-location</strong><em> jtree x y</em></dt>
+<dd><p>gets the object which is in component coordinate (x, y),
+or returns #f if there is no objects in (x, y).
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-jtree_002dpath_002dlist_002dfor_002dlocation"></a>Function: <strong>jtree-path-list-for-location</strong><em> jtree x y</em></dt>
+<dd><p>gets the path is in component coordinate (x, y),
+or returns #f if there is no objects in (x, y).
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-jtree_002drenderer_002dset_0021"></a>Function: <strong>jtree-renderer-set!</strong><em> jtree renderer</em></dt>
+<dd><p>sets the Swing tree renderer to the Swing tree.<br>
+The Swing tree renderer enables displaying custom icons and so on.<br>
+Procedure <var>renderer</var> has six arguments, which are
+a label, a destination Swing tree,
+a boolean value whether a node is selected,
+a boolean value wheteer the node is expanded,
+a boolean value wheteer the node is a leaf and
+a boolean value wheteer the node is focused, respectively.<br>
+Here is an example of displaying other icon
+when the object of a node is an integer.
+</p><div class="example">
+<pre class="example">(jtree-renderer-set!
+  tr
+  (lambda (l t node sel expn leaf hasf)
+    (if (integer? (jtree-node-&gt;datum node))
+        (label-icon-set! l icon1))))
+</pre></div>
+</dd></dl>
+
+<dl>
+<dt><a name="index-jtree_002dnode_002d_003edatum"></a>Function: <strong>jtree-node-&gt;datum</strong><em> jtree-node</em></dt>
+<dd><p>converts the Swing tree node to the object.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-jtree_002dnode_002d_003edatum_002dtree"></a>Function: <strong>jtree-node-&gt;datum-tree</strong><em> jtree-node</em></dt>
+<dd><p>converts the Swing tree under the node to a list of the objects.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-jtree_002dnode_002dinsert_0021"></a>Function: <strong>jtree-node-insert!</strong><em> jtree jtree-node datum row</em></dt>
+<dd><p>inserts the datum to the <var>row</var>th of the Swing tree node.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-jtree_002dnode_002dadd_0021"></a>Function: <strong>jtree-node-add!</strong><em> jtree jtree-node datum</em></dt>
+<dd><p>adds the datum to the Swing tree node.
+</p></dd></dl>
+
+
+<hr>
+<a name="Changing-look-and-feels"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing-trees" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing-support" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing-timers" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">3.36.24 Changing look and feels</h3>
+
+<dl>
+<dt><a name="index-installed_002dlook_002dand_002dfeel_002dnames"></a>Function: <strong>installed-look-and-feel-names</strong></dt>
+<dd><p>returns a list of installed look and feels.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-look_002dand_002dfeel_002dset_0021"></a>Function: <strong>look-and-feel-set!</strong><em> look-and-feel-name</em></dt>
+<dd><p>sets the look and feel to the given name.
+</p></dd></dl>
+
+
+<hr>
+<a name="Swing-timers"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Changing-look-and-feels" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing-support" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Threads" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">3.36.25 Swing timers</h3>
+
+<dl>
+<dt><a name="index-make_002dswing_002dtimer"></a>Function: <strong>make-swing-timer</strong><em> init-delay listener [delay]</em></dt>
+<dd><p>creates a Swing timer.<br>
+<var>init-delay</var> specifies initial delay in milliseconds
+and delay in milliseconds if <var>delay</var> is not specified.
+<var>delay</var> specifies delay.
+If <var>delay</var> is #f, timer will start only once.<br>
+<var>listener</var> is a procedure with one argument
+and called by timer.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-swing_002dtimer_002dstart"></a>Function: <strong>swing-timer-start</strong><em> swing-timer</em></dt>
+<dd><p>starts the Swing timer.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-swing_002dtimer_002dstop"></a>Function: <strong>swing-timer-stop</strong><em> swing-timer</em></dt>
+<dd><p>stops the Swing timer.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-swing_002dtimer_002drestart"></a>Function: <strong>swing-timer-restart</strong><em> swing-timer</em></dt>
+<dd><p>restarts the Swing timer.
+</p></dd></dl>
+
+
+<hr>
+<a name="Threads"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing-timers" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing-support" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Events" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">3.36.26 Threads</h3>
+
+<dl>
+<dt><a name="index-swing_002dinvoke_002dlater"></a>Function: <strong>swing-invoke-later</strong><em> thread</em></dt>
+<dd><p>starts the thread later in the Swing dispatch thread.<br>
+To manipulate any GUI component, you should call this procedure
+because Swing framework is not support multithread perfectly.
+</p></dd></dl>
+
+
+<hr>
+<a name="Events"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Threads" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing-support" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Others-1" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">3.36.27 Events</h3>
+
+<dl>
+<dt><a name="index-action_002dlistener_002dadd_0021"></a>Function: <strong>action-listener-add!</strong><em> component action-proc</em></dt>
+<dd><p>adds the action listener <var>action-proc</var> to the component.
+<var>action-proc</var> must be a procedure with one argument.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-mouse_002dlistener_002dadd_0021"></a>Function: <strong>mouse-listener-add!</strong><em> component event-proc</em></dt>
+<dd><p>adds the mouse listener <var>event-proc</var> to the component.
+<var>event-proc</var> must be a procedure with one argument.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-item_002dlistener_002dadd_0021"></a>Function: <strong>item-listener-add!</strong><em> component event-proc</em></dt>
+<dd><p>adds the item listener <var>event-proc</var> to the component.
+<var>event-proc</var> must be a procedure with one argument.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-adjustment_002dlistener_002dadd_0021"></a>Function: <strong>adjustment-listener-add!</strong><em> component event-proc</em></dt>
+<dd><p>adds the adjustment listener <var>event-proc</var> to the component.
+<var>event-proc</var> must be a procedure with one argument.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-change_002dlistener_002dadd_0021"></a>Function: <strong>change-listener-add!</strong><em> component event-proc</em></dt>
+<dd><p>adds the change listener <var>event-proc</var> to the component.
+<var>event-proc</var> must be a procedure with one argument.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-window_002dlistener_002dadd_0021"></a>Function: <strong>window-listener-add!</strong><em> component event-proc</em></dt>
+<dd><p>adds the window listener <var>event-proc</var> to the component.
+<var>event-proc</var> must be a procedure with one argument.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-get_002daction_002dcommand"></a>Function: <strong>get-action-command</strong><em> action-event-object</em></dt>
+<dd><p>gets the action command from the given event object.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-get_002dwhen"></a>Function: <strong>get-when</strong><em> action-event-object</em></dt>
+<dd><p>gets the SRFI-19 time when the action is occurred
+from the given event object.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-get_002dparam_002dstring"></a>Function: <strong>get-param-string</strong><em> action-event-object</em></dt>
+<dd><p>gets the parameter string from the given event object.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-get_002dmouse_002dbutton"></a>Function: <strong>get-mouse-button</strong><em> mouse-event-object</em></dt>
+<dd><p>gets a symbol indicates the mouse button which is pressed
+from the given event object.<br>
+Symbols of mouse buttons are shown as follows.
+</p><table>
+<tr><td width="25%">symbol</td><td width="70%">description</td></tr>
+<tr><td width="25%">no-button</td><td width="70%">no button clicked</td></tr>
+<tr><td width="25%">button1</td><td width="70%">first button clicked(left button in the Windows or UNIX environment)</td></tr>
+<tr><td width="25%">button2</td><td width="70%">second button clicked(right button in the Windows environment)</td></tr>
+<tr><td width="25%">button3</td><td width="70%">third button clicked(right button in the UNIX environment)</td></tr>
+<tr><td width="25%">unknown-button</td><td width="70%">unknown button clicked</td></tr>
+</table>
+</dd></dl>
+
+<dl>
+<dt><a name="index-get_002dmouse_002dclick_002dcount"></a>Function: <strong>get-mouse-click-count</strong><em> mouse-event-object</em></dt>
+<dd><p>gets the times which a mouse button clicked.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-get_002dmouse_002dx"></a>Function: <strong>get-mouse-x</strong><em> mouse-event-object</em></dt>
+<dd><p>gets the x-coordinate in which a mouse button clicked.
+Coordinate system is the component coordinate system.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-get_002dmouse_002dy"></a>Function: <strong>get-mouse-y</strong><em> mouse-event-object</em></dt>
+<dd><p>gets the y-coordinate in which a mouse button clicked.
+Coordinate system is the component coordinate system.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-popup_002dtrigger_003f"></a>Function: <strong>popup-trigger?</strong><em> mouse-event-object</em></dt>
+<dd><p>returns #t if the event object is a popup trigger.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-get_002devent_002dselected_002ditem_002dvalue"></a>Function: <strong>get-event-selected-item-value</strong><em> item-event-object</em></dt>
+<dd><p>gets selected items from the event object.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-get_002devent_002dadjustment_002dvalue"></a>Function: <strong>get-event-adjustment-value</strong><em> adjustment-event-object</em></dt>
+<dd><p>gets adjusted items from the event object.
+</p></dd></dl>
+
+
+<hr>
+<a name="Others-1"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Events" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing-support" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_43.html#Applet-support" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">3.36.28 Others</h3>
+
+<dl>
+<dt><a name="index-beep"></a>Function: <strong>beep</strong></dt>
+<dd><p>rings a bell.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-update_002dcomponent_002dtree_002dui"></a>Function: <strong>update-component-tree-ui</strong><em> component</em></dt>
+<dd><p>updates the component UI.
+</p></dd></dl>
+
+<hr>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Events" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing-support" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_43.html#Applet-support" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated on <i>August 9, 2012</i> using <a href="http://www.nongnu.org/texi2html/"><i>texi2html 5.0</i></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

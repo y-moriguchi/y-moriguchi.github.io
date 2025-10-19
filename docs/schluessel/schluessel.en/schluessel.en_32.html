@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created on August 9, 2012 by texi2html 5.0
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Schluessel: 3.26 Linear algebra</title>
+
+<meta name="description" content="Schluessel: 3.26 Linear algebra">
+<meta name="keywords" content="Schluessel: 3.26 Linear algebra">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 5.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smalllisp {margin-left: 3.2em}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nocodebreak {white-space:pre}
+span.nolinebreak {white-space:pre}
+span.roman {font-family:serif; font-weight:normal}
+span.sansserif {font-family:sans-serif; font-weight:normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Linear-algebra"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_31.html#g_t2_002ddimensional-linear-and-affine-transformations" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_33.html#Mathematics-_0028others_0029" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section">3.26 Linear algebra</h2>
+
+<p>Procedures for linear algebra.
+</p>
+<dl>
+<dt><a name="index-list_002d_003ematrix"></a>Function: <strong>list-&gt;matrix</strong><em> ((x &hellip;) &hellip;)</em></dt>
+<dd><p>creates a matrix from the given list.<br>
+Next code
+</p><div class="example">
+<pre class="example">(list-&gt;matrix '((1 2 3) (4 5 6)))
+</pre></div>
+<p>will create a matrix
+.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-matrix_003f"></a>Function: <strong>matrix?</strong><em> obj</em></dt>
+<dd><p>returns #t if the object is a matrix.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-list_002d_003enumber_002dvector"></a>Function: <strong>list-&gt;number-vector</strong><em> (x &hellip;)</em></dt>
+<dd><p>creates a numeric vector form the given list.<br>
+Next code
+</p><div class="example">
+<pre class="example">(list-&gt;number-vector '(1 2 3))
+</pre></div>
+<p>returns a vector <em>(1 \ 2 \ 3)</em>.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-number_002dvector"></a>Function: <strong>number-vector</strong><em> x &hellip;</em></dt>
+<dd><p>creates a numeric vector form the given numbers.<br>
+Next code
+</p><div class="example">
+<pre class="example">(number-vector 1 2 3)
+</pre></div>
+<p>returns a vector <em>(1 \ 2 \ 3)</em>.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dmatrix"></a>Function: <strong>make-matrix</strong><em> rowsize colsize [fill]</em></dt>
+<dd><p>creates a matrix whose elements are equal. Default value of <var>fill</var> is 0.<br>
+Next code
+</p><div class="example">
+<pre class="example">(make-matrix 3 4 1)
+</pre></div>
+<p>will create a matrix
+.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dnumber_002dvector"></a>Function: <strong>make-number-vector</strong><em> size [fill]</em></dt>
+<dd><p>creates a numeric vector whose elements are equal.<br>
+Next code
+</p><div class="example">
+<pre class="example">(make-number-vector 3 1)
+</pre></div>
+<p>returns a vector <em>(1 \ 1 \ 1)</em>.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-matrix_002ddeterminant"></a>Function: <strong>matrix-determinant</strong><em> matrix</em></dt>
+<dd><p>computes determinant of the matrix.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-matrix_002b"></a>Function: <strong>matrix+</strong><em> matrix &hellip;</em></dt>
+<dd><p>[R5RS+]
+adds all given arguments.
+This procedure extends for matrices.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-matrix_002d"></a>Function: <strong>matrix-</strong><em> matrix &hellip;</em></dt>
+<dd><p>[R5RS+]
+subtracts given arguments from the first argument.
+This procedure extends for matrices.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-matrix_002a"></a>Function: <strong>matrix*</strong><em> matrix &hellip;</em></dt>
+<dd><p>[R5RS+]
+multiplies all given arguments.
+This procedure extends for quoternions and octonions.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-matrix_002dinvert"></a>Function: <strong>matrix-invert</strong><em> matrix &hellip;</em></dt>
+<dd><p>computes invert matrix of the matrix.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-lu_002ddecompose"></a>Function: <strong>lu-decompose</strong><em> matrix</em></dt>
+<dd><p>decomposes the matrix to <em>P(LU)</em>.
+This procedure returns permutation matrix, L matrix and U matrix.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-solve_002dlinear_002dequation"></a>Function: <strong>solve-linear-equation</strong><em> matrix vector</em></dt>
+<dd><p>solves the equation <em>A\vec{x}=\vec{b}</em>.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-matrix_002drow_002dsize"></a>Function: <strong>matrix-row-size</strong><em> matrix</em></dt>
+<dt><a name="index-matrix_002dcolumn_002dsize"></a>Function: <strong>matrix-column-size</strong><em> matrix</em></dt>
+<dd><p>gets the row(column) size of <var>matrix</var>.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-matrix_002drow_002dvector"></a>Function: <strong>matrix-row-vector</strong><em> matrix n</em></dt>
+<dt><a name="index-matrix_002dcolumn_002dvector"></a>Function: <strong>matrix-column-vector</strong><em> matrix n</em></dt>
+<dd><p>gets the <var>n</var>th row(column) vector of <var>matrix</var>.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-matrix_002dtranspose"></a>Function: <strong>matrix-transpose</strong><em> matrix</em></dt>
+<dd><p>computes transpose of the matrix.
+</p></dd></dl>
+
+<hr>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_31.html#g_t2_002ddimensional-linear-and-affine-transformations" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_33.html#Mathematics-_0028others_0029" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated on <i>August 9, 2012</i> using <a href="http://www.nongnu.org/texi2html/"><i>texi2html 5.0</i></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

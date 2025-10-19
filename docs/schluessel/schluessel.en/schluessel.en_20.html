@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created on August 9, 2012 by texi2html 5.0
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Schluessel: 3.14 Accessing via LDAP</title>
+
+<meta name="description" content="Schluessel: 3.14 Accessing via LDAP">
+<meta name="keywords" content="Schluessel: 3.14 Accessing via LDAP">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 5.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smalllisp {margin-left: 3.2em}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nocodebreak {white-space:pre}
+span.nolinebreak {white-space:pre}
+span.roman {font-family:serif; font-weight:normal}
+span.sansserif {font-family:sans-serif; font-weight:normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Accessing-via-LDAP"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_19.html#Others" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_21.html#JNDI-manipulation" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section">3.14 Accessing via LDAP</h2>
+
+<p>Procedures for accessing via LDAP.
+</p>
+<dl>
+<dt><a name="index-bind_002dldap_002dservice"></a>Function: <strong>bind-ldap-service</strong><em> hostname dc password</em></dt>
+<dd><p>binds the LDAP server.<br>
+<i>hostname</i> is a hostname, <i>dc</i> is a dc of a LDAP manager
+and <i>password</i> is a password.
+</p>
+<p>An example is shown as follows.
+</p><div class="example">
+<pre class="example">(define ldap-connection
+  (bind-ldap-service
+     &quot;hostname&quot;  ; hostname
+     &quot;cn=Manager,dc=example,dc=com&quot;  ; dc
+     &quot;secret&quot;))  ; password
+</pre></div>
+</dd></dl>
+
+<dl>
+<dt><a name="index-select_002dldap_002dservice"></a>Function: <strong>select-ldap-service</strong><em> ldap-connection dn cond level</em></dt>
+<dd><p>gets information from the LDAP server.<br>
+<i>ldap-connection</i> is a LDAP connection create by bind-ldap-service
+and <i>dn</i> is a dn to search.
+</p>
+<p>The syntax of <i>cond</i> is shown as follows.
+</p>
+<p>cond-expression<br>
+: (=  attr value)  ; equals<br>
+| (~= attr value)  ; nearly equals<br>
+| (&lt;= attr value)  ; less than<br>
+| (&gt;= attr value)  ; grater than<br>
+| (and cond-expression &hellip;)<br>
+| (or  cond-expression &hellip;)<br>
+| (not cond-expression)
+</p>
+<p><i>level</i> is the symbol shown as follows.
+</p><table>
+<tr><td width="18%">object</td><td width="50%">until the object</td></tr>
+<tr><td width="18%">1level</td><td width="50%">until one level</td></tr>
+<tr><td width="18%">subtree</td><td width="50%">until subtree</td></tr>
+</table>
+
+<p>An example is shown as follows.
+</p><div class="example">
+<pre class="example">(select-ldap-service
+  ldap-connection  ; bound LDAP connection
+  &quot;ou=User,dc=example,dc=com&quot;  ; dn to search
+  '(or (= &quot;cn&quot; &quot;User*&quot;)
+       (= &quot;sn&quot; &quot;aaa*&quot;))  ; searching condition
+  'subtree)  ; object, 1level, subtree
+</pre></div>
+</dd></dl>
+
+<dl>
+<dt><a name="index-insert_002dldap_002dservice_0021"></a>Function: <strong>insert-ldap-service!</strong><em> ldap-connection dn value</em></dt>
+<dd><p>inserts information to the LDAP server.<br>
+<i>ldap-connection</i> is a LDAP connection create by bind-ldap-service
+and <i>dn</i> is a dn to insert.
+</p>
+<p><i>value</i> is a list whose format is shown as follows.
+((&quot;attr&quot; &quot;value1&quot; &hellip;)<br>
+ (&quot;attr&quot; &quot;value2&quot; &hellip;)<br>
+ ...)
+</p>
+<p>An example is shown as follows.
+</p><div class="example">
+<pre class="example">(insert-ldap-service!
+  ldap-connection  ; bound LDAP connection
+  &quot;cn=User0001,ou=User,dc=example,dc=com&quot;
+  '((&quot;cn&quot; &quot;User0001&quot;)
+    (&quot;sn&quot; &quot;aaaaa&quot;)
+    (&quot;objectclass&quot; &quot;top&quot; &quot;person&quot; &quot;organizationalPerson&quot;)))
+</pre></div>
+</dd></dl>
+
+<dl>
+<dt><a name="index-update_002dldap_002dservice_0021"></a>Function: <strong>update-ldap-service!</strong><em> ldap-connection dn value</em></dt>
+<dd><p>updates information of the LDAP server.<br>
+<i>ldap-connection</i> is a LDAP connection create by bind-ldap-service
+and <i>dn</i> is a dn to update.
+</p>
+<p><i>value</i> is a list whose format is shown as follows.
+((replace &quot;attr&quot; &quot;value1&quot; &hellip;)  ; update<br>
+ (add     &quot;attr&quot; &quot;value2&quot; &hellip;)  ; add<br>
+ (remove  &quot;attr&quot;)  ; remove<br>
+ ...)
+</p>
+<p>An example is shown as follows.
+</p><div class="example">
+<pre class="example">(update-ldap-service!
+  ldap-connection  ; bound LDAP connection
+  &quot;cn=User0001,ou=User,dc=example,dc=com&quot;
+  '((replace &quot;sn&quot; &quot;bbbb&quot;)
+    (add     &quot;description&quot; &quot;A description&quot;)
+    (remove &quot;mail&quot;)))
+</pre></div>
+</dd></dl>
+
+<dl>
+<dt><a name="index-delete_002dldap_002dservice_0021"></a>Function: <strong>delete-ldap-service!</strong><em> ldap-connection dn</em></dt>
+<dd><p>deletes information of the LDAP server.<br>
+<i>ldap-connection</i> is a LDAP connection create by bind-ldap-service
+and <i>dn</i> is a dn to delete.
+</p>
+<p>An example is shown as follows.
+</p><div class="example">
+<pre class="example">(delete-ldap-service!
+  ldap-connection  ; bound LDAP connection
+  &quot;cn=User0001,ou=User,dc=example,dc=com&quot;)
+</pre></div>
+</dd></dl>
+
+<hr>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_19.html#Others" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_21.html#JNDI-manipulation" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated on <i>August 9, 2012</i> using <a href="http://www.nongnu.org/texi2html/"><i>texi2html 5.0</i></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

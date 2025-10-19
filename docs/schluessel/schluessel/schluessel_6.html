@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created on 12月 15, 2012 by texi2html 5.0
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Schluessel: 3 Schluesselの型</title>
+
+<meta name="description" content="Schluessel: 3 Schluesselの型">
+<meta name="keywords" content="Schluessel: 3 Schluesselの型">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 5.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smalllisp {margin-left: 3.2em}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nocodebreak {white-space:pre}
+span.nolinebreak {white-space:pre}
+span.roman {font-family:serif; font-weight:normal}
+span.sansserif {font-family:sans-serif; font-weight:normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="ja" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Schluessel_306e_578b"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_2.html#Schluessel_306e_8d77_52d5" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_5.html#g_t_30b7_30b9_30c6_30e0_30d7_30ed_30d1_30c6_30a3" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[上]</td>
+<td valign="middle" align="left">[<a href="schluessel_7.html#g_t_6570" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_8.html#g_t_57fa_672c_6a5f_80fd" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h1 class="chapter">3 Schluesselの型</h1>
+
+<p>SchluesselにはR5RSにて規定された型に加えて処理系独自の型を持っています。
+Schluesselにて使用可能な型を以下に示します。
+</p>
+<dl compact="compact">
+<dt><b>論理値型[R5RS]</b></dt>
+<dd><p>任意のオブジェクトが論理値型として使用できます。
+オブジェクト#fは偽を表し、それ以外のオブジェクトは真を表します。
+真を表すための専用オブジェクトとして#tが用意されています。
+</p>
+</dd>
+<dt><b>数[R5RS+]</b></dt>
+<dd><p>SchluesselではR5RSで規定される整数、有理数、不正確な数、複素数に加えて
+四元数(クオータニオン)、八元数、正確なπと自然対数の底もサポートします。
+</p>
+</dd>
+<dt><b>文字[R5RS]</b></dt>
+<dd><p>文字そのものを表します。Unicodeのすべての文字が使用できます。
+</p>
+</dd>
+<dt><b>文字列[R5RS]</b></dt>
+<dd><p>テキストとして使用できる文字列を表します。
+現時点ではUnicode基本面のみを使用できます。
+</p>
+</dd>
+<dt><b>シンボル[R5RS]</b></dt>
+<dd><p>変数や引数のキーワードなどに使用できる文字列からなるオブジェクトです。
+</p>
+</dd>
+<dt><b>ペアとリスト[R5RS]</b></dt>
+<dd><p>2つの要素carとcdrを持つオブジェクトです。
+リストはcarにデータ、cdrに次のリストへの参照を持つデータ構造です。
+</p>
+</dd>
+<dt><b>ベクタ[R5RS]</b></dt>
+<dd><p>固定長の長さを持ち、
+要素の参照にO(1)の計算量でアクセスできるデータ構造です。
+</p>
+</dd>
+<dt><b>手続き[R5RS]</b></dt>
+<dd><p>Schemeでは手続きは数や文字と同じ第1級のオブジェクトとして規定されます。
+つまり、数と同じように手続きに手続きを渡したり、
+関数の戻り値として手続きを返したりできます。
+</p>
+</dd>
+<dt><b>継続[R5RS]</b></dt>
+<dd><p>call-with-current-continuation(call/cc)によって返されるオブジェクトです。
+そのときまでの計算結果が格納されています。
+</p>
+</dd>
+<dt><b>約束(プロミス)[R5RS]</b></dt>
+<dd><p>delayによって返されるオブジェクトです。
+結果が必要になるまで評価を遅らせることができます。
+</p>
+</dd>
+<dt><b>一様なベクタ[SRFI-4]</b></dt>
+<dd><p>固定バイトの整数または浮動小数点のみが格納されているベクタです。
+値を直接格納するのでメモリを節約できます。
+</p>
+</dd>
+<dt><b>文字セット[SRFI-14]</b></dt>
+<dd><p>文字の集合を表すオブジェクトです。
+</p>
+</dd>
+<dt><b>時刻[SRFI-19]</b></dt>
+<dd><p>時刻を表すオブジェクトです。
+</p>
+</dd>
+<dt><b>配列[SRFI-25][SRFI-47][SRFI-63]</b></dt>
+<dd><p>n次元の配列を表すオブジェクトです。
+</p>
+</dd>
+<dt><b>コレクション[SRFI-44]</b></dt>
+<dd><p>SRFI-44によって規定されるマップ、集合などのコレクションを表します。
+</p>
+</dd>
+<dt><b>ハッシュ表[SRFI-69]</b></dt>
+<dd><p>ハッシュ表を格納するオブジェクトです。
+SRFI-44のオブジェクトとしても使用可能です。
+</p>
+</dd>
+<dt><b>正規表現</b></dt>
+<dd><p>正規表現を表すオブジェクトです。
+</p>
+</dd>
+<dt><b>イテレータ</b></dt>
+<dd><p>リストのように操作できるオブジェクトです。
+</p>
+</dd>
+<dt><b>代数</b></dt>
+<dd><p>数学の環や体をなすオブジェクトです。<br>
+環をなすオブジェクトに対しては手続き+, -, *が適用できます。
+1変数多項式、行列などが該当します。<br>
+体をなすオブジェクトに対しては手続き+, -, *, /が適用できます。
+</p>
+</dd>
+<dt><b>AWT/Swingオブジェクト</b></dt>
+<dd><p>AWT/SwingのGUIコンポーネントなどを表すオブジェクトです。
+</p>
+</dd>
+<dt><b>その他</b></dt>
+<dd><p>Schluesselのオブジェクトはほかにも多くの種類のオブジェクトがあります。
+</p></dd>
+</dl>
+
+
+<hr>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_2.html#Schluessel_306e_8d77_52d5" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_5.html#g_t_30b7_30b9_30c6_30e0_30d7_30ed_30d1_30c6_30a3" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[上]</td>
+<td valign="middle" align="left">[<a href="schluessel_7.html#g_t_6570" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_8.html#g_t_57fa_672c_6a5f_80fd" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  この文書は<em>12月 15, 2012</em>に<a href="http://www.nongnu.org/texi2html/"><em>texi2html 5.0</em></a>を用いて生成されました。
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

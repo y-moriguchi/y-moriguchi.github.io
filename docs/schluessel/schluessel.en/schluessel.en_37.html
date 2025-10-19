@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created on August 9, 2012 by texi2html 5.0
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Schluessel: 3.31 Regular expression</title>
+
+<meta name="description" content="Schluessel: 3.31 Regular expression">
+<meta name="keywords" content="Schluessel: 3.31 Regular expression">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 5.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smalllisp {margin-left: 3.2em}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nocodebreak {white-space:pre}
+span.nolinebreak {white-space:pre}
+span.roman {font-family:serif; font-weight:normal}
+span.sansserif {font-family:sans-serif; font-weight:normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Regular-expression"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_36.html#Processes" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_38.html#Security" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section">3.31 Regular expression</h2>
+
+<p>Procedures for regular experssion.
+In these procedures, Java standard regular expression is available.
+</p>
+<dl>
+<dt><a name="index-_0023_002fregexp_002f"></a>Reader syntax: <strong>#/regexp/</strong><em>[uic]</em></dt>
+<dd><p>compiles a regular expression object.<br>
+Flags shown as follows are available.
+</p><table>
+<tr><td width="10%">u</td><td width="60%">use Unicode</td></tr>
+<tr><td width="10%">i</td><td width="60%">case insensitive</td></tr>
+<tr><td width="10%">c</td><td width="60%">enable standard equivalence</td></tr>
+</table>
+</dd></dl>
+
+<dl>
+<dt><a name="index-regexp_003f"></a>Function: <strong>regexp?</strong><em> datum</em></dt>
+<dd><p>returns #t if the object is a regular expression object.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-regexp_002dreplace"></a>Function: <strong>regexp-replace</strong><em> regexp dest-string replace-string</em></dt>
+<dd><p>replaces the string using the given regular expression.
+First occurence will be replaced.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-regexp_002dreplace_002dall"></a>Function: <strong>regexp-replace-all</strong><em> regexp dest-string replace-string</em></dt>
+<dd><p>replaces the string using the given regular expression.
+All occurence will be replaced.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-regexp_002d_003estring"></a>Function: <strong>regexp-&gt;string</strong><em> regexp-object</em></dt>
+<dd><p>gets the string representation of the regular expression.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-string_002d_003eregexp"></a>Function: <strong>string-&gt;regexp</strong><em> regexp</em></dt>
+<dd><p>transforms the string to regular expression.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-rxmatch"></a>Function: <strong>rxmatch</strong><em> regexp-object dest-string</em></dt>
+<dd><p>matches the string by the regular expression
+and returns the matched values as multiple values.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-rxmatch_002dlist"></a>Function: <strong>rxmatch-list</strong><em> regexp-object dest-string</em></dt>
+<dd><p>matches the string by the regular expression
+and returns the matched values as a list.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-matchrx_003f"></a>Function: <strong>matchrx?</strong><em> regexp-object dest-string</em></dt>
+<dd><p>returns #t if the string matches the regular expression.
+</p></dd></dl>
+
+<hr>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_36.html#Processes" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_38.html#Security" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated on <i>August 9, 2012</i> using <a href="http://www.nongnu.org/texi2html/"><i>texi2html 5.0</i></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

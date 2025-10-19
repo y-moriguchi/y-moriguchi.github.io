@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created on 12月 15, 2012 by texi2html 5.0
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Schluessel: 5.31 正規表現</title>
+
+<meta name="description" content="Schluessel: 5.31 正規表現">
+<meta name="keywords" content="Schluessel: 5.31 正規表現">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 5.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smalllisp {margin-left: 3.2em}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nocodebreak {white-space:pre}
+span.nolinebreak {white-space:pre}
+span.roman {font-family:serif; font-weight:normal}
+span.sansserif {font-family:sans-serif; font-weight:normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="ja" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="g_t_6b63_898f_8868_73fe"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_68.html#g_t_30d7_30ed_30bb_30b9" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_70.html#g_t_30bb_30adyu_30ea_30c6_30a3" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section">5.31 正規表現</h2>
+
+<p>正規表現に関するライブラリです。ここに記述されている手続きでは、Java標準の正規表現が使用できます。
+</p>
+<dl>
+<dt><a name="index-_0023_002fregexp_002f"></a>Reader syntax: <strong>#/regexp/</strong><em>[uic]</em></dt>
+<dd><p>戻り値: 正規表現オブジェクト<br>
+正規表現オブジェクトを構築します。末尾に以下のフラグを追加できます。フラグは複数指定可能です。
+</p>
+<table>
+<tr><td width="10%">u</td><td width="60%">Unicodeを使用します</td></tr>
+<tr><td width="10%">i</td><td width="60%">大文字/小文字を区別しません</td></tr>
+<tr><td width="10%">c</td><td width="60%">標準等価を有効にします</td></tr>
+</table>
+</dd></dl>
+
+<dl>
+<dt><a name="index-regexp_003f"></a>Function: <strong>regexp?</strong><em> datum</em></dt>
+<dd><p>戻り値: 正規表現オブジェクトのとき#t<br>
+与えられたオブジェクトが正規表現オブジェクトであるかを調べます。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-regexp_002dreplace"></a>Function: <strong>regexp-replace</strong><em> regexp dest-string replace-string</em></dt>
+<dd><p>戻り値: 置き換えられた文字列<br>
+与えられた正規表現に従い、文字列を置き換えます。最初に一致した文字のみ置き換えられます。
+正規表現は文字列または正規表現オブジェクトで与えます。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-regexp_002dreplace_002dall"></a>Function: <strong>regexp-replace-all</strong><em> regexp dest-string replace-string</em></dt>
+<dd><p>戻り値: 置き換えられた文字列<br>
+与えられた正規表現に従い、文字列を置き換えます。一致した文字すべてが置き換えられます。
+正規表現は文字列または正規表現オブジェクトで与えます。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-regexp_002d_003estring"></a>Function: <strong>regexp-&gt;string</strong><em> regexp-object</em></dt>
+<dd><p>戻り値: 正規表現を表す文字列<br>
+正規表現オブジェクトの文字列表現を取得します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-string_002d_003eregexp"></a>Function: <strong>string-&gt;regexp</strong><em> regexp</em></dt>
+<dd><p>戻り値: 正規表現オブジェクト<br>
+文字列を正規表現オブジェクトに変換します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-rxmatch"></a>Function: <strong>rxmatch</strong><em> regexp-object dest-string</em></dt>
+<dd><p>戻り値: マッチした文字列; グループ化されているときはグループにマッチした文字列が多値として返す<br>
+文字列をマッチし、その結果を多値として返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-rxmatch_002dlist"></a>Function: <strong>rxmatch-list</strong><em> regexp-object dest-string</em></dt>
+<dd><p>戻り値: マッチした文字列; グループ化されているときはグループにマッチした文字列をとして返す<br>
+文字列をマッチし、その結果をリストとして返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-matchrx_003f"></a>Function: <strong>matchrx?</strong><em> regexp-object dest-string</em></dt>
+<dd><p>戻り値: マッチしたときに#t<br>
+文字列が正規表現にマッチするかを調べます。 
+</p></dd></dl>
+
+<hr>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_68.html#g_t_30d7_30ed_30bb_30b9" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_70.html#g_t_30bb_30adyu_30ea_30c6_30a3" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  この文書は<em>12月 15, 2012</em>に<a href="http://www.nongnu.org/texi2html/"><em>texi2html 5.0</em></a>を用いて生成されました。
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

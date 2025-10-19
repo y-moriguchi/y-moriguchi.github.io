@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created on 12月 15, 2012 by texi2html 5.0
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Schluessel: 5.47 diffの取得</title>
+
+<meta name="description" content="Schluessel: 5.47 diffの取得">
+<meta name="keywords" content="Schluessel: 5.47 diffの取得">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 5.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smalllisp {margin-left: 3.2em}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nocodebreak {white-space:pre}
+span.nolinebreak {white-space:pre}
+span.roman {font-family:serif; font-weight:normal}
+span.sansserif {font-family:sans-serif; font-weight:normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="ja" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="diff_306e_53d6_5f97"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_84.html#g_t_5f62_5f0fWen_6cd5_306b_3088_308b_30d1_30fc_30b5_751f_6210" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_86.html#Servlet_9023_643a_6a5f_80fd" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section">5.47 diffの取得</h2>
+
+<p>リスト間のdiffを取得する手続きです。
+</p>
+<dl>
+<dt><a name="index-lcs_002dedit_002dlist"></a>Function: <strong>lcs-edit-list</strong><em> list1 list2 [equiv?]</em></dt>
+<dd><p>リスト1とリスト2の相違点を調べ、リストにします。
+出力されるリストは以下の形式です。
+</p><div class="example">
+<pre class="example">((+ 行数 追加されるオブジェクト)  ; 追加のとき
+ (- 行数 削除されるオブジェクト)  ; 削除のとき
+ (- 行数 削除されるオブジェクト)
+ (+ 行数 追加されるオブジェクト)  ; 更新のとき
+ ...)
+</pre></div>
+</dd></dl>
+
+<dl>
+<dt><a name="index-make_002dpatch"></a>Function: <strong>make-patch</strong><em> list1 list2 [equiv?]</em></dt>
+<dd><p>リスト1とリスト2の相違点を調べ、パッチオブジェクトにします。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-apply_002dpatch"></a>Function: <strong>apply-patch</strong><em> patch list</em></dt>
+<dd><p>リストにパッチオブジェクトを適用します。
+</p></dd></dl>
+
+<p>﻿</p><a name="g_t_30c7_30fc_30bf_30d9_30fc_30b9_9023_643a_6a5f_80fd"></a>
+<h2 class="section">データベース連携機能</h2>
+
+<p>リレーショナルデータベース(RDB)とJDBCにより連携する機能です。
+RDBからのデータを取得するときにRDBの型をメタデータにより参照して、対応するSchemeの型に変換します。
+</p>
+<p>変換の対応表は以下の通りです。
+</p>
+<table>
+<tr><td width="18%">RDBの型</td><td width="50%">Schemeのオブジェクト</td></tr>
+<tr><td width="18%">BOOLEAN</td><td width="50%">#tまたは#f</td></tr>
+<tr><td width="18%">CHAR</td><td width="50%">文字列</td></tr>
+<tr><td width="18%">DATE</td><td width="50%">SRFI-19形式の日付</td></tr>
+<tr><td width="18%">DECIMAL</td><td width="50%">正確な数(有理数)</td></tr>
+<tr><td width="18%">DOUBLE</td><td width="50%">不正確な数</td></tr>
+<tr><td width="18%">FLOAT</td><td width="50%">不正確な数</td></tr>
+<tr><td width="18%">INTEGER</td><td width="50%">正確な整数</td></tr>
+<tr><td width="18%">NUMERIC</td><td width="50%">正確な数(有理数)</td></tr>
+<tr><td width="18%">REAL</td><td width="50%">不正確な数</td></tr>
+<tr><td width="18%">SMALLINT</td><td width="50%">正確な整数</td></tr>
+<tr><td width="18%">TIMESTAMP</td><td width="50%">SRFI-19形式の日付</td></tr>
+<tr><td width="18%">TINYINT</td><td width="50%">正確な整数</td></tr>
+<tr><td width="18%">VARCHAR</td><td width="50%">文字列</td></tr>
+</table>
+
+<p>パラメータは原則として準備されたSQL(Prepared  SQL)を使用します。
+Prepared  SQLを使用することにより(ドライバが適切に実装されていれば)SQLインジェクション攻撃を防ぐことができます。
+Schemeオブジェクトをパラメータに渡すときも型変換が適用されます。型の対応は以下の通りです。
+</p>
+<table>
+<tr><td width="30%">Schemeのオブジェクト</td><td width="70%">RDBの型</td></tr>
+<tr><td width="30%">文字列</td><td width="70%">文字列(String)</td></tr>
+<tr><td width="30%">短い整数</td><td width="70%">短い整数(int)</td></tr>
+<tr><td width="30%">長い整数</td><td width="70%">長い整数(BigInteger)</td></tr>
+<tr><td width="30%">SRFI-19形式の日付</td><td width="70%">日付 (java.sql.Timestampまたはjava.sql.Date)</td></tr>
+<tr><td width="30%">不正確な数</td><td width="70%">浮動小数点型(doubleまたはfloat)</td></tr>
+<tr><td width="30%">#tまたは#f</td><td width="70%">論理型(boolean)</td></tr>
+</table>
+
+<p>クエリの結果は結果バッグ(result-bag)に格納されます。
+結果バッグからのデータ取得は通常のリストと同様に処理できます。
+「The Little Schemer」(Daniel P. Friedman, Matthias Felleisen著 ISBN 978-0-262-56099-3)の「掟(Commandment)」の書き方にならえば、
+</p>
+<div class="example">
+<pre class="example">第一の掟 (result bag version)
+
+結果バッグresbについて再帰するときには、次の2つの質問を問いかけよ:(end-result-bag? resb)とelse。
+</pre></div>
+
+<div class="example">
+<pre class="example">第四の掟 (result bag version)
+
+再帰するとき、少なくとも1つの引数はいつも変化する。
+結果バッグresbについて再帰するときには、(next-result-bag resb)を使用せよ。
+</pre></div>
+
+<p>となるとおもいます。
+</p>
+
+<dl>
+<dt><a name="index-jdbc_002duse_002ddb"></a>Function: <strong>jdbc-use-db</strong><em> dbms-name</em></dt>
+<dd><p>戻り値: 未定義<br>
+使用するDBMSの種類を宣言します。
+dbms-nameにはDBMSの種類を表すシンボルを指定します。指定可能なシンボルは以下の通りです。
+</p><table>
+<tr><td width="25%">dbms-name</td><td width="70%">RDBMS</td></tr>
+<tr><td width="25%">oracle</td><td width="70%">Oracle</td></tr>
+<tr><td width="25%">mysql</td><td width="70%">MySQL</td></tr>
+<tr><td width="25%">postgresql</td><td width="70%">PostgreSQL</td></tr>
+<tr><td width="25%">sqlite</td><td width="70%">SQLite</td></tr>
+</table>
+</dd></dl>
+
+<dl>
+<dt><a name="index-jdbc_002dconnect"></a>Function: <strong>jdbc-connect</strong><em> url</em></dt>
+<dd><p>戻り値: JDBCコネクション<br>
+JDBCを使用してRDBMSに接続します。
+urlは、JDBCで接続するときに指定するURLの文字列です。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-jdbc_002dprepare"></a>Function: <strong>jdbc-prepare</strong><em> connection SQL</em></dt>
+<dd><p>戻り値: JDBCステートメント<br>
+JDBCを使用してSQLを解析し、準備されたステートメントを取得します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-jdbc_002dquery"></a>Function: <strong>jdbc-query</strong><em> statement param &hellip;</em></dt>
+<dd><p>戻り値: JDBC結果バッグ<br>
+参照系のJDBCステートメントを実行します。
+パラメータはプレースホルダ(&quot;?&quot;)の順序に従ってステートメントの後に指定します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-jdbc_002dupdate_0021"></a>Function: <strong>jdbc-update!</strong><em> statement param &hellip;</em></dt>
+<dd><p>戻り値: 更新された件数<br>
+更新系またはDDLのJDBCステートメントを実行します。
+パラメータはプレースホルダ(&quot;?&quot;)の順序に従ってステートメントの後に指定します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-jdbc_002dopen_003f"></a>Function: <strong>jdbc-open?</strong><em> closable-object</em></dt>
+<dd><p>戻り値: closable-objectが開いていれば#t<br>
+closable-objectが開いているかを調べます。
+closable-objectには、JDBCコネクション、JDBCステートメント、JDBC結果バッグが含まれます。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-jdbc_002dclose"></a>Function: <strong>jdbc-close</strong><em> closable-object</em></dt>
+<dd><p>戻り値: 未定義<br>
+closable-objectを閉じます。
+closable-objectには、JDBCコネクション、JDBCステートメント、JDBC結果バッグが含まれます。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-get_002dresult_002dbag_002drow"></a>Function: <strong>get-result-bag-row</strong><em> result-bag</em></dt>
+<dd><p>戻り値: 行<br>
+結果バッグの現在の位置から行オブジェクトを取得します。
+この手続きは通常のリスト処理におけるcar手続きに相当します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-get_002dresult_002dbag_002drow_002dlist"></a>Function: <strong>get-result-bag-row-list</strong><em> result-bag</em></dt>
+<dd><p>戻り値: 行を表すリスト<br>
+結果バッグの現在の位置から行を表すリストを取得します。
+リストの順序はクエリを実行するときのSQLによって決まります。
+この手続きは通常のリスト処理におけるcar手続きに相当します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-end_002dresult_002dbag_003f"></a>Function: <strong>end-result-bag?</strong><em> result-bag</em></dt>
+<dd><p>戻り値: 結果バッグが行の終端を超えたら#t<br>
+結果バッグが行の終端を超えているかを調べます。
+この手続きは通常のリスト処理におけるnull?手続きに相当します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-next_002dresult_002dbag"></a>Function: <strong>next-result-bag</strong><em> result-bag</em></dt>
+<dd><p>戻り値: 結果バッグ<br>
+結果バッグの「カーソル」を次の行に進めます。
+この手続きは通常のリスト処理におけるcdr手続きに相当します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-row_002dref"></a>Function: <strong>row-ref</strong><em> row-of-result-bag symbol-of-row-id</em></dt>
+<dd><p>戻り値: 行の要素に対応するオブジェクト<br>
+結果バッグの行オブジェクトから行に対応するオブジェクトを取得します。
+第1引数には結果バッグの行を、第2引数には行名を表すシンボルを指定します。
+</p></dd></dl>
+
+<hr>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_84.html#g_t_5f62_5f0fWen_6cd5_306b_3088_308b_30d1_30fc_30b5_751f_6210" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_86.html#Servlet_9023_643a_6a5f_80fd" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  この文書は<em>12月 15, 2012</em>に<a href="http://www.nongnu.org/texi2html/"><em>texi2html 5.0</em></a>を用いて生成されました。
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created on August 9, 2012 by texi2html 5.0
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Schluessel: 3.38 AWT support</title>
+
+<meta name="description" content="Schluessel: 3.38 AWT support">
+<meta name="keywords" content="Schluessel: 3.38 AWT support">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 5.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smalllisp {margin-left: 3.2em}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nocodebreak {white-space:pre}
+span.nolinebreak {white-space:pre}
+span.roman {font-family:serif; font-weight:normal}
+span.sansserif {font-family:sans-serif; font-weight:normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="AWT-support"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_43.html#Applet-support" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Desktop-operation" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section">3.38 AWT support</h2>
+
+<p>Procedures for the Java AWT framework.
+</p>
+<hr>
+<a name="Desktop-operation"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#AWT-support" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#AWT-support" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Graphics-environment" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">3.38.1 Desktop operation</h3>
+
+<dl>
+<dt><a name="index-desktop_002dsupported_003f"></a>Function: <strong>desktop-supported?</strong><em> [operation]</em></dt>
+<dd><p>returns #t if the desktop operation is supported in your environment.<br>
+<var>operation</var> must be a symbol shown as follows.
+</p><table>
+<tr><td width="18%">browse</td><td width="50%">supports starting a Web browser</td></tr>
+<tr><td width="18%">edit</td><td width="50%">supports editing a file</td></tr>
+<tr><td width="18%">mail</td><td width="50%">supports starting a mailer</td></tr>
+<tr><td width="18%">open</td><td width="50%">supports opening a file</td></tr>
+<tr><td width="18%">print</td><td width="50%">supports printing a file</td></tr>
+</table>
+</dd></dl>
+
+<dl>
+<dt><a name="index-desktop_002dbrowse"></a>Function: <strong>desktop-browse</strong><em> uri</em></dt>
+<dt><a name="index-desktop_002dedit"></a>Function: <strong>desktop-edit</strong><em> file</em></dt>
+<dt><a name="index-desktop_002dmail"></a>Function: <strong>desktop-mail</strong><em> [uri]</em></dt>
+<dt><a name="index-desktop_002dopen"></a>Function: <strong>desktop-open</strong><em> file</em></dt>
+<dt><a name="index-desktop_002dprint"></a>Function: <strong>desktop-print</strong><em> file</em></dt>
+<dd><p>browses the URL, edits the file, sends a mail to the URI,
+opens the file and prints the file respectively.<br>
+This procedure returns #t when the operation is succeed
+or #f when the operation is not supported.
+</p></dd></dl>
+
+
+<hr>
+<a name="Graphics-environment"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Desktop-operation" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#AWT-support" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#GUI-robots" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">3.38.2 Graphics environment</h3>
+
+<dl>
+<dt><a name="index-graphics_002dall_002dfonts"></a>Function: <strong>graphics-all-fonts</strong></dt>
+<dd><p>returns a list of all font objects supported in your environment.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-graphics_002ddefault_002dscreen_002ddevice"></a>Function: <strong>graphics-default-screen-device</strong></dt>
+<dd><p>returns the default screen device object in your environment.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-graphics_002ddevice_002dfull_002dscreen_002dset_0021"></a>Function: <strong>graphics-device-full-screen-set!</strong><em> [screen-device] frame</em></dt>
+<dd><p>displays the frame in the full screen mode.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-graphics_002dscreen_002ddevices"></a>Function: <strong>graphics-screen-devices</strong></dt>
+<dd><p>returns a list of all screen device objects supported in your environment.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-graphics_002ddevice_002dfull_002dscreen_003f"></a>Function: <strong>graphics-device-full-screen?</strong><em> [screen-device]</em></dt>
+<dd><p>returns #t when the screen device is in the full screen mode.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-graphics_002ddevice_002dfull_002dscreen_002dsupported_003f"></a>Function: <strong>graphics-device-full-screen-supported?</strong><em> [screen-device]</em></dt>
+<dd><p>returns #t if the screen device supports full screen mode.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-graphics_002dheadless_003f"></a>Function: <strong>graphics-headless?</strong></dt>
+<dd><p>returns #t if your environment is headless
+(doesn&rsquo;t have any graphics environment).
+</p></dd></dl>
+
+
+<hr>
+<a name="GUI-robots"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Graphics-environment" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#AWT-support" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Tray-icons" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">3.38.3 GUI robots</h3>
+
+<dl>
+<dt><a name="index-make_002dgui_002drobot"></a>Function: <strong>make-gui-robot</strong><em> [screen-device]</em></dt>
+<dd><p>creates a GUI robot object.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-capture_002dscreen"></a>Function: <strong>capture-screen</strong><em> [gui-robot] x1 y1 x2 y2</em></dt>
+<dd><p>takes a screen shot in the given coordinates
+and returns it as an image object.
+</p></dd></dl>
+
+
+<hr>
+<a name="Tray-icons"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#GUI-robots" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#AWT-support" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Changing-the-shape-of-cursur" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">3.38.4 Tray icons</h3>
+
+<dl>
+<dt><a name="index-tray_002dsupported_003f"></a>Function: <strong>tray-supported?</strong></dt>
+<dd><p>returns #t if your environment supports tray icons.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dtray_002dicon"></a>Function: <strong>make-tray-icon</strong><em> image-file-path/image-object tooptip/#f menu/#f [action] [mouse-action] [mouse-motion-action]</em></dt>
+<dd><p>creates a tray icon.<br>
+<var>image-file-path/image-object</var> specifies an icon image
+by a file or a image object.<br>
+<var>tooltip</var> specifies a tooltip or doesn&rsquo;t specify any tooltips
+if <var>tooltip</var> is #f.<br>
+<var>menu</var> specifies a menu or doesn&rsquo;t specify any menus
+if <var>tooltip</var> is #f.
+The menu should specify as follows.
+</p><div class="example">
+<pre class="example">`((&quot;menu1&quot;  . ,(lambda (e) action))  ; a simple menu
+  (&quot;menusA&quot;  ; a nested menu
+    (&quot;sub1&quot; . ,(lambda (e) action))
+    (&quot;sub2&quot; . ,(lambda (e) action))
+    ...)
+  ...)
+</pre></div>
+
+<p><var>action</var>, <var>mouse-action</var> and <var>mouse-motion-action</var> specifies
+actions when the icon is double-clicked, the mouse is moved
+and the mouse is moved(detail), respectively.<br>
+Here is an example.
+</p><div class="example">
+<pre class="example">; definition of a tray icon
+(define icon
+  (make-tray-icon
+    &quot;example.png&quot;
+    &quot;test&quot;
+    `((&quot;sub&quot;  ; a menu structure
+        ((&quot;A&quot; ,(lambda (e) (display &quot;a&quot;)))
+         (&quot;b&quot; ,(lambda (e) (display &quot;b&quot;)))))
+      (&quot;Exit&quot; ,(lambda (e) (exit))))
+    (lambda (e) (display &quot;icon&quot;)) ; action
+    `(; mouse action
+      :entered ,(lambda (e) (display &quot;entered&quot;))
+      :exited  ,(lambda (e) (display &quot;exited&quot;)))))
+</pre></div>
+</dd></dl>
+
+<dl>
+<dt><a name="index-add_002dtray_002dicon_0021"></a>Function: <strong>add-tray-icon!</strong><em> tray-icon</em></dt>
+<dd><p>adds the tray icon to the system tray.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-display_002dtray_002dicon_002dmessage"></a>Function: <strong>display-tray-icon-message</strong><em> title message [type]</em></dt>
+<dd><p>sends the message to the given tray icon.<br>
+<var>message</var> must be a symbol shown as follows.
+</p><table>
+<tr><td width="18%">error</td><td width="50%">error</td></tr>
+<tr><td width="18%">warning</td><td width="50%">warning</td></tr>
+<tr><td width="18%">info</td><td width="50%">information(default)</td></tr>
+<tr><td width="18%">none</td><td width="50%">without any types</td></tr>
+</table>
+</dd></dl>
+
+
+<hr>
+<a name="Changing-the-shape-of-cursur"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Tray-icons" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#AWT-support" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_45.html#Sounds" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">3.38.5 Changing the shape of cursur</h3>
+
+<dl>
+<dt><a name="index-cursor_002dset_0021"></a>Function: <strong>cursor-set!</strong><em> componet [shape]</em></dt>
+<dd><p>changes the shape of the cursor.
+<var>shape</var> must be a symbol shown as follows or a string.
+You can specify system native cursor shapes
+by specifing <var>shape</var> as a string.
+</p><table>
+<tr><td width="25%">default-cursor</td><td width="70%">default shape</td></tr>
+<tr><td width="25%">hand-cursor</td><td width="70%">hand</td></tr>
+<tr><td width="25%">crosshair-cursor</td><td width="70%">crosshair</td></tr>
+<tr><td width="25%">move-cursor</td><td width="70%">move cursor</td></tr>
+<tr><td width="25%">n-resize-cursor</td><td width="70%">resize (north)</td></tr>
+<tr><td width="25%">s-resize-cursor</td><td width="70%">resize (south)</td></tr>
+<tr><td width="25%">e-resize-cursor</td><td width="70%">resize (east)</td></tr>
+<tr><td width="25%">w-resize-cursor</td><td width="70%">resize (west)</td></tr>
+<tr><td width="25%">ne-resize-cursor</td><td width="70%">resize (northeast)</td></tr>
+<tr><td width="25%">nw-resize-cursor</td><td width="70%">resize (northwest)</td></tr>
+<tr><td width="25%">se-resize-cursor</td><td width="70%">resize (southeast)</td></tr>
+<tr><td width="25%">sw-resize-cursor</td><td width="70%">resize (southwest)</td></tr>
+<tr><td width="25%">text-cursor</td><td width="70%">text</td></tr>
+<tr><td width="25%">wait-cursor</td><td width="70%">waiting</td></tr>
+</table>
+</dd></dl>
+
+<hr>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Tray-icons" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#AWT-support" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_45.html#Sounds" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated on <i>August 9, 2012</i> using <a href="http://www.nongnu.org/texi2html/"><i>texi2html 5.0</i></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

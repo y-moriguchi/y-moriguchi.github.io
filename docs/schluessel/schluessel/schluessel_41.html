@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created on 12月 15, 2012 by texi2html 5.0
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Schluessel: 5.3 イテレータ</title>
+
+<meta name="description" content="Schluessel: 5.3 イテレータ">
+<meta name="keywords" content="Schluessel: 5.3 イテレータ">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 5.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smalllisp {margin-left: 3.2em}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nocodebreak {white-space:pre}
+span.nolinebreak {white-space:pre}
+span.roman {font-family:serif; font-weight:normal}
+span.sansserif {font-family:sans-serif; font-weight:normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="ja" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="g_t_30a4_30c6_30ec_30fc_30bf"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_40.html#Java-VM_60c5_5831_3068_30ea_30d5_30a1_30ec_30f3_30b9" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_42.html#g_t_30b3_30f3_30bd_30fcru" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section">5.3 イテレータ</h2>
+
+<p>リストのように扱えるオブジェクトです。
+</p>
+<p>通常、リストを処理するときには以下のような記述をします。
+</p><div class="example">
+<pre class="example">(define (foo lst)
+  (cond ((null? lst) #f)
+        ((pred? (car lst)) &lt;処理&gt;)
+        (else (foo (cdr lst)))))
+</pre></div>
+
+<p>リストに限らず、このような処理ができるオブジェクトをまとめることにより、
+統一的にそのオブジェクトをまとめることができます。
+</p>
+<p>イテレータを使用した場合、上の例は
+</p><div class="example">
+<pre class="example">(define (foo lst)
+  (cond ((iterator-null? lst) #f)
+        ((pred? (iterator-car lst)) &lt;処理&gt;)
+        (else (foo (iterator-cdr lst)))))
+</pre></div>
+<p>のように記述できます。
+</p>
+<p>リストはそのままイテレータとして扱えます。
+</p>
+<p>&quot;イテレート可能なオブジェクト&quot;は手続き-&gt;iteratorにより
+イテレータを取り出すことが可能なオブジェクトです。
+</p>
+<p>イテレート可能なオブジェクトにはリスト、文字列、ベクタがあります。
+</p>
+<dl>
+<dt><a name="index-iterator_003f"></a>Function: <strong>iterator?</strong><em> obj</em></dt>
+<dd><p>オブジェクトがイテレータのとき#tを得ます。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-iterable_003f"></a>Function: <strong>iterable?</strong><em> obj</em></dt>
+<dd><p>オブジェクトがイテレート可能なオブジェクトのとき#tを得ます。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-iterator_002dnull_003f"></a>Function: <strong>iterator-null?</strong><em> iterator</em></dt>
+<dd><p>イテレータが終端にあるとき#tを得ます。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-iterator_002dcar"></a>Function: <strong>iterator-car</strong><em> iterator</em></dt>
+<dd><p>イテレータが指し示すオブジェクトを取得します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-iterator_002dcdr"></a>Function: <strong>iterator-cdr</strong><em> iterator</em></dt>
+<dd><p>イテレータを次に進めます。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-_002d_003eiterator"></a>Function: <strong>-&gt;iterator</strong><em> iterable</em></dt>
+<dd><p>イテレート可能なオブジェクトからイテレータを取得します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-iterator_002d_003elist"></a>Function: <strong>iterator-&gt;list</strong><em> iterator</em></dt>
+<dd><p>イテレータをリストに変換します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-compound_002diterator"></a>Function: <strong>compound-iterator</strong><em> iterator &hellip;</em></dt>
+<dd><p>イテレータを連結します。<br>
+例えば、イテレータitr1、itr2、itr3の内容が{1, 2, 3、{4, 5、{6, 7であるとしたとき、
+イテレータ(compound-iterator itr1 itr2 itr3)の内容は{1, 2, 3, 4, 5, 6, 7となります。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-filtered_002diterator"></a>Function: <strong>filtered-iterator</strong><em> proc iterator</em></dt>
+<dd><p>(proc (iterator-car iterator))が#tになった要素のみイテレートします。<br>
+例えば、イテレータitrの内容が{1, 2, 3, 4であるとき、
+イテレータ(filtered-iterator even? itr)の内容は{2, 4となります。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-group_002diterator"></a>Function: <strong>group-iterator</strong><em> iterator &hellip;</em></dt>
+<dd><p>それぞれのイテレータの結果をリストに連結して取得します。<br>
+例えば、イテレータitr1、itr2、itr3の内容が{1, 2, 3、{4, 5、{6, 7であるとしたとき、
+イテレータ(group-iterator itr1 itr2 itr3)の内容は{(1 4 6), (2 5 7)となります。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-list_002dgroup_002diterator"></a>Function: <strong>list-group-iterator</strong><em> list &hellip;</em></dt>
+<dd><p>それぞれのリストのcarの結果をリストに連結して取得します。<br>
+例えば、リストitr1、itr2、itr3の内容が(1 2)、(4 5)、(6 7)であるとしたとき、
+イテレータ(group-iterator itr1 itr2 itr3)の内容は{(1 4 6), (2 5 7)となります。<br>
+リストの長さが異なる、正確なリストでない、またはリストが循環するとき、
+該当したところが出現したときにエラーとなります。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dcsv_002diterator"></a>Function: <strong>make-csv-iterator</strong><em> file [separator] [quote] [newline] [comment]</em></dt>
+<dd><p>CSVを解析するイテレータを取得します。<br>
+separatorはデフォルトで&rsquo;,&rsquo;、<br>
+quoteはデフォルトで&rsquo;&quot;&rsquo;、<br>
+newlineはデフォルトで&rsquo;\n&rsquo;、<br>
+commentはデフォルトで#fです。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dreal_002dnumber_002diterator"></a>Function: <strong>make-real-number-iterator</strong><em> start end step</em></dt>
+<dd><p>startで始まり、step間隔でendまで増えて(減って)いくイテレータを取得します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dstring_002dtokenizer"></a>Function: <strong>make-string-tokenizer</strong><em> string charset</em></dt>
+<dd><p>stringをcharsetの文字で区切り、その結果を取得するイテレータを取得します。<br>
+charsetには文字セットまたは文字列が設定可能です。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dtree_002dwalker"></a>Function: <strong>make-tree-walker</strong><em> tree</em></dt>
+<dd><p>treeの要素をトラバースするイテレータを取得します。<br>
+例えば、treeを((1 2) 3 ((4 5) 6))としたとき、
+イテレータの内容は{1, 2, 3, 4, 5, 6となります。
+</p></dd></dl>
+
+<hr>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_40.html#Java-VM_60c5_5831_3068_30ea_30d5_30a1_30ec_30f3_30b9" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_42.html#g_t_30b3_30f3_30bd_30fcru" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  この文書は<em>12月 15, 2012</em>に<a href="http://www.nongnu.org/texi2html/"><em>texi2html 5.0</em></a>を用いて生成されました。
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created on August 9, 2012 by texi2html 5.0
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Schluessel: 3.34 Picture language and graphics</title>
+
+<meta name="description" content="Schluessel: 3.34 Picture language and graphics">
+<meta name="keywords" content="Schluessel: 3.34 Picture language and graphics">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 5.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smalllisp {margin-left: 3.2em}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nocodebreak {white-space:pre}
+span.nolinebreak {white-space:pre}
+span.roman {font-family:serif; font-weight:normal}
+span.sansserif {font-family:sans-serif; font-weight:normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Picture-language-and-graphics"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_39.html#Serialization-and-importing_002fexporting-objects" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_41.html#Turtle-graphics" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section">3.34 Picture language and graphics</h2>
+
+<dl>
+<dt><a name="index-make_002dwindow_002dframe"></a>Function: <strong>make-window-frame</strong><em> xsize ysize [x-begin y-begin x-end y-end]</em></dt>
+<dd><p>creates a window whose size is xsize x ysize.<br>
+Window coordinate can be specified
+with <var>x-begin</var>, <var>y-begin</var>, <var>x-end</var> and <var>y-end</var>.
+If you specify <var>x-begin</var> and so on
+coordinate system of the window has direction which is used in mathematics
+(x-axis is right directed and y-axis is up directed).
+If you don&rsquo;t specify <var>x-begin</var> and so on
+coordinate system has direction which is used in computer graphics
+(x-axis is right directed and y-axis is down directed).<br>
+</p>
+<p>Coordinate which you specify is conserved when the window is resized.<br>
+The window is disposed when it is closed.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dpainter_002dframe"></a>Function: <strong>make-painter-frame</strong><em> xsize ysize [x-begin y-begin x-end y-end]</em></dt>
+<dd><p>creates a painter frame whose size is xsize x ysize.<br>
+Coordinate which you specify is conserved when the window is resized.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-load_002dimage_002dpainer"></a>Function: <strong>load-image-painer</strong><em> image-file-name</em></dt>
+<dd><p>reads the image file as a image painter.
+JPEG, GIF and PNG image formats are available.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-below_002dpainter"></a>Function: <strong>below-painter</strong><em> above below</em></dt>
+<dd><p>paints the given painter along y-axis.
+Size of the painter is half of the given size along y-axis.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-beside_002dpainter"></a>Function: <strong>beside-painter</strong><em> left right</em></dt>
+<dd><p>paints the given painter along x-axis.
+Size of the painter is half of the given size along x-axis.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-display_002dpainter"></a>Function: <strong>display-painter</strong><em> frame painter x y</em></dt>
+<dd><p>paints the painter to the given frame.
+Coordinates which the frame has are used.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-draw_002dline"></a>Function: <strong>draw-line</strong><em> frame begin-x begin-y end-x end-y</em></dt>
+<dd><p>draws a line to the frame.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-draw_002dstring"></a>Function: <strong>draw-string</strong><em> frame string x y</em></dt>
+<dd><p>draws the given string to the frame.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-draw_002drectangle"></a>Function: <strong>draw-rectangle</strong><em> frame left-top-x left-top-y right-bottom-x right-bottom-y</em></dt>
+<dd><p>draws a rectangle to the frame.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-draw_002doval"></a>Function: <strong>draw-oval</strong><em> frame left-top-x left-top-y right-bottom-x right-bottom-y</em></dt>
+<dd><p>draws a oval to the frame.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-fill_002drectangle"></a>Function: <strong>fill-rectangle</strong><em> frame left-top-x left-top-y right-bottom-x right-bottom-y</em></dt>
+<dd><p>draws and fills a rectangle to the frame.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-fill_002doval"></a>Function: <strong>fill-oval</strong><em> frame left-top-x left-top-y right-bottom-x right-bottom-y</em></dt>
+<dd><p>draws and fills a oval to the frame.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-clear_002drectangle"></a>Function: <strong>clear-rectangle</strong><em> frame left-top-x left-top-y right-bottom-x right-bottom-y</em></dt>
+<dd><p>clears a rectangle to the frame,
+i.e. fills a rectangle with the background color.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-clear_002dscreen"></a>Function: <strong>clear-screen</strong><em> frame</em></dt>
+<dd><p>clears the frame and cancels what has been painted.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-set_002dcurrent_002dcolor_0021"></a>Function: <strong>set-current-color!</strong><em> frame color</em></dt>
+<dd><p>sets foreground color of the frame to the given color.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dcolor"></a>Function: <strong>make-color</strong><em> red green blue [alpha]</em></dt>
+<dd><p>creates a color object.
+<var>red</var>, <var>green</var>, <var>blue</var> and <var>alpha</var>
+are specified with a real number in range [0.0, 1.0].
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-_002acolor_002dblack_002a"></a>Variable: <strong>*color-black*</strong></dt>
+<dt><a name="index-_002acolor_002dblue_002a"></a>Variable: <strong>*color-blue*</strong></dt>
+<dt><a name="index-_002acolor_002dcyan_002a"></a>Variable: <strong>*color-cyan*</strong></dt>
+<dt><a name="index-_002acolor_002ddark_002dgray_002a"></a>Variable: <strong>*color-dark-gray*</strong></dt>
+<dt><a name="index-_002acolor_002dgray_002a"></a>Variable: <strong>*color-gray*</strong></dt>
+<dt><a name="index-_002acolor_002dgreen_002a"></a>Variable: <strong>*color-green*</strong></dt>
+<dt><a name="index-_002acolor_002dlight_002dgray_002a"></a>Variable: <strong>*color-light-gray*</strong></dt>
+<dt><a name="index-_002acolor_002dmagenta_002a"></a>Variable: <strong>*color-magenta*</strong></dt>
+<dt><a name="index-_002acolor_002dorange_002a"></a>Variable: <strong>*color-orange*</strong></dt>
+<dt><a name="index-_002acolor_002dpink_002a"></a>Variable: <strong>*color-pink*</strong></dt>
+<dt><a name="index-_002acolor_002dred_002a"></a>Variable: <strong>*color-red*</strong></dt>
+<dt><a name="index-_002acolor_002dwhite_002a"></a>Variable: <strong>*color-white*</strong></dt>
+<dt><a name="index-_002acolor_002dyellow_002a"></a>Variable: <strong>*color-yellow*</strong></dt>
+<dd><p>Predefined color objects.
+</p></dd></dl>
+
+<hr>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_39.html#Serialization-and-importing_002fexporting-objects" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_41.html#Turtle-graphics" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated on <i>August 9, 2012</i> using <a href="http://www.nongnu.org/texi2html/"><i>texi2html 5.0</i></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

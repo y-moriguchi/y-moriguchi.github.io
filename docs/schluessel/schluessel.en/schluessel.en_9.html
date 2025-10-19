@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created on August 9, 2012 by texi2html 5.0
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Schluessel: 3.3 Iterators</title>
+
+<meta name="description" content="Schluessel: 3.3 Iterators">
+<meta name="keywords" content="Schluessel: 3.3 Iterators">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 5.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smalllisp {margin-left: 3.2em}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nocodebreak {white-space:pre}
+span.nolinebreak {white-space:pre}
+span.roman {font-family:serif; font-weight:normal}
+span.sansserif {font-family:sans-serif; font-weight:normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Iterators"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_8.html#Java-VM-Information-and-instance-reference" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_10.html#Consoles" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section">3.3 Iterators</h2>
+
+<p>The iterators are objects which treat like lists.
+</p>
+<p>If you want to process lists, you will write a code which shows as follows.
+</p><div class="example">
+<pre class="example">(define (foo lst)
+  (cond ((null? lst) #f)
+        ((pred? (car lst)) &lt;processes&gt;)
+        (else (foo (cdr lst)))))
+</pre></div>
+
+<p>You can rewrite the example using the iterators.
+</p><div class="example">
+<pre class="example">(define (foo lst)
+  (cond ((iterator-null? lst) #f)
+        ((pred? (iterator-car lst)) &lt;processes&gt;)
+        (else (foo (iterator-cdr lst)))))
+</pre></div>
+
+<p>Lists can treat as iterators.
+</p>
+<p>The iteratable object is an object which can extract an iterator
+by <i>procedure</i>-&gt;iterator procedure.
+</p>
+<p>Lists, strings and vectors are iteratable objects.
+</p>
+<dl>
+<dt><a name="index-iterator_003f"></a>Function: <strong>iterator?</strong><em> obj</em></dt>
+<dd><p>returns true if the object is an iterator.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-iterable_003f"></a>Function: <strong>iterable?</strong><em> obj</em></dt>
+<dd><p>returns true if the object is an iteratable object.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-iterator_002dnull_003f"></a>Function: <strong>iterator-null?</strong><em> iterator</em></dt>
+<dd><p>returns true if the iterator is terminated.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-iterator_002dcar"></a>Function: <strong>iterator-car</strong><em> iterator</em></dt>
+<dd><p>returns an object which indicates the iterator.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-iterator_002dcdr"></a>Function: <strong>iterator-cdr</strong><em> iterator</em></dt>
+<dd><p>gets a next iterator.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-_002d_003eiterator"></a>Function: <strong>-&gt;iterator</strong><em> iterable</em></dt>
+<dd><p>gets an iterator from the iterable object.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-iterator_002d_003elist"></a>Function: <strong>iterator-&gt;list</strong><em> iterator</em></dt>
+<dd><p>converts the iterators to a list.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-compound_002diterator"></a>Function: <strong>compound-iterator</strong><em> iterator &hellip;</em></dt>
+<dd><p>concatenates the iterators.<br>
+If iterator itr1, itr2 and itr3 are {1, 2, 3, {4, 5 and {6, 7 respectively,
+the result will be {1, 2, 3, 4, 5, 6, 7.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-filtered_002diterator"></a>Function: <strong>filtered-iterator</strong><em> proc iterator</em></dt>
+<dd><p>returns the iterator in which objects satisfies the proposition.<br>
+If the given iterator is {1, 2, 3, 4,
+the result of (filtered-iterator even? itr) will be {2, 4.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-group_002diterator"></a>Function: <strong>group-iterator</strong><em> iterator &hellip;</em></dt>
+<dd><p>returns the iterator whose elements are lists which are concatenated each result of given iterator.<br>
+If iterator itr1, itr2 and itr3 are {1, 2, 3, {4, 5 and {6, 7, respectively,
+the result of (group-iterator itr1 itr2 itr3) will be {(1 4 6), (2 5 7).
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-list_002dgroup_002diterator"></a>Function: <strong>list-group-iterator</strong><em> list &hellip;</em></dt>
+<dd><p>returns the iterator whose elements are lists which are concatenated each car of given list.<br>
+An error is occured if all length of the lists are not equal, one of the lists is circulated or not a proper list.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dcsv_002diterator"></a>Function: <strong>make-csv-iterator</strong><em> file [separator] [quote] [newline] [comment]</em></dt>
+<dd><p>returns the iterator which analyses the given CSV file.<br>
+Default value of <i>separator</i> is &rsquo;,&rsquo;, <i>quote</i> is &rsquo;&quot;&rsquo;, <i>newline</i> is &rsquo;\n&rsquo; and <i>comment</i> is #f.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dreal_002dnumber_002diterator"></a>Function: <strong>make-real-number-iterator</strong><em> start end step</em></dt>
+<dd><p>returns the iterator which increse(decrese) from <i>start</i> to <i>end</i> by <i>step</i>.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dstring_002dtokenizer"></a>Function: <strong>make-string-tokenizer</strong><em> string charset</em></dt>
+<dd><p>returns the iterator whose elements are strings tokenized by the given <i>charset</i>.<br>
+<i>charset</i> must be a character set or a string.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dtree_002dwalker"></a>Function: <strong>make-tree-walker</strong><em> tree</em></dt>
+<dd><p>returns the iterator which traverses the given tree.<br>
+If the given tree is ((1 2) 3 ((4 5) 6)),
+the result will be {1, 2, 3, 4, 5, 6.
+</p></dd></dl>
+
+<hr>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_8.html#Java-VM-Information-and-instance-reference" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_10.html#Consoles" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated on <i>August 9, 2012</i> using <a href="http://www.nongnu.org/texi2html/"><i>texi2html 5.0</i></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

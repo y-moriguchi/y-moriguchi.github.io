@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created on 12月 15, 2012 by texi2html 5.0
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Schluessel: 6.3 ハフマン符号</title>
+
+<meta name="description" content="Schluessel: 6.3 ハフマン符号">
+<meta name="keywords" content="Schluessel: 6.3 ハフマン符号">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 5.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smalllisp {margin-left: 3.2em}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nocodebreak {white-space:pre}
+span.nolinebreak {white-space:pre}
+span.roman {font-family:serif; font-weight:normal}
+span.sansserif {font-family:sans-serif; font-weight:normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="ja" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="g_t_30cf_30d5ma_30f3_7b26_53f7"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_91.html#g_t_8a18_53f7_5fae_5206" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_93.html#RLC_56de_8def_306e_30b7_30dfyu_30ec_30fc_30c8" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section">6.3 ハフマン符号</h2>
+
+<p>ハフマン符号でオブジェクトの列を符号化するサンプルです。
+(SICPの問題2.68〜2.70の解答になっています。)
+</p>
+<div class="example">
+<pre class="example">(define (make-leaf symbol weight)
+  (list 'leaf symbol weight))
+(define (leaf? o) (and (pair? o) (eq? (car o) 'leaf)))
+(define (symbol-leaf x) (cadr x))
+(define (weight-leaf x) (caddr x))
+
+(define (make-code-tree left right)
+  (list left
+       right
+       (append (symbols left) (symbols right))
+       (+ (weight left) (weight right))))
+(define (left-branch x) (car x))
+(define (right-branch x) (cadr x))
+(define (symbols tree)
+  (if (leaf? tree)
+      (list (symbol-leaf tree))
+      (caddr tree)))
+(define (weight tree)
+  (if (leaf? tree)
+      (weight-leaf tree)
+      (cadddr tree)))
+
+(define (decode bits tree)
+  (let loop ((bits bits) (branch tree))
+    (if (null? bits)
+        '()
+        (let ((next-branch (choose-branch (car bits) branch)))
+          (if (leaf? next-branch)
+              (cons (symbol-leaf next-branch)
+                   (loop (cdr bits) tree))
+              (loop (cdr bits) next-branch))))))
+(define (choose-branch bit branch)
+  (cons ((= bit 0) (left-branch branch))
+       ((= bit 1) (right-branch branch))
+       (else (error &quot;bad bit&quot;))))
+
+(define (adjoin-set x set)
+  (cond ((null? set) (list x))
+        ((&lt; (weight x) (weight (car set))) (cons x set))
+        (else (cons (car set)
+                    (adjoin-set x (cdr set))))))
+(define (make-leaf-set pairs)
+  (if (null? pairs)
+      '()
+      (let ((pair (car pairs)))
+        (adjoin-set (make-leaf (car pair) (cadr pair))
+                    (make-leaf-set (cdr pairs))))))
+
+(define (encode message tree)
+  (if (null? message)
+      '()
+      (append (encode-symbol (car message) tree)
+              (encode (cdr message) tree))))
+(define (encode-symbol symbol tree)
+  (if (not (memv symbol (symbols tree)))
+      (error &quot;cannot encode the symbol&quot;))
+  (let loop ((branch tree))
+    (if (leaf? branch)
+        '()
+        (let ((lbranch (left-branch branch))
+              (rbranch (right-branch branch)))
+          (if (memv symbol (symbols lbranch))
+              (cons 0 (loop lbranch))
+              (cons 1 (loop rbranch)))))))
+
+(define (generate-huffman-tree pairs)
+  (succesive-merge (make-leaf-set pairs)))
+(define (succesive-merge set)
+  (cond ((null? set) (error &quot;cannot null&quot;))
+        ((null? (cdr set)) (car set))
+        (else (succesive-merge
+                (adjoin-set (make-code-tree (car set) (cadr set))
+                            (cddr set))))))
+
+(define
+  words
+  '(get a job
+    sha na na na na na na na na
+    get a job
+    sha na na na na na na na na
+    wah yip yip yip yip yip yip yip yip yip
+    sha boom))
+(define
+  words-pairs
+  '((a 2) (na 16) (boom 1) (sha 3) (get 2) (yip 9) (job 2) (wah 1)))
+
+(define t0 (generate-huffman-tree words-pairs))
+(encode words t0)
+</pre></div>
+
+<hr>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_91.html#g_t_8a18_53f7_5fae_5206" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_93.html#RLC_56de_8def_306e_30b7_30dfyu_30ec_30fc_30c8" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  この文書は<em>12月 15, 2012</em>に<a href="http://www.nongnu.org/texi2html/"><em>texi2html 5.0</em></a>を用いて生成されました。
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

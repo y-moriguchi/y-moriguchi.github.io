@@ -1,0 +1,423 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created on 12月 15, 2012 by texi2html 5.0
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Schluessel: 4.11 算術</title>
+
+<meta name="description" content="Schluessel: 4.11 算術">
+<meta name="keywords" content="Schluessel: 4.11 算術">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 5.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smalllisp {margin-left: 3.2em}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nocodebreak {white-space:pre}
+span.nolinebreak {white-space:pre}
+span.roman {font-family:serif; font-weight:normal}
+span.sansserif {font-family:sans-serif; font-weight:normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="ja" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="g_t_7b97_8853"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_8.html#g_t_57fa_672c_6a5f_80fd" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_18.html#ma_30c3_30d7" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_8.html#g_t_57fa_672c_6a5f_80fd" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_20.html#g_t_6570Xue" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section">4.11 算術</h2>
+
+<dl>
+<dt><a name="index-number_003f"></a>Function: <strong>number?</strong><em> object</em></dt>
+<dd><p>[R5RS]
+<var>object</var>が数のとき#tを返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-complex_003f"></a>Function: <strong>complex?</strong><em> object</em></dt>
+<dd><p>[R5RS]
+<var>object</var>が複素数のとき#tを返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-real_003f"></a>Function: <strong>real?</strong><em> object</em></dt>
+<dd><p>[R5RS]
+<var>object</var>が実数のとき#tを返します。
+虚数部分が不正確な0のときは#fを返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-rational_003f"></a>Function: <strong>rational?</strong><em> object</em></dt>
+<dd><p>[R5RS]
+<var>object</var>が有理数のとき#tを返します。
+虚数部分が不正確な0のときは#fを返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-integer_003f"></a>Function: <strong>integer?</strong><em> object</em></dt>
+<dd><p>[R5RS]
+<var>object</var>が整数のとき#tを返します。
+虚数部分が不正確な0のときは#fを返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-real_002dvalued_003f"></a>Function: <strong>real-valued?</strong><em> object</em></dt>
+<dd><p>[R6RS]
+<var>object</var>が実数のとき#tを返します。
+虚数部分が不正確な0のときでも#tを返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-rational_002dvalued_003f"></a>Function: <strong>rational-valued?</strong><em> object</em></dt>
+<dd><p>[R6RS]
+<var>object</var>が有理数のとき#tを返します。
+虚数部分が不正確な0のときでも#tを返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-integer_002dvalued_003f"></a>Function: <strong>integer-valued?</strong><em> object</em></dt>
+<dd><p>[R6RS]
+<var>object</var>が整数のとき#tを返します。
+虚数部分が不正確な0のときでも#tを返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-_002b"></a>Function: <strong>+</strong><em> number &hellip;</em></dt>
+<dd><p>[R5RS+]
+加算を実行します。
+この手続きは体や環などの代数的な対象に拡張されています。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-_002d"></a>Function: <strong>-</strong><em> number &hellip;</em></dt>
+<dd><p>[R5RS]
+減算を実行します。
+この手続きは体や環などの代数的な対象に拡張されています。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-_002a"></a>Function: <strong>*</strong><em> number &hellip;</em></dt>
+<dd><p>[R5RS]
+乗算を実行します。
+この手続きは体や環などの代数的な対象に拡張されています。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-_002f"></a>Function: <strong>/</strong><em> number &hellip;</em></dt>
+<dd><p>[R5RS]
+除算を実行します。
+この手続きは体などの代数的な対象に拡張されています。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-_003c"></a>Function: <strong>&lt;</strong><em> number &hellip;</em></dt>
+<dt><a name="index-_003c_003d"></a>Function: <strong>&lt;=</strong><em> number &hellip;</em></dt>
+<dt><a name="index-_003e"></a>Function: <strong>&gt;</strong><em> number &hellip;</em></dt>
+<dt><a name="index-_003e_003d"></a>Function: <strong>&gt;=</strong><em> number &hellip;</em></dt>
+<dt><a name="index-_003d"></a>Function: <strong>=</strong><em> number &hellip;</em></dt>
+<dd><p>[R5RS+]
+それぞれ左から右へ数値がより小さい、以下である、より大きい、
+以上であり、等しいときに#tを返します。
+この手続きは数と見なせる対象に拡張されています。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-exact_003f"></a>Function: <strong>exact?</strong><em> number</em></dt>
+<dd><p>[R5RS]
+<var>number</var>が正確な数のとき#tを返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-inexact_003f"></a>Function: <strong>inexact?</strong><em> number</em></dt>
+<dd><p>[R5RS]
+<var>number</var>が不正確な数のとき#tを返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-zero_003f"></a>Function: <strong>zero?</strong><em> number</em></dt>
+<dd><p>[R5RS+]
+<var>number</var>が0のとき#tを返します。
+この手続きは代数的に零元と見なせるものについて
+#tを返すよう拡張されています。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-positive_003f"></a>Function: <strong>positive?</strong><em> number</em></dt>
+<dd><p>[R5RS]
+<var>number</var>が正数のとき#tを返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-negative_003f"></a>Function: <strong>negative?</strong><em> number</em></dt>
+<dd><p>[R5RS]
+<var>number</var>が負数のとき#tを返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-even_003f"></a>Function: <strong>even?</strong><em> number</em></dt>
+<dd><p>[R5RS+]
+<var>number</var>が偶数のとき#tを返します。
+この手続きはパリティが偶と見なせるものについて
+#tを返すよう拡張されています。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-odd_003f"></a>Function: <strong>odd?</strong><em> number</em></dt>
+<dd><p>[R5RS+]
+<var>number</var>が奇数のとき#tを返します。
+この手続きはパリティが奇と見なせるものについて
+#tを返すよう拡張されています。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-finite_003f"></a>Function: <strong>finite?</strong><em> number</em></dt>
+<dt><a name="index-infinite_003f"></a>Function: <strong>infinite?</strong><em> number</em></dt>
+<dd><p>[R6RS]
+<var>number</var>が有限(無限)のとき#tを返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-nan_003f"></a>Function: <strong>nan?</strong><em> number</em></dt>
+<dd><p>[R6RS]
+<var>number</var>がNaNのとき#tを返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-quotient"></a>Function: <strong>quotient</strong><em> number div</em></dt>
+<dd><p>[R5RS+]
+<var>number</var>を整除した結果を返します。
+この手続きは整除できる代数的対象について拡張されています。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-remainder"></a>Function: <strong>remainder</strong><em> number div</em></dt>
+<dd><p>[R5RS+]
+<var>number</var>を整除した余りを返します。
+この手続きは整除できる代数的対象について拡張されています。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-modulo"></a>Function: <strong>modulo</strong><em> number div</em></dt>
+<dd><p>[R5RS]
+<var>number</var>を整除したモジュロを返します。
+quotientとの違いについてはR5RSのドキュメントを参照願います。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-div"></a>Function: <strong>div</strong><em> number div</em></dt>
+<dd><p>[R6RS]
+<var>number</var>を整除した結果を返します。
+余りは必ず0以上になります。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-mod"></a>Function: <strong>mod</strong><em> number div</em></dt>
+<dd><p>[R6RS]
+<var>number</var>を整除した余りを返します。
+余りは必ず0以上になります。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-div_002dand_002dmod"></a>Function: <strong>div-and-mod</strong><em> number div</em></dt>
+<dd><p>[R6RS]
+<var>number</var>を整除した結果と余りを返します。
+余りは必ず0以上になります。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-div0"></a>Function: <strong>div0</strong><em> number div</em></dt>
+<dd><p>[R6RS]
+<var>number</var>を整除した結果を返します。
+整数についてquotientと同じ結果を返しますが、
+整除できる代数的対象について拡張されていません。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-mod0"></a>Function: <strong>mod0</strong><em> number div</em></dt>
+<dd><p>[R6RS]
+<var>number</var>を整除した余りを返します。
+整数についてremainderと同じ結果を返しますが、
+整除できる代数的対象について拡張されていません。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-div0_002dand_002dmod0"></a>Function: <strong>div0-and-mod0</strong><em> number div</em></dt>
+<dd><p>[R6RS]
+<var>number</var>を整除した結果と余りを返します。
+整数についてquotientとremainderと同じ結果を返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-truncate"></a>Function: <strong>truncate</strong><em> number</em></dt>
+<dd><p>[R5RS]
+<var>number</var>の小数点を切り捨てた結果を返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-floor"></a>Function: <strong>floor</strong><em> number</em></dt>
+<dd><p>[R5RS]
+<var>number</var>を超えない最大の整数を返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-ceiling"></a>Function: <strong>ceiling</strong><em> number</em></dt>
+<dd><p>[R5RS]
+<var>number</var>を超える最小の整数を返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-round"></a>Function: <strong>round</strong><em> number</em></dt>
+<dd><p>[R5RS]
+<var>number</var>を四捨五入した整数を返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-abs"></a>Function: <strong>abs</strong><em> number</em></dt>
+<dd><p>[R5RS]
+<var>number</var>の絶対値を返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-exact_002d_003einexact"></a>Function: <strong>exact-&gt;inexact</strong><em> number</em></dt>
+<dt><a name="index-inexact_002d_003eexact"></a>Function: <strong>inexact-&gt;exact</strong><em> number</em></dt>
+<dd><p>[R5RS]
+正確な数から不正確な数、およびその逆に変換します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-inexact"></a>Function: <strong>inexact</strong><em> number</em></dt>
+<dt><a name="index-exact"></a>Function: <strong>exact</strong><em> number</em></dt>
+<dd><p>[R6RS]
+正確な数から不正確な数、およびその逆に変換します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-max"></a>Function: <strong>max</strong><em> number &hellip;</em></dt>
+<dt><a name="index-min"></a>Function: <strong>min</strong><em> number &hellip;</em></dt>
+<dd><p>[R5RS]
+<var>number</var>&hellip;のうちで最大(最小)の値を返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-gcd"></a>Function: <strong>gcd</strong><em> number &hellip;</em></dt>
+<dd><p>[R5RS]
+<var>number</var>&hellip;の最大公約数を返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-lcm"></a>Function: <strong>lcm</strong><em> number &hellip;</em></dt>
+<dd><p>[R5RS]
+<var>number</var>&hellip;の最小公倍数を返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-rationalize"></a>Function: <strong>rationalize</strong><em> number number2</em></dt>
+<dd><p>[R5RS]
+詳細はR5RSのドキュメントを参照願います。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-numerator"></a>Function: <strong>numerator</strong><em> rational</em></dt>
+<dt><a name="index-denominator"></a>Function: <strong>denominator</strong><em> rational</em></dt>
+<dd><p>[R5RS]
+<var>rational</var>の分子(分母)を取得します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-real_002dpart"></a>Function: <strong>real-part</strong><em> number</em></dt>
+<dt><a name="index-imag_002dpart"></a>Function: <strong>imag-part</strong><em> number</em></dt>
+<dd><p>[R5RS]
+<var>number</var>の実部(虚部)を取得します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002drectangular"></a>Function: <strong>make-rectangular</strong><em> real-part imag-part</em></dt>
+<dd><p>[R5RS]
+直交座標による複素数を生成します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dpolar"></a>Function: <strong>make-polar</strong><em> radius angle</em></dt>
+<dd><p>[R5RS]
+極座標による複素数を生成します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-magnitude"></a>Function: <strong>magnitude</strong><em> complex</em></dt>
+<dt><a name="index-angle"></a>Function: <strong>angle</strong><em> complex</em></dt>
+<dd><p>[R5RS]
+複素数の半径(偏角)を取得します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-string_002d_003enumber"></a>Function: <strong>string-&gt;number</strong><em> string [radix]</em></dt>
+<dd><p>[R5RS]
+文字列を数値にパースします。
+パースできない文字のときは#fを返します。<br>
+不正確な数の場合、<var>radix</var>は10のみ有効です。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-number_002d_003estring"></a>Function: <strong>number-&gt;string</strong><em> number [radix [precision]]</em></dt>
+<dd><p>[R5RS, R6RS]
+数値を文字列に変換します。<br>
+不正確な数の場合、<var>radix</var>は10のみ有効です。
+</p></dd></dl>
+
+<hr>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_8.html#g_t_57fa_672c_6a5f_80fd" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_18.html#ma_30c3_30d7" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_8.html#g_t_57fa_672c_6a5f_80fd" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_20.html#g_t_6570Xue" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  この文書は<em>12月 15, 2012</em>に<a href="http://www.nongnu.org/texi2html/"><em>texi2html 5.0</em></a>を用いて生成されました。
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

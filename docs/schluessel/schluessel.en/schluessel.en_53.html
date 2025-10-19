@@ -1,0 +1,375 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created on August 9, 2012 by texi2html 5.0
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Schluessel: 3.47 Other procedures</title>
+
+<meta name="description" content="Schluessel: 3.47 Other procedures">
+<meta name="keywords" content="Schluessel: 3.47 Other procedures">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 5.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smalllisp {margin-left: 3.2em}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nocodebreak {white-space:pre}
+span.nolinebreak {white-space:pre}
+span.roman {font-family:serif; font-weight:normal}
+span.sansserif {font-family:sans-serif; font-weight:normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Other-procedures"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_52.html#diff" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Loading-files" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section">3.47 Other procedures</h2>
+
+<hr>
+<a name="Loading-files"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Other-procedures" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Other-procedures" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Using-Java-classes-and-instances" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">3.47.1 Loading files</h3>
+
+<dl>
+<dt><a name="index-load"></a>Special Form: <strong>load</strong><em> filename</em></dt>
+<dd><p>[R5RS] loads a Scheme source from *load-path* and current directory.
+File extension &quot;.scm&quot; can be optional.<br>
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-_002aload_002dpath_002a"></a>Variable: <strong>*load-path*</strong></dt>
+<dd><p>Directory paths which use searching source files by procedure load.
+You should use procedure add-load-path when you wish to modify this variable.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-add_002dload_002dpath"></a>Special Form: <strong>add-load-path</strong><em> directory-name [endflg]</em></dt>
+<dd><p>A special form when you wish to modify variable *load-path*.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-use"></a>Special Form: <strong>use</strong><em> package-name</em></dt>
+<dd><p>loads a Scheme package from *use-path*.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-_002ause_002dpath_002a"></a>Variable: <strong>*use-path*</strong></dt>
+<dd><p>Directory paths which use searching source files by procedure use.
+You should use procedure add-use-path when you wish to modify this variable.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-add_002duse_002dpath"></a>Special Form: <strong>add-use-path</strong><em> package-name [endflg]</em></dt>
+<dd><p>A special form when you wish to modify variable *use-path*.
+</p></dd></dl>
+
+
+<hr>
+<a name="Using-Java-classes-and-instances"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Loading-files" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Other-procedures" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Java-system-properties" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">3.47.2 Using Java classes and instances</h3>
+
+<dl>
+<dt><a name="index-_002e"></a>Special Form: <strong>.</strong><em> instance method args</em></dt>
+<dt><a name="index-_002e-1"></a>Special Form: <strong>.</strong><em> classname method args</em></dt>
+<dd><p>calls a Java method.<br>
+When the first argument is an instance,
+this procedure calls the method of the instance.
+When the first argument is Java FQCN class name,
+this procedure calls the static method of the class.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-new"></a>Special Form: <strong>new</strong><em> classname args</em></dt>
+<dd><p>invokes the constructor of the Java class.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-apply_002djava"></a>Function: <strong>apply-java</strong><em> java-object java-method-name [args &hellip;]</em></dt>
+<dd><p>calls the method of the given Java object.
+<var>java-method-name</var> must be a symbol.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-apply_002djava_002dstatic"></a>Function: <strong>apply-java-static</strong><em> class-name java-method-name [args &hellip;]</em></dt>
+<dd><p>calls the static method of the given Java class.
+</p></dd></dl>
+
+
+<hr>
+<a name="Java-system-properties"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Using-Java-classes-and-instances" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Other-procedures" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#String-transformation" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">3.47.3 Java system properties</h3>
+
+<dl>
+<dt><a name="index-get_002dsystem_002dproperty"></a>Function: <strong>get-system-property</strong><em> prop-name</em></dt>
+<dd><p>gets a Java system property,
+or returns #f if the property is not found.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-get_002dsystem_002dproperties"></a>Function: <strong>get-system-properties</strong></dt>
+<dd><p>gets all Java system properties as an associative list.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-set_002dsystem_002dproperty_0021"></a>Function: <strong>set-system-property!</strong><em> prop-name prop</em></dt>
+<dd><p>sets the object to Java system property.
+</p></dd></dl>
+
+
+<hr>
+<a name="String-transformation"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Java-system-properties" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Other-procedures" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#format" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">3.47.4 String transformation</h3>
+
+<dl>
+<dt><a name="index-tr_002dstring"></a>Function: <strong>tr-string</strong><em> src-string old new</em></dt>
+<dd><p>translates the string. This procedure works like UNIX tr(1) command.
+</p></dd></dl>
+
+
+<hr>
+<a name="format"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#String-transformation" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Other-procedures" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Traditional-macros" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">3.47.5 format</h3>
+
+<dl>
+<dt><a name="index-format"></a>Function: <strong>format</strong><em> [output-port] format args &hellip;</em></dt>
+<dd><p>[SRFI-28+]
+formats the string and outputs to a string or an output port.<br>
+If <var>output-port</var> specifies an output port,
+this procedure outputs a format string to the output port.
+If <var>output-port</var> is #f or not specified,
+this procedure returns a format string.
+Format string which supports in Schluessel is shown as follows.
+</p>
+<ul>
+<li>
+    ~A : format by display
+</li><li>
+    ~S : format by write
+</li><li>
+    ~D, ~B, ~O, ~X : format a number by decimal, binary, octal, hexadecimal
+</li><li>
+    ~~ : tilde &quot;~&quot; itself
+</li><li>
+    ~% : newline
+</li></ul>
+</dd></dl>
+
+
+<hr>
+<a name="Traditional-macros"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#format" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Other-procedures" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Others-2" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">3.47.6 Traditional macros</h3>
+
+<dl>
+<dt><a name="index-define_002dmacro"></a>Special Form: <strong>define-macro</strong><em> name procedure</em></dt>
+<dt><a name="index-define_002dmacro-1"></a>Special Form: <strong>define-macro</strong><em> (name args &hellip;) procedure</em></dt>
+<dd><p>defines a traditional macro.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-macroexpand"></a>Function: <strong>macroexpand</strong><em> form</em></dt>
+<dt><a name="index-macroexpand_002d1"></a>Function: <strong>macroexpand-1</strong><em> form</em></dt>
+<dd><p>returns a result of expanding the form.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-gensym"></a>Function: <strong>gensym</strong></dt>
+<dd><p>creates a temporary symbol.
+</p></dd></dl>
+
+
+<hr>
+<a name="Others-2"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Traditional-macros" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Other-procedures" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">3.47.7 Others</h3>
+
+<dl>
+<dt><a name="index-_0023"></a>Reader Syntax: <strong>#</strong><em>[charset]</em></dt>
+<dd><p>creates a character set.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-promise_003f"></a>Function: <strong>promise?</strong><em> object</em></dt>
+<dd><p>returns #t if the object is a promise.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-define_002dfeature"></a>Special Form: <strong>define-feature</strong><em> feature-name [body &hellip;]</em></dt>
+<dd><p>defines a SRFI-0 feature.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-command_002dline"></a>Function: <strong>command-line</strong></dt>
+<dd><p>[R6RS]
+gets command lines when the interpreter is executed.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-exit"></a>Function: <strong>exit</strong><em> [code]</em></dt>
+<dd><p>[R6RS]
+exits the interpreter.
+If <var>code</var> is #f, error code of the interpreter will be not 0.
+</p></dd></dl>
+
+
+<hr>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Traditional-macros" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Other-procedures" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated on <i>August 9, 2012</i> using <a href="http://www.nongnu.org/texi2html/"><i>texi2html 5.0</i></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

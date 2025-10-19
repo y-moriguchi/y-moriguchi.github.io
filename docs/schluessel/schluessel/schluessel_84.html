@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created on 12月 15, 2012 by texi2html 5.0
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Schluessel: 5.46 形式文法によるパーサ生成</title>
+
+<meta name="description" content="Schluessel: 5.46 形式文法によるパーサ生成">
+<meta name="keywords" content="Schluessel: 5.46 形式文法によるパーサ生成">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 5.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smalllisp {margin-left: 3.2em}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nocodebreak {white-space:pre}
+span.nolinebreak {white-space:pre}
+span.roman {font-family:serif; font-weight:normal}
+span.sansserif {font-family:sans-serif; font-weight:normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="ja" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="g_t_5f62_5f0fWen_6cd5_306b_3088_308b_30d1_30fc_30b5_751f_6210"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_83.html#g_t_5730_7406_95a2_9023" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_85.html#diff_306e_53d6_5f97" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section">5.46 形式文法によるパーサ生成</h2>
+
+<p>形式文法を使用して、ファイルや文字列を解析するパーサを生成することができます。<br>
+このライブラリでは、LALR(1)文法のクラスにある形式文法のパーサを生成することができます。<br>
+正規表現を使用して文字列をトークナイズする字句解析器も生成できます。<br>
+このパーサで使用する字句解析器は終端記号を表すシンボルとsemanticsな解析結果の2値を返す手続きならばどのようなものでも使用できます。<br>
+使用できる正規表現は以下の通りです。
+</p>
+<table>
+<tr><td width="15%">rs</td><td width="60%">rとsの連結</td></tr>
+<tr><td width="15%">r|s</td><td width="60%">rまたはs</td></tr>
+<tr><td width="15%">r*</td><td width="60%">rの0回以上の繰り返し</td></tr>
+<tr><td width="15%">r+</td><td width="60%">rの1回以上の繰り返し</td></tr>
+<tr><td width="15%">r?</td><td width="60%">rの0または1回の出現</td></tr>
+<tr><td width="15%">(r)</td><td width="60%">rそのもの</td></tr>
+<tr><td width="15%">.</td><td width="60%">改行以外の任意の文字</td></tr>
+<tr><td width="15%">[a-zA]</td><td width="60%">文字セット</td></tr>
+<tr><td width="15%">[^a-zA]</td><td width="60%">補文字セット</td></tr>
+</table>
+<p>(注) Java標準の正規表現は使用できません。
+</p>
+<dl>
+<dt><a name="index-make_002dgrammar"></a>Function: <strong>make-grammar</strong><em> grammar</em></dt>
+<dd><p>戻り値: 解析された形式文法オブジェクト<br>
+与えられた形式文法を解析します。解析された文法は parse-grammar手続きで使用することができます。<br>
+形式文法は、以下のような形式で与えます。
+</p>
+<div class="example">
+<pre class="example">((生成規則の左辺 (生成規則の右辺 &hellip;) reduceされたときに実行される手続き
+ &hellip;)
+</pre></div>
+
+<p>終端記号および非終端記号はシンボルで与えます。開始記号はシンボルS(大文字)で与えられます。<br>
+&quot;reduceされたときに実行される手続き&quot;は右辺の semanticsな解析結果を引数として呼び出されます。<br>
+例えば、
+</p>
+<div class="example">
+<pre class="example">S → S + T
+S → S - T
+S → T
+T → T * F
+T → T / F
+T → F
+F → lparen S rparen
+F → num
+</pre></div>
+
+<p>という文法(この文法は一般的な四則演算を定義します)を定義し、この文法に従って計算するときの文法の定義は、
+</p>
+<div class="example">
+<pre class="example">  (make-grammar
+    `((S (S + T)     ,(lambda (t1 x t2) (+ t1 t2)))
+      (S (S - T)     ,(lambda (t1 x t2) (- t1 t2)))
+      (S (T)         ,(lambda (t1) t1))
+      (T (T * F)     ,(lambda (f1 x f2) (* f1 f2)))
+      (T (T / F)     ,(lambda (f1 x f2) (* f1 f2)))
+      (T (F)         ,(lambda (f1) f1))
+      (F (lparen S rparen)
+         ,(lambda (x s1 y) s1))
+      (F (num)
+         ,(lambda (v1) (string-&gt;number v1)))))
+</pre></div>
+
+<p>のように指定します。シンボルlparen, rparen, numは字句解析器により与えられます。<br>
+文法に&quot;競合&quot;(conflict)が発生してもこの手続きはエラー・警告を出しません。競合を取得したいときはget-conflicts手続きを使用してください。<br>
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-parse_002dgrammar"></a>Function: <strong>parse-grammar</strong><em> parser-object lexer</em></dt>
+<dd><p>戻り値: パース結果のsemanticsのスタックトップ<br>
+与えられた字句解析器を使用してパースします。<br>
+字句解析器は終端記号を表すシンボルとsemanticsな解析結果の2値を返す手続きです。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-get_002dconflicts"></a>Function: <strong>get-conflicts</strong><em> parser-object</em></dt>
+<dd><p>戻り値: 競合のリスト<br>
+文法における&quot;競合&quot;を取得します。競合は以下の形で取得されます。
+</p>
+<div class="example">
+<pre class="example">(&hellip;
+ (shift-reduce  シフトする終端記号
+                還元する文法規則)   ;シフト-還元競合
+ (reduce-reduce 還元する文法規則
+                還元する文法規則)   ;還元-還元競合
+ &hellip;) 
+</pre></div>
+
+<p>文法規則は(生成規則の左辺 (生成規則の右辺 &hellip;))の形のリストで取得されます。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dregexp_002dtokenize_002dpattern"></a>Function: <strong>make-regexp-tokenize-pattern</strong><em> lexer-patterns</em></dt>
+<dd><p>戻り値: トークナイザパターン<br>
+正規表現によるトークナイザパターンを生成します。パターンは以下の形で与えます。
+</p>
+<div class="example">
+<pre class="example">((正規表現を表す文字列 . 終端記号を表すシンボル)
+ &hellip;)
+</pre></div>
+
+<p>例:四則演算子と数値を解析するトークナイザ
+</p>
+<div class="example">
+<pre class="example">(make-regexp-tokenize-pattern
+    '((&quot;[0-9]+(\\.[0-9]+)?&quot; . num
+      (&quot;[ 	
+      ]+&quot; . whitespace)  ; 空白+タブ+改行
+      (&quot;\\(&quot; . lparen
+      (&quot;\\)&quot; . rparen
+      (&quot;\\+&quot; . +
+      (&quot;-&quot; . -
+      (&quot;\\*&quot; . *
+      (&quot;\\/&quot; . /))
+</pre></div>
+</dd></dl>
+
+
+<dl>
+<dt><a name="index-make_002dregexp_002dtokenizer_002dstring"></a>Function: <strong>make-regexp-tokenizer-string</strong><em> tokenizer-pattern string</em></dt>
+<dd><p>戻り値: トークナイザ<br>
+文字列に対してパターンを適用するトークナイザを取得します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dregexp_002dtokenizer_002dport"></a>Function: <strong>make-regexp-tokenizer-port</strong><em> tokenizer-pattern iport</em></dt>
+<dd><p>戻り値: トークナイザ<br>
+入力ポートに対してパターンを適用するトークナイザを取得します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-tokenize"></a>Function: <strong>tokenize</strong><em> tokenizer</em></dt>
+<dd><p>戻り値: 終端記号のシンボルと一致した部分の文字列の2値<br>
+トークナイザを用いて入力を区切り、その結果を返します。 
+</p></dd></dl>
+
+<hr>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_83.html#g_t_5730_7406_95a2_9023" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_85.html#diff_306e_53d6_5f97" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  この文書は<em>12月 15, 2012</em>に<a href="http://www.nongnu.org/texi2html/"><em>texi2html 5.0</em></a>を用いて生成されました。
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

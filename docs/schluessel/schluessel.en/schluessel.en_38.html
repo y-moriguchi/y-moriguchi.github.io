@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created on August 9, 2012 by texi2html 5.0
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Schluessel: 3.32 Security</title>
+
+<meta name="description" content="Schluessel: 3.32 Security">
+<meta name="keywords" content="Schluessel: 3.32 Security">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 5.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smalllisp {margin-left: 3.2em}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nocodebreak {white-space:pre}
+span.nolinebreak {white-space:pre}
+span.roman {font-family:serif; font-weight:normal}
+span.sansserif {font-family:sans-serif; font-weight:normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Security"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_37.html#Regular-expression" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Message-digest" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section">3.32 Security</h2>
+
+<p>Procedures for security.
+</p>
+<hr>
+<a name="Message-digest"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Security" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Security" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Signature-of-objects" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">3.32.1 Message digest</h3>
+
+<dl>
+<dt><a name="index-string_002d_003emessage_002ddigest"></a>Function: <strong>string-&gt;message-digest</strong><em> string algorithm</em></dt>
+<dd><p>creates a message digest object from the string.<br>
+Generation algorithm(md5, sha &hellip;) is specified by <var>algorithm</var>.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-string_002d_003ehexified_002dmessage_002ddigest"></a>Function: <strong>string-&gt;hexified-message-digest</strong><em> string algorithm</em></dt>
+<dd><p>creates a hexified message digest from the string.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-file_002d_003emessage_002ddigest"></a>Function: <strong>file-&gt;message-digest</strong><em> filename algorithm</em></dt>
+<dd><p>creates a message digest object from the file.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-file_002d_003ehexified_002dmessage_002ddigest"></a>Function: <strong>file-&gt;hexified-message-digest</strong><em> filename algorithm</em></dt>
+<dd><p>creates a hexified message digest from the file.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-hexift_002dmessage_002ddigest"></a>Function: <strong>hexift-message-digest</strong><em> digest</em></dt>
+<dd><p>hexifies the message digest.
+</p></dd></dl>
+
+<hr>
+<a name="Signature-of-objects"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Message-digest" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Security" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_39.html#Serialization-and-importing_002fexporting-objects" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">3.32.2 Signature of objects</h3>
+
+<dl>
+<dt><a name="index-generate_002dkey_002dpair"></a>Function: <strong>generate-key-pair</strong><em> algorithm</em></dt>
+<dd><p>generates a pair of public and private keys with specified algorithm.<br>
+This procedure return public and private keys.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-sign_002dfile"></a>Function: <strong>sign-file</strong><em> path private-key</em></dt>
+<dd><p>signs the given file with the private key and returns the signature.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-file_002dsigned_003f"></a>Function: <strong>file-signed?</strong><em> path public-key sign</em></dt>
+<dd><p>returns #t if the file is signed.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-sign_002dfile-1"></a>Function: <strong>sign-file</strong><em> obj private-key</em></dt>
+<dd><p>signs the given object with the private key and returns the signature.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-verify_002dsigned_002ddatum"></a>Function: <strong>verify-signed-datum</strong><em> obj public-key</em></dt>
+<dd><p>verifies the object and returns #t if verification succeeds.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-unwrap_002dsigned_002ddatum"></a>Function: <strong>unwrap-signed-datum</strong><em> obj</em></dt>
+<dd><p>unwraps the signed object.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-hexify_002dsigneture"></a>Function: <strong>hexify-signeture</strong><em> sign</em></dt>
+<dd><p>hexifies the signature.
+</p></dd></dl>
+
+<hr>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Message-digest" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Security" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_39.html#Serialization-and-importing_002fexporting-objects" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated on <i>August 9, 2012</i> using <a href="http://www.nongnu.org/texi2html/"><i>texi2html 5.0</i></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

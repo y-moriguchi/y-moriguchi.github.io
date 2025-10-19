@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created on August 9, 2012 by texi2html 5.0
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Schluessel: 3.46 diff</title>
+
+<meta name="description" content="Schluessel: 3.46 diff">
+<meta name="keywords" content="Schluessel: 3.46 diff">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 5.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smalllisp {margin-left: 3.2em}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nocodebreak {white-space:pre}
+span.nolinebreak {white-space:pre}
+span.roman {font-family:serif; font-weight:normal}
+span.sansserif {font-family:sans-serif; font-weight:normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="diff"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_51.html#Generating-parsers-by-formal-grammar" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_53.html#Other-procedures" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section">3.46 diff</h2>
+
+<p>Procedure for diff.
+</p>
+<dl>
+<dt><a name="index-lcs_002dedit_002dlist"></a>Function: <strong>lcs-edit-list</strong><em> list1 list2 [equiv?]</em></dt>
+<dd><p>returns a list of difference of <var>list1</var> and <var>list2</var>
+as following format.
+</p><div class="example">
+<pre class="example">((+ row-number object-to-be-added)    ; case of addition
+ (- row-number object-to-be-removed)  ; case of change
+ (+ row-number object-to-be-added)
+ (- row-number object-to-be-removed)  ; case of removal
+ ...)
+</pre></div>
+</dd></dl>
+
+<dl>
+<dt><a name="index-make_002dpatch"></a>Function: <strong>make-patch</strong><em> list1 list2 [equiv?]</em></dt>
+<dd><p>returns a patch object of difference of <var>list1</var> and <var>list2</var>.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-apply_002dpatch"></a>Function: <strong>apply-patch</strong><em> patch list</em></dt>
+<dd><p>applies the patch object to the given list.
+</p></dd></dl>
+
+<p>﻿</p><a name="Accessing-databases"></a>
+<h2 class="section">Accessing databases</h2>
+
+<p>Procedures for accessing databases.
+DB types can be convert to corresponding Scheme types using DB metadata
+shown as follows.<br>
+</p>
+<table>
+<tr><td width="18%">RDB type</td><td width="50%">Scheme type</td></tr>
+<tr><td width="18%">BOOLEAN</td><td width="50%">#t or #f</td></tr>
+<tr><td width="18%">CHAR</td><td width="50%">string</td></tr>
+<tr><td width="18%">DATE</td><td width="50%">SRFI-19 date</td></tr>
+<tr><td width="18%">DECIMAL</td><td width="50%">exact number(rational number)</td></tr>
+<tr><td width="18%">DOUBLE</td><td width="50%">inexact number</td></tr>
+<tr><td width="18%">FLOAT</td><td width="50%">inexact number</td></tr>
+<tr><td width="18%">INTEGER</td><td width="50%">exact integer</td></tr>
+<tr><td width="18%">NUMERIC</td><td width="50%">exact number(rational number)</td></tr>
+<tr><td width="18%">REAL</td><td width="50%">inexact number</td></tr>
+<tr><td width="18%">SMALLINT</td><td width="50%">exact integer</td></tr>
+<tr><td width="18%">TIMESTAMP</td><td width="50%">SRFI-19 date</td></tr>
+<tr><td width="18%">TINYINT</td><td width="50%">exact integer</td></tr>
+<tr><td width="18%">VARCHAR</td><td width="50%">string</td></tr>
+</table>
+
+<p>These procedures use prepared SQL for preventing SQL injection attack.<br>
+</p>
+<p>Scheme types can also be convert to corresponding DB shown as follows.<br>
+</p>
+<table>
+<tr><td width="30%">Scheme type</td><td width="70%">RDB type</td></tr>
+<tr><td width="30%">string</td><td width="70%">string(String)</td></tr>
+<tr><td width="30%">small integer</td><td width="70%">small integer(int)</td></tr>
+<tr><td width="30%">long integer</td><td width="70%">long integer(BigInteger)</td></tr>
+<tr><td width="30%">SRFI-19 date</td><td width="70%">date (java.sql.Timestampまたはjava.sql.Date)</td></tr>
+<tr><td width="30%">inexact number</td><td width="70%">float number(double or float)</td></tr>
+<tr><td width="30%">#t or #f</td><td width="70%">boolean</td></tr>
+</table>
+
+<p>The result of queries containes in result-bag.<br>
+It is the same way to treating list
+that you get data from the result bag.
+</p>
+
+<dl>
+<dt><a name="index-jdbc_002duse_002ddb"></a>Function: <strong>jdbc-use-db</strong><em> dbms-name</em></dt>
+<dd><p>declares the DBMS.
+<var>dbms-name</var> is a symbol shown as follows.
+</p><table>
+<tr><td width="25%">dbms-name</td><td width="70%">RDBMS</td></tr>
+<tr><td width="25%">oracle</td><td width="70%">Oracle</td></tr>
+<tr><td width="25%">mysql</td><td width="70%">MySQL</td></tr>
+<tr><td width="25%">postgresql</td><td width="70%">PostgreSQL</td></tr>
+<tr><td width="25%">sqlite</td><td width="70%">SQLite</td></tr>
+</table>
+</dd></dl>
+
+<dl>
+<dt><a name="index-jdbc_002dconnect"></a>Function: <strong>jdbc-connect</strong><em> uri</em></dt>
+<dd><p>connects the RDBMS with the connecting URI.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-jdbc_002dprepare"></a>Function: <strong>jdbc-prepare</strong><em> connection SQL</em></dt>
+<dd><p>compiles the SQL in the connection and prepares a statement using JDBC.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-jdbc_002dquery"></a>Function: <strong>jdbc-query</strong><em> statement param &hellip;</em></dt>
+<dd><p>queries the prepared statement.
+Parameters is specified by <var>param</var> &hellip;.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-jdbc_002dupdate_0021"></a>Function: <strong>jdbc-update!</strong><em> statement param &hellip;</em></dt>
+<dd><p>executes the updating SQL or DDL.
+Parameters is specified by <var>param</var> &hellip;.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-jdbc_002dopen_003f"></a>Function: <strong>jdbc-open?</strong><em> closable-object</em></dt>
+<dd><p>returns #t is the object is open.
+<var>closable-object</var> is a JDBC connection, a JDBC statement
+and a JDBC result bag.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-jdbc_002dclose"></a>Function: <strong>jdbc-close</strong><em> closable-object</em></dt>
+<dd><p>closes the closable object mentioned above.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-get_002dresult_002dbag_002drow"></a>Function: <strong>get-result-bag-row</strong><em> result-bag</em></dt>
+<dd><p>gets a row object from the result bag.
+This procedure corresponds to procedure car in usual list processing.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-get_002dresult_002dbag_002drow_002dlist"></a>Function: <strong>get-result-bag-row-list</strong><em> result-bag</em></dt>
+<dd><p>gets a list of a row from the result bag.
+This procedure corresponds to procedure car in usual list processing.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-end_002dresult_002dbag_003f"></a>Function: <strong>end-result-bag?</strong><em> result-bag</em></dt>
+<dd><p>returns #t if the result bag is terminated.
+This procedure corresponds to procedure null? in usual list processing.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-next_002dresult_002dbag"></a>Function: <strong>next-result-bag</strong><em> result-bag</em></dt>
+<dd><p>proceeds the cursor of the result bag.
+This procedure corresponds to procedure cdr in usual list processing.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-row_002dref"></a>Function: <strong>row-ref</strong><em> row-of-result-bag symbol-of-row-id</em></dt>
+<dd><p>gets an object from the row object of result bag.
+</p></dd></dl>
+
+<hr>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_51.html#Generating-parsers-by-formal-grammar" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_53.html#Other-procedures" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated on <i>August 9, 2012</i> using <a href="http://www.nongnu.org/texi2html/"><i>texi2html 5.0</i></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

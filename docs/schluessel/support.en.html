@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+
+
+
+
+
+
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"><title>Schluessel - 機能</title>
+
+<style type="text/css"></style>
+<link rel="stylesheet" href="default.css" type="text/css"></head><body style="color: rgb(0, 0, 0); background-color: rgb(204, 255, 255);" alink="#000099" link="#000099" vlink="#990099">
+<img style="width: 400px; height: 100px;" alt="Schluessel" src="schluessel-logo.png"><br>
+
+<span class="title2">Schluessel - </span><span class="title2">A Scheme Implementation on Java -</span><br>
+<hr><a href="index.html">home</a>
+- <a href="support.en.html">features</a>
+- <a href="download.en.html">download</a>
+- <a href="schluessel.en/schluessel.en.html">manual</a>
+<hr><span class="title2">Features</span><br>
+<ul>
+<li>Supports R5RS features</li>
+<li>Supports R5RS macro and traditional macro</li>
+<li>Supports arbitrary precision integers, flonum, and complex numbers</li>
+<li>Supports SRFIs (Scheme Request for Implementation) as follows<br>
+</li>
+<ul>
+    <li>SRFI-0 (Feature-based conditional expansion construct)</li>
+    <li>SRFI-1 (List libraries)</li>
+    <li>SRFI-2 (AND-LET*)</li>
+    <li>SRFI-4 (Homogenious vectors)</li>
+    <li>SRFI-6 (String ports)</li>
+    <li>SRFI-8 (receive)</li>
+    <li>SRFI-9 (records)</li>
+    <li>SRFI-10 (Sharp-comma external forms)</li>
+    <li>SRFI-13 (String libraries)</li>
+    <li>SRFI-14 (Character sets)</li>
+    <li>SRFI-16 (Syntax for procedures of variable arity)</li>
+    <li>SRFI-17 (Generazied set!)</li>
+    <li>SRFI-18 (Multithreading)</li>
+    <li>SRFI-19 (Time Data Types and Procedures)</li>
+    <li>SRFI-22 (Running Scheme Scripts on Unix)</li>
+    <li>SRFI-23 (Error reports)</li>
+    <li>SRFI-25 (Multi-dimensional Array Primitives)</li>
+    <li>SRFI-28 (Basic Format Strings)</li>
+    <li>SRFI-30 (Nested Multi-line Comments)</li>
+    <li>SRFI-34 (Exception Handling for Programs)</li>
+    <li>SRFI-38 (External Representation for Data With Shared Structure)</li>
+    <li>SRFI-39 (Parameter objects)</li>
+    <li>SRFI-41 (Streams)</li>
+    <li>SRFI-44 (Collections)</li>
+    <li>SRFI-47 (Array)</li>
+    <li>SRFI-58 (Array Notation)</li>
+    <li>SRFI-60 (Integers as Bits)</li>
+    <li>SRFI-62 (S-expression comments)</li>
+    <li>SRFI-63 (Homogeneous and Heterogeneous Arrays)</li>
+    <li>SRFI-66 (Octet Vectors)</li>
+    <li>SRFI-67 (Compare Procedures)</li>
+    <li>SRFI-69 (Basic hash tables)</li>
+    <li>SRFI-94 (Type-Restricted Numerical Functions)</li>
+    <li>SRFI-98 (An interface to access environment variables)</li>
+</ul>
+<li>Supports multi-byte characters and strings</li>
+<li>Supports Decimal32 and Decimal64<br>
+<li>Supports Java library reflection, which has Clojure-like syntax.<br>
+<li>Java classes can be used as records</li>
+<li>Scheme codes manipulation by Java</li>
+<li>User-defined #-syntax</li>
+<li>Building parsers with formal language; LALR(1) language class supported</li>
+<li>Building lexical analyser (tokenizer) with regular expression</li>
+<li>Schluessel plugin</li>
+<li>Sound libraries</li>
+<li>Supports generic functions and tiny ObjectSystem</li>
+<li>Supports syntax-case macro partially. Supported features are listed as follows<br>
+  <ul>
+    <li>syntax-case</li>
+    <li>syntax(#'), quasisyntax(#`), unsyntax(#,), unsyntax-splicing(#,@)</li>
+    <li>make-variable-transformer</li>
+    <li>identifier?</li>
+    <li>syntax-&gt;datum, datum-&gt;syntax</li>
+    <li>generate-tempolaries</li>
+  </ul></li>
+<li>Supports graphics language. Supported features are listed as follows<br>
+  <ul>
+    <li>inputs from image file</li>
+    <li>draws line, rectangle, ellipsis, characters</li>
+    <li>outputs to image file (JPEG, GIF and PNG are supported)<br>
+    </li>
+  </ul></li>
+<li>Computing special functions. Supported functions are listed as follows<br>
+  <ul>
+    <li>Bessel functions(complex domain)</li>
+    <li>Gamma functions(complex domain)</li>
+  </ul></li>
+<li>Supports accessing RDBs used by JDBC</li>
+<li>Web applications using Java Servlet technology</li>
+<li>Supports XML Parsing</li>
+<li>Applet by Scheme</li>
+<li>Supports Swing applications</li>
+<li>Supports file manipulation</li>
+<li>Supports regular expressions</li>
+<li>Supports linear algebra library(elementary arithmetics of matrices, LU decomposition,
+solving linear equations)</li>
+<li>Supports exact complex numbers</li>
+<li>Supports quaternions and octionions</li>
+<li>Supports 1-variable polynomials</li>
+<li>Supports ranges of real number</li>
+<li>Supports networking</li>
+<li>HTTP, FTP, SMTP, SNMP, LDAP are avaliable</li>
+<li>JNDI is avaliable</li>
+<li>Supports reading zip files and reading and writing gzip files</li>
+<li>Supports desktop's tray icons</li>
+<li>R6RS I/O is available</li>
+<li>Statistics procedures are available</li>
+<li>Exact pi and Nepier's number are available</li>
+<li>An iterator framework is available</li>
+<li>Processes are available</li>
+<li>Supports turtle graphics</li>
+</ul>
+
+<span class="title2">Restrictions</span><br><ul>
+<li>restriction of syntax-case</li>
+  <ul>
+    <li>with-syntax is not supported</li>
+  </ul>
+  <ul>
+    <ul>
+      <li>
+        <pre>(define-syntax with-syntax<br>  (lambda (x)<br>    (syntax-case x ()<br>      ((_ ((p e0) ...) e1 e2 ...)<br>       (syntax (syntax-case (list e0 ...) ()<br>                 ((p ...) (let () e1 e2 ...))))))))</pre>
+      </li>
+    </ul>
+  </ul>
+
+</ul>
+<br>
+
+<hr style="width: 100%; height: 2px;">Yuichiro Moriguchi<br>
+</body></html>

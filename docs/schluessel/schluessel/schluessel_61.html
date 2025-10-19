@@ -1,0 +1,305 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created on 12月 15, 2012 by texi2html 5.0
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Schluessel: 5.23 数学(統計関数)</title>
+
+<meta name="description" content="Schluessel: 5.23 数学(統計関数)">
+<meta name="keywords" content="Schluessel: 5.23 数学(統計関数)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 5.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smalllisp {margin-left: 3.2em}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nocodebreak {white-space:pre}
+span.nolinebreak {white-space:pre}
+span.roman {font-family:serif; font-weight:normal}
+span.sansserif {font-family:sans-serif; font-weight:normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="ja" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="g_t_6570Xue_0028_7d71_8a08_95a2_6570_0029"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_60.html#g_t_6570Xue_0028_7279_6b8a_95a2_6570_0029" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_7d71_8a08_30c7_30fc_30bf" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section">5.23 数学(統計関数)</h2>
+
+<p>統計に関する手続きです。
+</p>
+<hr>
+<a name="g_t_7d71_8a08_30c7_30fc_30bf"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_6570Xue_0028_7d71_8a08_95a2_6570_0029" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_6570Xue_0028_7d71_8a08_95a2_6570_0029" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_5206_5e03_95a2_6570" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">5.23.1 統計データ</h3>
+
+<dl>
+<dt><a name="index-statistics_002ddata"></a>Function: <strong>statistics-data</strong><em> real &hellip;</em></dt>
+<dd><p>与えられた数から統計データを生成します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-histogram"></a>Function: <strong>histogram</strong><em> real &hellip;</em></dt>
+<dd><p>与えられた数からヒストグラムを生成します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dstatistics_002dxy_002ddata"></a>Function: <strong>make-statistics-xy-data</strong><em> (x &hellip;) (y &hellip;)</em></dt>
+<dd><p>与えられた数からXYデータを生成します。
+</p></dd></dl>
+
+<hr>
+<a name="g_t_5206_5e03_95a2_6570"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_7d71_8a08_30c7_30fc_30bf" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_6570Xue_0028_7d71_8a08_95a2_6570_0029" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_691c_5b9a" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">5.23.2 分布関数</h3>
+
+<dl>
+<dt><a name="index-make_002dnormal_002ddistribution"></a>Function: <strong>make-normal-distribution</strong><em> mu sigma</em></dt>
+<dd><p>平均<em>\mu</em>、分散<em>\sigma^2</em>の正規分布関数を生成します。<br>
+得られた関数は1引数の関数として使用可能です。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dbinormal_002ddistribution"></a>Function: <strong>make-binormal-distribution</strong><em> n p</em></dt>
+<dd><p>試行回数n、成功確率p(0&lt;p&lt;1)の二項分布を生成します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dchi_002dsquared_002ddistribution"></a>Function: <strong>make-chi-squared-distribution</strong><em> k</em></dt>
+<dd><p>パラメータkのカイ2乗分布を生成します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dcontinuous_002duniform_002ddistribution"></a>Function: <strong>make-continuous-uniform-distribution</strong><em> a b</em></dt>
+<dd><p>範囲[a, b]の連続一様分布関数を生成します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002ddiscrete_002duniform_002ddistribution"></a>Function: <strong>make-discrete-uniform-distribution</strong><em> a b</em></dt>
+<dd><p>範囲[a, b]の離散一様分布関数を生成します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002derlang_002ddistribution"></a>Function: <strong>make-erlang-distribution</strong><em> k lambda</em></dt>
+<dd><p>パラメータk, <em>\lambda</em>のアーラン分布関数を生成します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dexponential_002ddistribution"></a>Function: <strong>make-exponential-distribution</strong><em> lambda</em></dt>
+<dd><p>パラメータ<em>\lambda</em>の指数分布関数を生成します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dgamma_002ddistribution"></a>Function: <strong>make-gamma-distribution</strong><em> k theta</em></dt>
+<dd><p>パラメータk, <em>\theta</em>のガンマ分布関数を生成します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dpoisson_002ddistribution"></a>Function: <strong>make-poisson-distribution</strong><em> lambda</em></dt>
+<dd><p>パラメータ<em>\lambda</em>のポアソン分布関数を生成します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dt_002ddistribution"></a>Function: <strong>make-t-distribution</strong><em> nu</em></dt>
+<dd><p>パラメータ<em>\nu</em>のスチューデントのt分布関数を生成します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-distribution_002dexpected_002dvalue"></a>Function: <strong>distribution-expected-value</strong><em> distribution</em></dt>
+<dt><a name="index-distribution_002dmedian"></a>Function: <strong>distribution-median</strong><em> distribution</em></dt>
+<dt><a name="index-distribution_002dmode"></a>Function: <strong>distribution-mode</strong><em> distribution</em></dt>
+<dt><a name="index-distribution_002dvariance"></a>Function: <strong>distribution-variance</strong><em> distribution</em></dt>
+<dt><a name="index-distribution_002dskewness"></a>Function: <strong>distribution-skewness</strong><em> distribution</em></dt>
+<dt><a name="index-distribution_002dkurtosis"></a>Function: <strong>distribution-kurtosis</strong><em> distribution</em></dt>
+<dd><p>それぞれ分布の期待値(平均)、メディアン、モード、分散、歪度、尖度を取得します。<br>
+分布はstatistics-dataにより生成された分布でもかまいません。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-distribution_002dp_002deq"></a>Function: <strong>distribution-p-eq</strong><em> distribution a</em></dt>
+<dt><a name="index-distribution_002dp_002dlt"></a>Function: <strong>distribution-p-lt</strong><em> distribution a</em></dt>
+<dt><a name="index-distribution_002dp_002dgt"></a>Function: <strong>distribution-p-gt</strong><em> distribution a</em></dt>
+<dd><p>それぞれ<em>P(x=a)</em>、<em>P(x&lt;a)</em>、<em>P(x&gt;a)</em>
+となる分布関数の確率を求めます。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-pdf_002dto_002dlist"></a>Function: <strong>pdf-to-list</strong><em> distribution distribution min max dx</em></dt>
+<dt><a name="index-cdf_002dto_002dlist"></a>Function: <strong>cdf-to-list</strong><em> distribution distribution min max dx</em></dt>
+<dd><p>与えられた確率密度関数(累積分布関数)から[min,max]の範囲の値を
+増分dxおきにリストの値で取得します。
+</p></dd></dl>
+
+<hr>
+<a name="g_t_691c_5b9a"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_5206_5e03_95a2_6570" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_6570Xue_0028_7d71_8a08_95a2_6570_0029" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#XY_30c7_30fc_30bf" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">5.23.3 検定</h3>
+
+<dl>
+<dt><a name="index-test_002dfit_002dchi_002dsquared_003f"></a>Function: <strong>test-fit-chi-squared?</strong><em> (observed &hellip;) (expeceted &hellip;) critical-value</em></dt>
+<dd><p>与えられた結果によるカイ2乗検定をします。<br>
+帰無仮説が棄却されるときに#fを、そうでないときは#tを返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-test_002dt_002d1sample"></a>Function: <strong>test-t-1sample</strong><em> (observed &hellip;) expected side critical-value</em></dt>
+<dd><p>与えられた結果による1標本t検定をします。<br>
+sideは以下の値をとります。
+</p><table>
+<tr><td width="18%">&lt;</td><td width="50%">下側検定</td></tr>
+<tr><td width="18%">&gt;</td><td width="50%">上側検定</td></tr>
+<tr><td width="18%">=</td><td width="50%">両側検定</td></tr>
+</table>
+
+<p>帰無仮説が棄却されるときに#fを、そうでないときは#tを返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-test_002dt_002d1sample-1"></a>Function: <strong>test-t-1sample</strong><em> (observed &hellip;) (observed2 &hellip;) side critical-value</em></dt>
+<dd><p>与えられた結果による2標本t検定をします。<br>
+帰無仮説が棄却されるときに#fを、そうでないときは#tを返します。
+</p></dd></dl>
+
+<hr>
+<a name="XY_30c7_30fc_30bf"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_691c_5b9a" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_6570Xue_0028_7d71_8a08_95a2_6570_0029" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_62.html#g_t1_5909_6570_306e_591a_9805_5f0f" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">5.23.4 XYデータ</h3>
+
+<dl>
+<dt><a name="index-covariance"></a>Function: <strong>covariance</strong><em> xy-data</em></dt>
+<dt><a name="index-covariance-1"></a>Function: <strong>covariance</strong><em> (x &hellip;)(y &hellip;)</em></dt>
+<dd><p>与えられたXYデータの共分散を返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-correlation_002dcoefficient"></a>Function: <strong>correlation-coefficient</strong><em> xy-data</em></dt>
+<dt><a name="index-correlation_002dcoefficient-1"></a>Function: <strong>correlation-coefficient</strong><em> (x &hellip;)(y &hellip;)</em></dt>
+<dd><p>与えられたXYデータの相関係数を返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-linear_002dregression"></a>Function: <strong>linear-regression</strong><em> xy-data</em></dt>
+<dt><a name="index-linear_002dregression-1"></a>Function: <strong>linear-regression</strong><em> (x &hellip;)(y &hellip;)</em></dt>
+<dd><p>与えられたXYデータを線形回帰した結果を1変数の多項式で返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-error_002dterm"></a>Function: <strong>error-term</strong><em> xy-data</em></dt>
+<dt><a name="index-error_002dterm-1"></a>Function: <strong>error-term</strong><em> (x &hellip;)(y &hellip;)</em></dt>
+<dd><p>与えられたXYデータの誤差項を統計データとして返します。
+</p></dd></dl>
+
+<hr>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_691c_5b9a" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_6570Xue_0028_7d71_8a08_95a2_6570_0029" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_62.html#g_t1_5909_6570_306e_591a_9805_5f0f" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  この文書は<em>12月 15, 2012</em>に<a href="http://www.nongnu.org/texi2html/"><em>texi2html 5.0</em></a>を用いて生成されました。
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

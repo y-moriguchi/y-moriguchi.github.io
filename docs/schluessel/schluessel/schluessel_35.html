@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created on 12月 15, 2012 by texi2html 5.0
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Schluessel: 4.27 flonum</title>
+
+<meta name="description" content="Schluessel: 4.27 flonum">
+<meta name="keywords" content="Schluessel: 4.27 flonum">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 5.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smalllisp {margin-left: 3.2em}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nocodebreak {white-space:pre}
+span.nolinebreak {white-space:pre}
+span.roman {font-family:serif; font-weight:normal}
+span.sansserif {font-family:sans-serif; font-weight:normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="ja" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="flonum"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_8.html#g_t_57fa_672c_6a5f_80fd" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_34.html#fixnum" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_8.html#g_t_57fa_672c_6a5f_80fd" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_36.html#R5RS_305d_306e_4ed6" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section">4.27 flonum</h2>
+
+<p>本処理系ではflonumを2進倍精度の浮動小数点にしています。
+</p>
+<dl>
+<dt><a name="index-flonum_003f"></a>Function: <strong>flonum?</strong><em> obj</em></dt>
+<dd><p>[R6RS]<var>obj</var>がflonumのとき#tを返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-real_002d_003eflonum"></a>Function: <strong>real-&gt;flonum</strong><em> x</em></dt>
+<dd><p>[R6RS]<var>x</var>のflonum表現を返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-fl_003d_003f"></a>Function: <strong>fl=?</strong><em> fl1 &hellip;</em></dt>
+<dt><a name="index-fl_003c_003f"></a>Function: <strong>fl&lt;?</strong><em> fl1 &hellip;</em></dt>
+<dt><a name="index-fl_003e_003f"></a>Function: <strong>fl&gt;?</strong><em> fl1 &hellip;</em></dt>
+<dt><a name="index-fl_003c_003d_003f"></a>Function: <strong>fl&lt;=?</strong><em> fl1 &hellip;</em></dt>
+<dt><a name="index-fl_003e_003d_003f"></a>Function: <strong>fl&gt;=?</strong><em> fl1 &hellip;</em></dt>
+<dd><p>[R6RS]それぞれ引数がすべて等しい、単調増加しているとき、単調減少しているとき、単調減少していないとき、単調増加していないときに#tを返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-flinteger_003f"></a>Function: <strong>flinteger?</strong><em> fl</em></dt>
+<dt><a name="index-flzero_003f"></a>Function: <strong>flzero?</strong><em> fl</em></dt>
+<dt><a name="index-flpositive_003f"></a>Function: <strong>flpositive?</strong><em> fl</em></dt>
+<dt><a name="index-flnegative_003f"></a>Function: <strong>flnegative?</strong><em> fl</em></dt>
+<dt><a name="index-flodd_003f"></a>Function: <strong>flodd?</strong><em> fl</em></dt>
+<dt><a name="index-fleven_003f"></a>Function: <strong>fleven?</strong><em> fl</em></dt>
+<dt><a name="index-flfinite_003f"></a>Function: <strong>flfinite?</strong><em> fl</em></dt>
+<dt><a name="index-flinfinite_003f"></a>Function: <strong>flinfinite?</strong><em> fl</em></dt>
+<dt><a name="index-flnan_003f"></a>Function: <strong>flnan?</strong><em> fl</em></dt>
+<dd><p>[R6RS]flonum <var>fl</var>がそれぞれ整数、0、正、負、奇数、偶数、有限、無限、非数であるときに#tを返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-flmax"></a>Function: <strong>flmax</strong><em> fl1 &hellip;</em></dt>
+<dt><a name="index-flmin"></a>Function: <strong>flmin</strong><em> fl1 &hellip;</em></dt>
+<dd><p>[R6RS]それぞれflonumの最大値、最小値を返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-fl_002b"></a>Function: <strong>fl+</strong><em> fl1 &hellip;</em></dt>
+<dt><a name="index-fl_002a"></a>Function: <strong>fl*</strong><em> fl1 &hellip;</em></dt>
+<dd><p>[R6RS]それぞれflonumの和と積を返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-fl_002d"></a>Function: <strong>fl-</strong><em> fl1 fl2 &hellip;</em></dt>
+<dt><a name="index-fl_002d-1"></a>Function: <strong>fl-</strong><em> fl1</em></dt>
+<dd><p>[R6RS]2引数以上のときは<var>fl1</var>から<var>fl2</var> &hellip;を引いた差を求めます。
+1引数のときは<var>fl1</var>の加法に対する逆元を求める。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-fl_002f"></a>Function: <strong>fl/</strong><em> fl1 fl2 &hellip;</em></dt>
+<dt><a name="index-fl_002f-1"></a>Function: <strong>fl/</strong><em> fl1</em></dt>
+<dd><p>[R6RS]2引数以上のときは<var>fl1</var>を<var>fl2</var> &hellip;で割った商を求めます。
+1引数のときは<var>fl1</var>の逆数を求めます。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-flabs"></a>Function: <strong>flabs</strong><em> fl</em></dt>
+<dd><p>[R6RS]<var>fl</var>の絶対値を返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-fldiv_002dand_002dmod"></a>Function: <strong>fldiv-and-mod</strong><em> fl1 fl2</em></dt>
+<dt><a name="index-fldiv"></a>Function: <strong>fldiv</strong><em> fl1 fl2</em></dt>
+<dt><a name="index-flmod"></a>Function: <strong>flmod</strong><em> fl1 fl2</em></dt>
+<dt><a name="index-fldiv0_002dand_002dmod0"></a>Function: <strong>fldiv0-and-mod0</strong><em> fl1 fl2</em></dt>
+<dt><a name="index-fldiv0"></a>Function: <strong>fldiv0</strong><em> fl1 fl2</em></dt>
+<dt><a name="index-flmod0"></a>Function: <strong>flmod0</strong><em> fl1 fl2</em></dt>
+<dd><p>[R6RS]これらの手続きは整数論上の除算と剰余を実装します。
+div0とdiv、mod0とmodの違いについてはR6RSのドキュメントを参照願います。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-flnumerator"></a>Function: <strong>flnumerator</strong><em> fl</em></dt>
+<dt><a name="index-fldenominator"></a>Function: <strong>fldenominator</strong><em> fl</em></dt>
+<dd><p>[R6RS]それぞれflonum <var>fl</var>の分子、分母を求めます。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-flfloor"></a>Function: <strong>flfloor</strong><em> fl</em></dt>
+<dt><a name="index-flceiling"></a>Function: <strong>flceiling</strong><em> fl</em></dt>
+<dd><p>[R6RS]それぞれflonum <var>fl</var>の天井、床関数を求めます。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-fltruncate"></a>Function: <strong>fltruncate</strong><em> fl</em></dt>
+<dt><a name="index-flround"></a>Function: <strong>flround</strong><em> fl</em></dt>
+<dd><p>[R6RS]それぞれflonum <var>fl</var>の小数点を切り捨てた結果と丸めた結果を返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-flexp"></a>Function: <strong>flexp</strong><em> fl</em></dt>
+<dt><a name="index-fllog"></a>Function: <strong>fllog</strong><em> fl</em></dt>
+<dt><a name="index-flsin"></a>Function: <strong>flsin</strong><em> fl</em></dt>
+<dt><a name="index-flcos"></a>Function: <strong>flcos</strong><em> fl</em></dt>
+<dt><a name="index-fltan"></a>Function: <strong>fltan</strong><em> fl</em></dt>
+<dt><a name="index-flasin"></a>Function: <strong>flasin</strong><em> fl</em></dt>
+<dt><a name="index-flacos"></a>Function: <strong>flacos</strong><em> fl</em></dt>
+<dt><a name="index-flatan"></a>Function: <strong>flatan</strong><em> fl</em></dt>
+<dd><p>[R6RS]それぞれ<em>\exp fl</em>, <em>\log fl</em>, <em>\sin fl</em>, <em>\cos fl</em>, <em>\sin^{-1} fl</em>, <em>\cos^{-1} fl</em>, <em>\tan^{-1} fl</em>を求めます。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-fllog-1"></a>Function: <strong>fllog</strong><em> fl1 fl2</em></dt>
+<dd><p>[R6RS]<var>fl2</var>を底とした<var>fl1</var>の対数を求めます。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-flatan-1"></a>Function: <strong>flatan</strong><em> fl1 fl2</em></dt>
+<dd><p>[R6RS]<em>\tan^{-1} fl1/fl2</em>を求めます。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-flsqrt"></a>Function: <strong>flsqrt</strong><em> fl</em></dt>
+<dd><p>[R6RS]<var>fl</var>の平方根を求めます。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-flexpt"></a>Function: <strong>flexpt</strong><em> fl1 fl2</em></dt>
+<dd><p>[R6RS]<em>fl1^{fl2}</em>を求めます。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-fixnum_002d_003eflonum"></a>Function: <strong>fixnum-&gt;flonum</strong><em> fx</em></dt>
+<dd><p>[R6RS]<var>fx</var>をflonumに変換します。
+</p></dd></dl>
+
+<hr>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_8.html#g_t_57fa_672c_6a5f_80fd" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_34.html#fixnum" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_8.html#g_t_57fa_672c_6a5f_80fd" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_36.html#R5RS_305d_306e_4ed6" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  この文書は<em>12月 15, 2012</em>に<a href="http://www.nongnu.org/texi2html/"><em>texi2html 5.0</em></a>を用いて生成されました。
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

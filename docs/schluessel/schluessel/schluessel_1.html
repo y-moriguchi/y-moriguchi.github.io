@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created on 12月 15, 2012 by texi2html 5.0
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Schluessel: 1.1 SRFIのサポート</title>
+
+<meta name="description" content="Schluessel: 1.1 SRFIのサポート">
+<meta name="keywords" content="Schluessel: 1.1 SRFIのサポート">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 5.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smalllisp {margin-left: 3.2em}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nocodebreak {white-space:pre}
+span.nolinebreak {white-space:pre}
+span.roman {font-family:serif; font-weight:normal}
+span.sansserif {font-family:sans-serif; font-weight:normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="ja" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="SRFI_306e_30b5_30dd_30fc_30c8"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.html#Top" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_2.html#Schluessel_306e_8d77_52d5" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_2.html#Schluessel_306e_8d77_52d5" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section">1.1 SRFIのサポート</h2>
+
+<p>Schluesselでは以下のSRFIが使用可能です。
+</p><ul>
+<li> SRFI-0 (Feature-based conditional expansion construct)
+</li><li> SRFI-1 (リストライブラリ)
+</li><li> SRFI-2 (AND-LET*)
+</li><li> SRFI-4 (一様なベクタ)
+</li><li> SRFI-6 (文字列ポート)
+</li><li> SRFI-7
+</li><li> SRFI-8 (receive)
+</li><li> SRFI-9 (レコード型)
+</li><li> SRFI-10 (Sharp-comma external forms)
+</li><li> SRFI-13 (文字列ライブラリ)
+</li><li> SRFI-14 (文字セット)
+</li><li> SRFI-16 (Syntax for procedures of variable arity)
+</li><li> SRFI-17 (一般化されたset!)
+</li><li> SRFI-18 (マルチスレッド)
+</li><li> SRFI-19 (日付オブジェクト)
+</li><li> SRFI-23 (エラーレポート)
+</li><li> SRFI-25 (多次元配列)
+</li><li> SRFI-28 (文字列のフォーマット)
+</li><li> SRFI-30 (ネストされたコメント)
+</li><li> SRFI-34 (例外処理)
+</li><li> SRFI-37
+</li><li> SRFI-38 (共有構造の表現)
+</li><li> SRFI-39 (パラメータ)
+</li><li> SRFI-41 (ストリーム)
+</li><li> SRFI-44 (コレクション)
+</li><li> SRFI-47 (配列)
+</li><li> SRFI-58 (配列の記法)
+</li><li> SRFI-59
+</li><li> SRFI-60 (ビットとしての整数)
+</li><li> SRFI-62 (S式コメント)
+</li><li> SRFI-63 (一様および一様でない配列)
+</li><li> SRFI-66 (オクテットベクター)
+</li><li> SRFI-67 (比較手続き)
+</li><li> SRFI-69 (基本的なハッシュ表)
+</li><li> SRFI-94 (型の制限された数値関数)
+</li><li> SRFI-98 (環境変数へのアクセス)
+</li></ul>
+
+
+<hr>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.html#Top" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_2.html#Schluessel_306e_8d77_52d5" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_2.html#Schluessel_306e_8d77_52d5" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  この文書は<em>12月 15, 2012</em>に<a href="http://www.nongnu.org/texi2html/"><em>texi2html 5.0</em></a>を用いて生成されました。
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

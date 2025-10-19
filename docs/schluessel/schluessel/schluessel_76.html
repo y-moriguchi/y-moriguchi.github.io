@@ -1,0 +1,348 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created on 12月 15, 2012 by texi2html 5.0
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Schluessel: 5.38 AWT関連</title>
+
+<meta name="description" content="Schluessel: 5.38 AWT関連">
+<meta name="keywords" content="Schluessel: 5.38 AWT関連">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 5.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smalllisp {margin-left: 3.2em}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nocodebreak {white-space:pre}
+span.nolinebreak {white-space:pre}
+span.roman {font-family:serif; font-weight:normal}
+span.sansserif {font-family:sans-serif; font-weight:normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="ja" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="AWT_95a2_9023"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_75.html#Applet_9023_643a_6a5f_80fd" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30c7_30b9_30af_30c8_30c3_30d7_64cd_4f5c" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section">5.38 AWT関連</h2>
+
+<p>Java AWTに関連した手続きです。
+</p>
+<p>現在、GUIコンポーネントの機能はSwingに置き換えられていますが、低レベルなGUIの操作や、トレイアイコンなど重量コンポーネントが必要なところでは使用されています。
+</p>
+
+<hr>
+<a name="g_t_30c7_30b9_30af_30c8_30c3_30d7_64cd_4f5c"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#AWT_95a2_9023" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#AWT_95a2_9023" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30b0_30e9_30d5_30a3_30c3_30af_30b9_74b0_5883" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">5.38.1 デスクトップ操作</h3>
+
+<p>デスクトップに関連づけられているアプリケーションを起動する手続きです。
+</p>
+<dl>
+<dt><a name="index-desktop_002dsupported_003f"></a>Function: <strong>desktop-supported?</strong><em> [operation]</em></dt>
+<dd><p>実行している環境でデスクトップがサポートされていれば#tを返します。<br>
+operationは以下のシンボルで表される操作がサポートされているときに#tを返します。
+</p><table>
+<tr><td width="18%">browse</td><td width="50%">Webブラウザの起動</td></tr>
+<tr><td width="18%">edit</td><td width="50%">編集</td></tr>
+<tr><td width="18%">mail</td><td width="50%">メーラの起動</td></tr>
+<tr><td width="18%">open</td><td width="50%">開く</td></tr>
+<tr><td width="18%">print</td><td width="50%">印刷</td></tr>
+</table>
+</dd></dl>
+
+<dl>
+<dt><a name="index-desktop_002dbrowse"></a>Function: <strong>desktop-browse</strong><em> uri</em></dt>
+<dt><a name="index-desktop_002dedit"></a>Function: <strong>desktop-edit</strong><em> file</em></dt>
+<dt><a name="index-desktop_002dmail"></a>Function: <strong>desktop-mail</strong><em> [uri]</em></dt>
+<dt><a name="index-desktop_002dopen"></a>Function: <strong>desktop-open</strong><em> file</em></dt>
+<dt><a name="index-desktop_002dprint"></a>Function: <strong>desktop-print</strong><em> file</em></dt>
+<dd><p>それぞれWebブラウザの起動、編集、メーラの起動、開く、印刷する動作をします。
+動作が実行されたときは#tを、動作がサポートされないときは#fが返されます。
+</p></dd></dl>
+
+
+<hr>
+<a name="g_t_30b0_30e9_30d5_30a3_30c3_30af_30b9_74b0_5883"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30c7_30b9_30af_30c8_30c3_30d7_64cd_4f5c" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#AWT_95a2_9023" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#GUI_30ed_30dc_30c3_30c8" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">5.38.2 グラフィックス環境</h3>
+
+<p>グラフィックス環境を操作する手続きです。フレームをフルスクリーンで実行することもできます。
+</p>
+<dl>
+<dt><a name="index-graphics_002dall_002dfonts"></a>Function: <strong>graphics-all-fonts</strong></dt>
+<dd><p>実行している環境でサポートされている全フォントのオブジェクトをリストの形で返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-graphics_002ddefault_002dscreen_002ddevice"></a>Function: <strong>graphics-default-screen-device</strong></dt>
+<dd><p>実行している環境でのデフォルトのスクリーンデバイスオブジェクトを返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-graphics_002ddevice_002dfull_002dscreen_002dset_0021"></a>Function: <strong>graphics-device-full-screen-set!</strong><em> [screen-device] frame</em></dt>
+<dd><p>指定したスクリーンデバイスにフレームをフルスクリーン表示します。
+戻り値は未定義です。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-graphics_002dscreen_002ddevices"></a>Function: <strong>graphics-screen-devices</strong></dt>
+<dd><p>実行している環境でサポートされている全スクリーンデバイスのオブジェクトを
+リストの形で返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-graphics_002ddevice_002dfull_002dscreen_003f"></a>Function: <strong>graphics-device-full-screen?</strong><em> [screen-device]</em></dt>
+<dd><p>指定したスクリーンデバイスがフルスクリーン表示されていれば#tを返します。
+そうでなければ#fを返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-graphics_002ddevice_002dfull_002dscreen_002dsupported_003f"></a>Function: <strong>graphics-device-full-screen-supported?</strong><em> [screen-device]</em></dt>
+<dd><p>指定したスクリーンデバイスがフルスクリーン表示をサポートしていれば#tを返します。
+そうでなければ#fを返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-graphics_002dheadless_003f"></a>Function: <strong>graphics-headless?</strong></dt>
+<dd><p>実行している環境がグラフィックス環境を持たないとき#tを返します。
+</p></dd></dl>
+
+
+<hr>
+<a name="GUI_30ed_30dc_30c3_30c8"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30b0_30e9_30d5_30a3_30c3_30af_30b9_74b0_5883" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#AWT_95a2_9023" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30c8_30ec_30a4a_30a4_30b3_30f3" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">5.38.3 GUIロボット</h3>
+
+<p>プログラムによりマウスやキーボードなどを操作したり、スクリーンショットを取得する手続きです。
+</p>
+<dl>
+<dt><a name="index-make_002dgui_002drobot"></a>Function: <strong>make-gui-robot</strong><em> [screen-device]</em></dt>
+<dd><p>GUIロボットオブジェクトを作成します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-capture_002dscreen"></a>Function: <strong>capture-screen</strong><em> [gui-robot] x1 y1 x2 y2</em></dt>
+<dd><p>指定された範囲のスクリーンショットを取得し、それを画像オブジェクトとして返します。
+</p></dd></dl>
+
+
+<hr>
+<a name="g_t_30c8_30ec_30a4a_30a4_30b3_30f3"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#GUI_30ed_30dc_30c3_30c8" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#AWT_95a2_9023" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30ab_30fc_30bdru_306e_5f62_72b6_5909_66f4" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">5.38.4 トレイアイコン</h3>
+
+<p>トレイアイコンに格納するアプリケーションを記述する手続きです。
+</p>
+<dl>
+<dt><a name="index-tray_002dsupported_003f"></a>Function: <strong>tray-supported?</strong></dt>
+<dd><p>トレイアイコンがサポートされていれば#tを返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dtray_002dicon"></a>Function: <strong>make-tray-icon</strong><em> image-file-path/image-object tooptip/#f menu/#f [action] [mouse-action] [mouse-motion-action]</em></dt>
+<dd><p>トレイアイコンを作成します。<br>
+第1の引数はアイコンのイメージをファイルまたは画像オブジェクトで指定します。<br>
+第2の引数はツールチップを指定します。#fのときは表示されません。<br>
+第3の引数はメニューを指定します。#fのときはメニューは使用しません。
+メニューは以下のように指定します。
+</p><div class="example">
+<pre class="example">`((&quot;menu1&quot;  . ,(lambda (e) action))  ; 単純メニュー
+  (&quot;menusA&quot;  ; ネストされたメニュー
+    (&quot;sub1&quot; . ,(lambda (e) action))
+    (&quot;sub2&quot; . ,(lambda (e) action))
+    ...)
+  ...)
+</pre></div>
+<p>第4〜第6の引数はアイコンがダブルクリックされた、マウス、マウスの移動に伴う
+アクションを記述します。<br>
+例を以下に示します。
+</p><div class="example">
+<pre class="example">; トレイアイコンの定義
+(define icon
+  (make-tray-icon
+    &quot;example.png&quot;
+    &quot;test&quot;
+    `((&quot;sub&quot;  ;メニュー階層
+        ((&quot;A&quot; ,(lambda (e) (display &quot;a&quot;)))
+         (&quot;b&quot; ,(lambda (e) (display &quot;b&quot;)))))
+      (&quot;Exit&quot; ,(lambda (e) (exit))))
+    (lambda (e) (display &quot;icon&quot;)) ;アクション
+    `(;マウスアクション
+      :entered ,(lambda (e) (display &quot;entered&quot;))
+      :exited  ,(lambda (e) (display &quot;exited&quot;)))))
+</pre></div>
+</dd></dl>
+
+<dl>
+<dt><a name="index-add_002dtray_002dicon_0021"></a>Function: <strong>add-tray-icon!</strong><em> tray-icon</em></dt>
+<dd><p>トレイアイコンをシステムトレイに登録します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-display_002dtray_002dicon_002dmessage"></a>Function: <strong>display-tray-icon-message</strong><em> title message [type]</em></dt>
+<dd><p>トレイアイコンにメッセージを送信します。<br>
+メッセージタイプは以下の通りです。デフォルトではinfoです。
+</p><table>
+<tr><td width="18%">error</td><td width="50%">エラー</td></tr>
+<tr><td width="18%">warning</td><td width="50%">警告</td></tr>
+<tr><td width="18%">info</td><td width="50%">情報</td></tr>
+<tr><td width="18%">none</td><td width="50%">タイプなし</td></tr>
+</table>
+</dd></dl>
+
+
+<hr>
+<a name="g_t_30ab_30fc_30bdru_306e_5f62_72b6_5909_66f4"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30c8_30ec_30a4a_30a4_30b3_30f3" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#AWT_95a2_9023" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_77.html#g_t_30b5_30a6_30f3_30c9_6a5f_80fd" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">5.38.5 カーソルの形状変更</h3>
+
+<dl>
+<dt><a name="index-cursor_002dset_0021"></a>Function: <strong>cursor-set!</strong><em> componet [shape]</em></dt>
+<dd><p>カーソルの形状を変更します。shapeは以下のようなシンボルまたは文字列を指定します。文字列を指定したときはネイティブのカーソル形状を使用することができます。省略されたときはデフォルトの形状が使用されます。
+</p><table>
+<tr><td width="25%">default-cursor</td><td width="70%">デフォルトの形状</td></tr>
+<tr><td width="25%">hand-cursor</td><td width="70%">手の形状</td></tr>
+<tr><td width="25%">crosshair-cursor</td><td width="70%">十字の形状</td></tr>
+<tr><td width="25%">move-cursor</td><td width="70%">移動カーソル</td></tr>
+<tr><td width="25%">n-resize-cursor</td><td width="70%">サイズ変更(上)</td></tr>
+<tr><td width="25%">s-resize-cursor</td><td width="70%">サイズ変更(下)</td></tr>
+<tr><td width="25%">e-resize-cursor</td><td width="70%">サイズ変更(右)</td></tr>
+<tr><td width="25%">w-resize-cursor</td><td width="70%">サイズ変更(左)</td></tr>
+<tr><td width="25%">ne-resize-cursor</td><td width="70%">サイズ変更(右上)</td></tr>
+<tr><td width="25%">nw-resize-cursor</td><td width="70%">サイズ変更(左上)</td></tr>
+<tr><td width="25%">se-resize-cursor</td><td width="70%">サイズ変更(右下)</td></tr>
+<tr><td width="25%">sw-resize-cursor</td><td width="70%">サイズ変更(左下)</td></tr>
+<tr><td width="25%">text-cursor</td><td width="70%">テキストの形状</td></tr>
+<tr><td width="25%">wait-cursor</td><td width="70%">処理中の形状</td></tr>
+</table>
+</dd></dl>
+
+<hr>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30c8_30ec_30a4a_30a4_30b3_30f3" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#AWT_95a2_9023" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_77.html#g_t_30b5_30a6_30f3_30c9_6a5f_80fd" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  この文書は<em>12月 15, 2012</em>に<a href="http://www.nongnu.org/texi2html/"><em>texi2html 5.0</em></a>を用いて生成されました。
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created on 12月 15, 2012 by texi2html 5.0
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Schluessel: 6.2 記号微分</title>
+
+<meta name="description" content="Schluessel: 6.2 記号微分">
+<meta name="keywords" content="Schluessel: 6.2 記号微分">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 5.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smalllisp {margin-left: 3.2em}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nocodebreak {white-space:pre}
+span.nolinebreak {white-space:pre}
+span.roman {font-family:serif; font-weight:normal}
+span.sansserif {font-family:sans-serif; font-weight:normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="ja" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="g_t_8a18_53f7_5fae_5206"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_90.html#g_t_30e2_30f3_30c6_30abru_30ed_7a4d_5206" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_92.html#g_t_30cf_30d5ma_30f3_7b26_53f7" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section">6.2 記号微分</h2>
+
+<p>与えられた数式を微分します。
+(SICPの問題2.56, 2.57の解答になっています。)
+</p>
+<div class="example">
+<pre class="example">(define (=number? exp num)
+  (and (number? exp) (= exp num)))
+
+(define (variable? x) (symbol? x))
+(define (same-variable? x y)
+  (and (variable? x) (variable? y) (eq? x y)))
+
+(define (make-sum a b)
+  (cond ((=number? a 0) b)
+        ((=number? b 0) a)
+        ((and (number? a) (number? b)) (+ a b))
+        (else `(+ ,a ,b))))
+(define (sum? x)
+  (and (pair? x) (eq? (car x) '+)))
+(define (addend x) (cadr x))
+(define (augend x)
+  (if (null? (cddr x)) 0 `(+ . ,(cddr x))))
+
+(define (make-product a b)
+  (cond ((or (=number? a 0) (=number? b 0)) 0)
+        ((=number? a 1) b)
+        ((=number? b 1) a)
+        ((and (number? a) (number? b)) (* a b))
+        (else `(* ,a ,b))))
+(define (product? x)
+  (and (pair? x) (eq? (car x) '*)))
+(define (multiplier x) (cadr x))
+;(define (multiplicand x) (caddr x))
+(define (multiplicand x)
+  (if (null? (cddr x)) 1 `(* . ,(cddr x))))
+
+(define (make-exponentiation a b)
+  (cond ((not (number? b)) (error &quot;exponent must be a number&quot;))
+        ((and (=number? a 0) (=number? b 0))
+          (error &quot;Aritimetic Error&quot;))
+        ((=number? a 0) 0)
+        ((=number? a 1) 1)
+        ((=number? b 0) 1)
+        ((=number? b 1) a)
+        ((and (number? a) (number? b)) (expt a b))
+        (else `(** ,a ,b))))
+(define (exponentiation? x)
+  (and (pair? x) (eq? (car x) '**)))
+(define (base x) (cadr x))
+(define (exponent x) (caddr x))
+
+(define (deriv x var)
+  (cond ((number? x) 0)
+        ((variable? x) (if (same-variable? x var) 1 0))
+        ((sum? x)
+          (make-sum (deriv (addend x) var)
+                   (deriv (augend x) var)))
+        ((product? x)
+          (make-sum
+            (make-product (deriv (multiplier x) var)
+                        (multiplicand x))
+            (make-product (deriv (multiplicand x) var)
+                        (multiplier x))))
+        ((exponentiation? x)
+          (make-product
+            (exponent x)
+            (make-product
+              (make-exponentiation (base x) (- (exponent x) 1))
+              (deriv (base x) var))))))
+</pre></div>
+
+<hr>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_90.html#g_t_30e2_30f3_30c6_30abru_30ed_7a4d_5206" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_92.html#g_t_30cf_30d5ma_30f3_7b26_53f7" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  この文書は<em>12月 15, 2012</em>に<a href="http://www.nongnu.org/texi2html/"><em>texi2html 5.0</em></a>を用いて生成されました。
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created on 12月 15, 2012 by texi2html 5.0
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Schluessel: 6.5 メタ循環Lispインタプリタ</title>
+
+<meta name="description" content="Schluessel: 6.5 メタ循環Lispインタプリタ">
+<meta name="keywords" content="Schluessel: 6.5 メタ循環Lispインタプリタ">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 5.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smalllisp {margin-left: 3.2em}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nocodebreak {white-space:pre}
+span.nolinebreak {white-space:pre}
+span.roman {font-family:serif; font-weight:normal}
+span.sansserif {font-family:sans-serif; font-weight:normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="ja" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="g_t_30e1_30bf_5faa_74b0Lisp_30a4_30f3_30bf_30d7_30ea_30bf"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_93.html#RLC_56de_8def_306e_30b7_30dfyu_30ec_30fc_30c8" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_95.html#g_t_30b3_30c3_30db_66f2_7dda" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section">6.5 メタ循環Lispインタプリタ</h2>
+
+<p>メタ循環Lispインタプリタ、つまりLispを解析するLispのプログラムです。
+</p>
+<div class="example">
+<pre class="example">(define-syntax bind-vars
+  (syntax-rules ()
+    ((_ x (a b ...) (c ...) body ...)
+      (if (pair? x)
+          (let ((a (car x)))
+            (bind-vars (cdr x) (b ...) (c ...) body ...))
+          (error &quot;Syntax Error&quot;)))
+    ((_ x () (c d ...) body ...)
+      (if (pair? x)
+          (let ((c (car x)))
+            (bind-vars (cdr x) () (d ...) body ...))
+          (let ((c (if #f #f)))
+            (bind-vars x () (d ...) body ...))))
+    ((_ x () () body ...)
+      (if (null? x)
+          (begin body ...)
+          (error &quot;Syntax Error&quot;)))))
+
+(define-syntax bind-vars-opt
+  (syntax-rules ()
+    ((_ x (a b ...) rest body ...)
+      (if (pair? x)
+          (let ((a (car x)))
+            (bind-vars-opt (cdr x) (b ...) rest body ...))
+          (error &quot;Syntax Error&quot;)))
+    ((_ x () rest body ...) (let ((rest x)) body ...))))
+
+(define-record-type meta-closure
+  (make-meta-closure vars body)
+  meta-closure?
+  (vars get-vars)
+  (body get-body))
+
+(define *global-environment*
+  `((null? . ,null?) (eq?   . ,eq?)  (car   . ,car)  (cdr   . ,cdr)
+    (cons  . ,cons)  (+     . ,+)    (-     . ,-)    (*     . ,*)
+    (/     . ,/)     (=     . ,=)))
+
+(define (bind-to-env name val env) (cons name val))
+
+(define (bind-all adef args env)
+  (cond ((and (null? adef) (null? args)) env)
+        ((or (null? adef) (null? args))
+          (error &quot;Illegal Argument&quot;))
+        ((symbol? adef) (cons (cons adef args) env))
+        ((and (pair? adef) (pair? args))
+          (bind-all (cdr adef) (cdr args)
+                    (cons (cons (car adef) (car args)) env)))
+        (else (error &quot;Illegal Argument&quot;))))
+
+(define (find-from-env name env)
+  (cdr (or (assq name env)
+           (assq name *global-environment*)
+           (error &quot;Unbound Symbol&quot;))))
+
+(define (eval-meta x env)
+  (cond ((symbol? x) (find-from-env x env))
+        ((not (pair? x)) x)
+        ((eq? (car x) 'if) (eval-if (cdr x) env))
+        ((eq? (car x) 'lambda) (eval-lambda (cdr x) env))
+        ((eq? (car x) 'define) (eval-define (cdr x) env))
+        ((eq? (car x) 'begin) (eval-begin (cdr x) env))
+        ((eq? (car x) 'quote) (eval-quote (cdr x) env))
+        (else
+          (apply-meta
+            (eval-meta (car x) env)
+            (map (lambda (x) (eval-meta x env)) (cdr x))
+            env))))
+
+(define (eval-if x env)
+  (bind-vars x (cnd tr) (fl)
+    (if (eval-meta cnd env)
+        (eval-meta tr env)
+        (eval-meta fl env))))
+
+(define (eval-lambda x env)
+  (bind-vars-opt x (vars) body
+    (make-meta-closure vars body)))
+
+(define (eval-define x env)
+  (cond ((and (pair? x) (pair? (car x)))
+          (bind-vars-opt x (vars) body
+            (bind-vars-opt vars (name) args
+              (set! *global-environment*
+                    (cons
+                      (bind-to-env
+                        name
+                        (make-meta-closure args body)
+                        env)
+                      *global-environment*))
+              name)))
+        (else
+          (bind-vars x (name val) ()
+            (set! *global-environment*
+                  (cons
+                    (bind-to-env name (eval-meta val env) env)
+                    *global-environment*))
+            name))))
+
+(define (eval-begin f env)
+  (cond ((null? f) r)
+        ((null? (cdr f)) (eval-meta (car f) env))
+        (else
+          (eval-meta (car f) env)
+          (eval-begin (cdr f) env))))
+
+(define (eval-quote args env)
+  (if (and (pair? args))
+      (car args)
+      (error &quot;invalid quote&quot;)))
+
+(define (apply-meta cl args env)
+  (cond ((procedure? cl) (apply cl args))
+        ((meta-closure? cl)
+          (eval-begin
+          (get-body cl)
+          (bind-all (get-vars cl) args env)))
+        (else  (error &quot;Cannot apply&quot;))))
+</pre></div>
+
+<hr>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_93.html#RLC_56de_8def_306e_30b7_30dfyu_30ec_30fc_30c8" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_95.html#g_t_30b3_30c3_30db_66f2_7dda" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  この文書は<em>12月 15, 2012</em>に<a href="http://www.nongnu.org/texi2html/"><em>texi2html 5.0</em></a>を用いて生成されました。
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

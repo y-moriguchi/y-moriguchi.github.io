@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+
+
+
+
+
+
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"><title>Schluessel - 機能</title>
+
+<style type="text/css"></style>
+<link rel="stylesheet" href="default.css" type="text/css"></head><body style="color: rgb(0, 0, 0); background-color: rgb(204, 255, 255);" alink="#000099" link="#000099" vlink="#990099">
+<img style="width: 400px; height: 100px;" alt="Schluessel" src="schluessel-logo.png"><br>
+
+
+<span class="title2">Schluessel - </span><span class="title2"></span>
+<span class="title2">A Scheme Implementation on Java -</span><br>
+<hr><a href="index.ja.html">ホーム</a>
+-&nbsp;<a href="support.html">機能</a>
+- <a href="download.html">ダウンロード</a>
+- <a href="manual.html">マニュアル</a>
+<hr><span class="title2">機能</span><br>
+<ul>
+<li>R5RSの機能をサポートしています</li>
+<li>R5RS形式のマクロと伝統的なマクロをサポートしています</li>
+<li>多倍長整数、浮動小数点数、複素数をサポートしています</li>
+<li>以下のSRFI(Scheme Request for Implementation)をサポートしています</li>
+<ul>
+  <li>SRFI-0 (Feature-based conditional expansion construct)</li>
+  <li>SRFI-1 (リストライブラリ)</li>
+  <li>SRFI-2 (AND-LET*)</li>
+  <li>SRFI-4 (一様なベクタ)</li>
+  <li>SRFI-6 (文字列ポート)</li>
+  <li>SRFI-7</li>
+  <li>SRFI-8 (receive)</li>
+  <li>SRFI-9 (レコード型)</li>
+  <li>SRFI-10 (Sharp-comma external forms)</li>
+  <li>SRFI-13 (文字列ライブラリ)</li>
+  <li>SRFI-14 (文字セット)</li>
+  <li>SRFI-16 (Syntax for procedures of variable arity)</li>
+  <li>SRFI-17 (一般化されたset!)</li>
+  <li>SRFI-18 (マルチスレッド)</li>
+  <li>SRFI-19 (日付オブジェクト)</li>
+  <li>SRFI-23 (エラーレポート)</li>
+  <li>SRFI-25 (多次元配列)</li>
+  <li>SRFI-28 (文字列のフォーマット)</li>
+  <li>SRFI-30 (ネストされたコメント)</li>
+  <li>SRFI-34 (例外処理)</li>
+  <li>SRFI-37</li>
+  <li>SRFI-38 (共有構造の表現)</li>
+  <li>SRFI-39 (パラメータ)</li>
+  <li>SRFI-41 (ストリーム)</li>
+  <li>SRFI-44 (コレクション)</li>
+  <li>SRFI-47 (配列)</li>
+  <li>SRFI-58 (配列の記法)</li>
+  <li>SRFI-59</li>
+  <li>SRFI-60 (ビットとしての整数)</li>
+  <li>SRFI-62 (S式コメント)</li>
+  <li>SRFI-63 (一様および一様でない配列)</li>
+  <li>SRFI-66 (オクテットベクター)</li>
+  <li>SRFI-67 (比較手続き)</li>
+  <li>SRFI-69 (基本的なハッシュ表)</li>
+  <li>SRFI-94 (型の制限された数値関数)</li>
+  <li>SRFI-98 (環境変数へのアクセス)</li>
+</ul>
+<li>マルチバイト文字列が使用可能です</li>
+<li>10進浮動小数点(Decimal32, Decimal64)が使用可能です</li>
+<li>ClojureライクなJavaライブラリの参照が可能です</li>
+<li>Javaライブラリをインポートして使用することが可能です</li>
+<li>Javaクラスをレコードのように使用することが可能です</li>
+<li>Java側からSchemeのコードの実行・Schemeの変数の取得・Schemeの手続きの実行が可能です</li>
+<li>#構文をユーザで定義することが可能です</li>
+<li>形式言語によるパーサを構築することが可能です。LALR(1)の言語クラスが使用可能です</li>
+<li>正規表現による字句解析器(トークナイザ)が構築することが可能です</li>
+<li>Schluesselプラグイン機構</li>
+<li>サウンド機能</li>
+<li>総称関数と簡易的なObjectSystemをサポートしています</li>
+<li>syntax-case形式のマクロの一部をサポートしています。サポートされている機能は以下の通りです<br>
+  <ul>
+    <li>syntax-case</li>
+    <li>syntax(#'), quasisyntax(#`), unsyntax(#,), unsyntax-splicing(#,@)</li>
+    <li>make-variable-transformer</li>
+    <li>identifier?</li>
+    <li>syntax-&gt;datum, datum-&gt;syntax</li>
+    <li>generate-tempolaries</li>
+  </ul></li>
+<li>図形言語・グラフィックス機能をサポートしています。現在サポートしている機能は以下の通りです。<br>
+  <ul>
+    <li>画像の入力・描画</li>
+    <li>線・矩形・楕円・文字の描画</li>
+    <li>画像の出力(JPEG, GIF, PNGをサポートしています)<br>
+    </li>
+  </ul></li>
+<li>特殊関数の計算が可能です。サポートしている特殊関数は以下の通りです<br>
+  <ul>
+    <li>Bessel関数(複素数領域・次数は任意の実数)</li>
+    <li>ガンマ関数(複素数領域)</li>
+  </ul></li>
+<li>JDBCを使用したRDBとの連携が可能です</li>
+<li>Servletを応用したサーバサイドアプリケーションを記述可能です</li>
+<li>XMLを解析可能です</li>
+<li>AppletからSchemeを起動可能です</li>
+<li>Swingとの連携が可能です</li>
+<li>ファイルの操作が可能です</li>
+<li>正規表現が使用可能です</li>
+<li>線形代数ライブラリ(行列の基本演算・LU分解・連立１次方程式の解法等)が使用可能です</li>
+<li>正確な複素数の演算が可能です</li>
+<li>四元数/八元数が使用可能です</li>
+<li>1変数多項式の計算が可能です</li>
+<li>実数の区間ライブラリが使用可能です</li>
+<li>ネットワーク手続きが使用可能です</li>
+<li>HTTP, FTP, SMTP, SNMP, LDAPが使用可能です</li>
+<li>JNDIが使用可能です</li>
+<li>zipファイルの読み込みとgzipファイルの読み書きが使用可能です</li>
+<li>トレイアイコンが使用可能です</li>
+<li>R6RS I/Oが使用可能です</li>
+<li>統計関連の手続きが使用可能です</li>
+<li>厳密なπと自然対数の底が使用可能です</li>
+<li>イテレータフレームワークが使用可能です</li>
+<li>プロセスが使用可能です</li>
+<li>タートルグラフィックス機能が使用可能です</li>
+</ul>
+
+<span class="title2">制限事項</span><br><ul>
+  <li>syntax-caseの制限</li>
+  <ul>
+    <li>以下のような引数に展開してパターンにするようなマクロを記述することができません</li>
+  </ul>
+  <ul>
+    <ul>
+      <li>
+        <pre>(define-syntax with-syntax<br>  (lambda (x)<br>    (syntax-case x ()<br>      ((_ ((p e0) ...) e1 e2 ...)<br>       (syntax (syntax-case (list e0 ...) ()<br>                 ((p ...) (let () e1 e2 ...))))))))</pre>
+      </li>
+    </ul>
+  </ul>
+
+</ul>
+<br>
+<hr style="width: 100%; height: 2px;">Yuichiro Moriguchi<br>
+<br>
+</body></html>

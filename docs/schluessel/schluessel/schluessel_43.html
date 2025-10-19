@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created on 12月 15, 2012 by texi2html 5.0
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Schluessel: 5.5 ロケール</title>
+
+<meta name="description" content="Schluessel: 5.5 ロケール">
+<meta name="keywords" content="Schluessel: 5.5 ロケール">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 5.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smalllisp {margin-left: 3.2em}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nocodebreak {white-space:pre}
+span.nolinebreak {white-space:pre}
+span.roman {font-family:serif; font-weight:normal}
+span.sansserif {font-family:sans-serif; font-weight:normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="ja" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="g_t_30ed_30b1_30fcru"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_42.html#g_t_30b3_30f3_30bd_30fcru" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_44.html#g_t_30cd_30c3_30c8_30ef_30fc_30af_95a2_9023" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section">5.5 ロケール</h2>
+
+<p>ロケールに関連する手続きです。
+</p>
+<dl>
+<dt><a name="index-current_002dlocale"></a>Function: <strong>current-locale</strong><em> [locale]</em></dt>
+<dd><p>ロケールを取得します。引数が与えられたときは現在のロケールを引数に設定します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-current_002dcountry"></a>Function: <strong>current-country</strong><em> [country]</em></dt>
+<dt><a name="index-current_002dlanguage"></a>Function: <strong>current-language</strong><em> [language]</em></dt>
+<dt><a name="index-current_002dlocale_002ddetails"></a>Function: <strong>current-locale-details</strong><em> [details &hellip;]</em></dt>
+<dd><p>[SRFI-29] それぞれ国コード、言語コード、詳細情報を指定します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-available_002dlocales"></a>Function: <strong>available-locales</strong></dt>
+<dd><p>使用可能なロケールをすべてリストの形で取得します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-iso_002dcountries"></a>Function: <strong>iso-countries</strong></dt>
+<dt><a name="index-iso_002dlanguages"></a>Function: <strong>iso-languages</strong></dt>
+<dd><p>使用可能な国コード、言語コードをリストの形で取得します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-locale"></a>Special Form: <strong>locale</strong><em> language [country] [variant]</em></dt>
+<dd><p>ロケールを取得します。<br>
+これは構文のため、引数は定数のシンボルである必要があります。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dlocale"></a>Function: <strong>make-locale</strong><em> language [country] [variant]</em></dt>
+<dd><p>ロケールを取得します。<br>
+これは手続きのため、定数のシンボルを与えるときはクオートする必要があります。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-locale_002dcountry"></a>Function: <strong>locale-country</strong><em> locale</em></dt>
+<dt><a name="index-locale_002dlanguage"></a>Function: <strong>locale-language</strong><em> locale</em></dt>
+<dt><a name="index-locale_002dvariant"></a>Function: <strong>locale-variant</strong><em> locale</em></dt>
+<dt><a name="index-locale_002diso3_002dcountry"></a>Function: <strong>locale-iso3-country</strong><em> locale</em></dt>
+<dt><a name="index-locale_002diso3_002dlanguage"></a>Function: <strong>locale-iso3-language</strong><em> locale</em></dt>
+<dd><p>それぞれロケールの国コード、言語コード、バリアント、
+3文字での国コード、3文字での言語コードを取得します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-locale_002dcountry_002dname"></a>Function: <strong>locale-country-name</strong><em> locale locale2</em></dt>
+<dt><a name="index-locale_002dlanguage_002dname"></a>Function: <strong>locale-language-name</strong><em> locale locale2</em></dt>
+<dt><a name="index-locale_002dvariant_002dname"></a>Function: <strong>locale-variant-name</strong><em> locale locale2</em></dt>
+<dd><p>それぞれlocaleをlocale2で表したときの名称を取得します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-print_002ddate"></a>Function: <strong>print-date</strong><em> format-string date [locale]</em></dt>
+<dd><p>SRFI-19形式の日付をformat-stringでフォーマットして出力します。<br>
+format-stringはjava.text.SimpleDateFormatと同じものです。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-parse_002ddate"></a>Function: <strong>parse-date</strong><em> format-string date [locale]</em></dt>
+<dd><p>文字列をformat-stringでフォーマットしてSRFI-19形式の日付で出力します。<br>
+format-stringはjava.text.SimpleDateFormatと同じものです。
+</p></dd></dl>
+
+<hr>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_42.html#g_t_30b3_30f3_30bd_30fcru" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_44.html#g_t_30cd_30c3_30c8_30ef_30fc_30af_95a2_9023" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  この文書は<em>12月 15, 2012</em>に<a href="http://www.nongnu.org/texi2html/"><em>texi2html 5.0</em></a>を用いて生成されました。
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

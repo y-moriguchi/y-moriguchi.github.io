@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created on August 9, 2012 by texi2html 5.0
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Schluessel: 3.7 FTP</title>
+
+<meta name="description" content="Schluessel: 3.7 FTP">
+<meta name="keywords" content="Schluessel: 3.7 FTP">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 5.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smalllisp {margin-left: 3.2em}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nocodebreak {white-space:pre}
+span.nolinebreak {white-space:pre}
+span.roman {font-family:serif; font-weight:normal}
+span.sansserif {font-family:sans-serif; font-weight:normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="FTP"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_12.html#Networing" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_14.html#HTTP" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section">3.7 FTP</h2>
+
+<dl>
+<dt><a name="index-make_002dftp_002dactive_002dconnection"></a>Function: <strong>make-ftp-active-connection</strong><em> address [port] username password server-address</em></dt>
+<dd><p>crates an FTP connection in active mode.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dftp_002dpassive_002dconnection"></a>Function: <strong>make-ftp-passive-connection</strong><em> address [port] username password</em></dt>
+<dd><p>crates an FTP connection in passive mode.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-ftp_002dconnection_003f"></a>Function: <strong>ftp-connection?</strong><em> obj</em></dt>
+<dd><p>returns #t if the object is an FTP connection.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-ftp_002dtransfer_002dmode"></a>Special Form: <strong>ftp-transfer-mode</strong><em> mode</em></dt>
+<dd><p>returns an FTP transfer mode. <i>mode</i> must be a symbol binary or ascii.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-ftp_002dcd"></a>Function: <strong>ftp-cd</strong><em> connection dir</em></dt>
+<dd><p>changes the working directory in the remote host.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-ftp_002ddelete_002dfile"></a>Function: <strong>ftp-delete-file</strong><em> connection filename</em></dt>
+<dd><p>removes the file in the remote host.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-ftp_002dfile_002dsize"></a>Function: <strong>ftp-file-size</strong><em> connection filename</em></dt>
+<dd><p>gets size of the file in the remote host.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-ftp_002dget"></a>Function: <strong>ftp-get</strong><em> connection filename</em></dt>
+<dd><p>transfers the file in the remote host to the local host.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-ftp_002dget_002dtransfer_002dmode"></a>Function: <strong>ftp-get-transfer-mode</strong><em> connection</em></dt>
+<dd><p>gets an FTP transfer mode.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-ftp_002dlist"></a>Function: <strong>ftp-list</strong><em> connection</em></dt>
+<dd><p>gets file lists in the remote host. The result depends an FTP server.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-ftp_002dmkdir"></a>Function: <strong>ftp-mkdir</strong><em> connection dir</em></dt>
+<dd><p>creates a directory in the remote host.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-ftp_002dname_002dlist"></a>Function: <strong>ftp-name-list</strong><em> connection</em></dt>
+<dd><p>gets a list of files in the remote host.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-ftp_002dput"></a>Function: <strong>ftp-put</strong><em> connection filename</em></dt>
+<dd><p>transfers the file to the remote host.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-ftp_002dpwd"></a>Function: <strong>ftp-pwd</strong><em> connection</em></dt>
+<dd><p>gets a working directory in the remote host.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-ftp_002dquit"></a>Function: <strong>ftp-quit</strong><em> connection</em></dt>
+<dd><p>quits the FTP connection.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-ftp_002drename"></a>Function: <strong>ftp-rename</strong><em> connection oldname newname</em></dt>
+<dd><p>changes <i>oldname</i> in the remote host to <i>newname</i>.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-ftp_002drmdir"></a>Function: <strong>ftp-rmdir</strong><em> connection dir</em></dt>
+<dd><p>removes the directory in the remote host.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-ftp_002dserver_002dinfo"></a>Function: <strong>ftp-server-info</strong><em> connection</em></dt>
+<dd><p>gets a server infomation of the remote host.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-ftp_002dset_002dtransfer_002dmode_0021"></a>Function: <strong>ftp-set-transfer-mode!</strong><em> connection mode</em></dt>
+<dd><p>sets a transfer mode of the connection.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-ftp_002dtimestamp"></a>Function: <strong>ftp-timestamp</strong><em> connection filename</em></dt>
+<dd><p>gets a timestamp of the file in the remote host.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-ftp_002dconnected_003f"></a>Function: <strong>ftp-connected?</strong><em> connection</em></dt>
+<dd><p>return #t if the connection has been connected.
+</p></dd></dl>
+
+<hr>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_12.html#Networing" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_14.html#HTTP" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated on <i>August 9, 2012</i> using <a href="http://www.nongnu.org/texi2html/"><i>texi2html 5.0</i></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

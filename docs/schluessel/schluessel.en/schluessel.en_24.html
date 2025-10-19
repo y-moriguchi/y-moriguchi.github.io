@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created on August 9, 2012 by texi2html 5.0
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Schluessel: 3.18 Ranges of real numbers</title>
+
+<meta name="description" content="Schluessel: 3.18 Ranges of real numbers">
+<meta name="keywords" content="Schluessel: 3.18 Ranges of real numbers">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 5.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smalllisp {margin-left: 3.2em}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nocodebreak {white-space:pre}
+span.nolinebreak {white-space:pre}
+span.roman {font-family:serif; font-weight:normal}
+span.sansserif {font-family:sans-serif; font-weight:normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Ranges-of-real-numbers"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_23.html#Quoternions-and-octonions" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_25.html#Mathematics-_0028algebraic-structure_0029" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section">3.18 Ranges of real numbers</h2>
+
+<p>Procedures for ranges of real numbers.
+</p>
+<dl>
+<dt><a name="index-_0023R"></a>Reader Syntax: <strong>#R</strong><em>[n m]</em></dt>
+<dt><a name="index-_0023R-1"></a>Reader Syntax: <strong>#R</strong><em>(n m]</em></dt>
+<dt><a name="index-_0023R-2"></a>Reader Syntax: <strong>#R</strong><em>[n m)</em></dt>
+<dt><a name="index-_0023R-3"></a>Reader Syntax: <strong>#R</strong><em>(n m)</em></dt>
+<dd><p>describes
+</p><ul>
+<li> closed interval <em>[n, m]</em>
+</li><li> right-open interval <em>(n, m]</em>
+</li><li> left-open interval <em>[n, m)</em>
+</li><li> open interval <em>(n, m)</em>
+</li></ul>
+<p>of real numbers respectively.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dclosed_002dinterval"></a>Function: <strong>make-closed-interval</strong><em> n m</em></dt>
+<dt><a name="index-make_002dleft_002dopen_002dinterval"></a>Function: <strong>make-left-open-interval</strong><em> n m</em></dt>
+<dt><a name="index-make_002dright_002dopen_002dinterval"></a>Function: <strong>make-right-open-interval</strong><em> n m</em></dt>
+<dt><a name="index-make_002dopen_002dinterval"></a>Function: <strong>make-open-interval</strong><em> n m</em></dt>
+<dd><p>creates
+</p><ul>
+<li> closed interval <em>[n, m]</em>
+</li><li> right-open interval <em>(n, m]</em>
+</li><li> left-open interval <em>[n, m)</em>
+</li><li> open interval <em>(n, m)</em>
+</li></ul>
+<p>of real numbers respectively.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-neighborhood_002dof_003f"></a>Function: <strong>neighborhood-of?</strong><em> range obj</em></dt>
+<dd><p>returns #t if the object is in the range.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-topology_002dclosed_003f"></a>Function: <strong>topology-closed?</strong><em> range</em></dt>
+<dt><a name="index-topology_002dopen_003f"></a>Function: <strong>topology-open?</strong><em> range</em></dt>
+<dd><p>returns #t if the range is closed.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-topology_002dcontained_003f"></a>Function: <strong>topology-contained?</strong><em> range1 range2</em></dt>
+<dd><p>returns #t if <var>range1</var> is contained in <var>range2</var>.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-topology_002dindependent_003f"></a>Function: <strong>topology-independent?</strong><em> range1 range2</em></dt>
+<dd><p>returns #t if <var>range1</var> is independent of <var>range2</var>.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-topology_002dempty_003f"></a>Function: <strong>topology-empty?</strong><em> range</em></dt>
+<dd><p>returns #t if the range is the empty set.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-set_002dmaximum"></a>Function: <strong>set-maximum</strong><em> range</em></dt>
+<dt><a name="index-set_002dminimum"></a>Function: <strong>set-minimum</strong><em> range</em></dt>
+<dd><p>gets maximum(minimum) of <var>range</var>,
+or #f if the range doesn&rsquo;t have maximum(minimum).
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-set_002dsupremum"></a>Function: <strong>set-supremum</strong><em> range</em></dt>
+<dt><a name="index-set_002dinfimum"></a>Function: <strong>set-infimum</strong><em> range</em></dt>
+<dd><p>gets supremum(infimum) of <var>range</var>,
+or #f if the range is not bounded.<br>
+A range may have supremum(infimum)
+if the range doesn&rsquo;t have maximum(minumum).
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-topology_002dunion"></a>Function: <strong>topology-union</strong><em> range &hellip;</em></dt>
+<dd><p>computes union of all given ranges.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-topology_002dintersection"></a>Function: <strong>topology-intersection</strong><em> range &hellip;</em></dt>
+<dd><p>computes intersection of all given ranges.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-topology_002dclosure"></a>Function: <strong>topology-closure</strong><em> R</em></dt>
+<dt><a name="index-topology_002dinterior"></a>Function: <strong>topology-interior</strong><em> R</em></dt>
+<dd><p>computes a closure(interior) in sense of set theory.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-topology_002dcardinality"></a>Function: <strong>topology-cardinality</strong><em> range</em></dt>
+<dd><p>computes cardinality of <var>range</var>.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-cardinality_002d_003einteger"></a>Function: <strong>cardinality-&gt;integer</strong><em> cardinality</em></dt>
+<dd><p>converts <var>cardinality</var> to an integer.
+If the cardinality is infinite, this procedure will return #f.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-cardinality_002dfinite_003f"></a>Function: <strong>cardinality-finite?</strong><em> cardinality</em></dt>
+<dd><p>returns #t if <var>cardinality</var> is finite.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-cardinality_002dcountable_003f"></a>Function: <strong>cardinality-countable?</strong><em> cardinality</em></dt>
+<dd><p>returns #t if <var>cardinality</var> is countable.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-_002b-1"></a>Function: <strong>+</strong><em> cardinality &hellip;</em></dt>
+<dd><p>[R5RS+]
+adds all given arguments.
+This procedure extends for cardinality.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-_002a-1"></a>Function: <strong>*</strong><em> cardinality &hellip;</em></dt>
+<dd><p>[R5RS+]
+multiplies all given arguments.
+This procedure extends for cardinality.
+</p></dd></dl>
+
+<hr>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_23.html#Quoternions-and-octonions" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_25.html#Mathematics-_0028algebraic-structure_0029" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated on <i>August 9, 2012</i> using <a href="http://www.nongnu.org/texi2html/"><i>texi2html 5.0</i></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

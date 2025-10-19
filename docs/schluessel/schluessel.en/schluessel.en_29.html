@@ -1,0 +1,303 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created on August 9, 2012 by texi2html 5.0
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Schluessel: 3.23 Mathematics (statistics)</title>
+
+<meta name="description" content="Schluessel: 3.23 Mathematics (statistics)">
+<meta name="keywords" content="Schluessel: 3.23 Mathematics (statistics)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 5.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smalllisp {margin-left: 3.2em}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nocodebreak {white-space:pre}
+span.nolinebreak {white-space:pre}
+span.roman {font-family:serif; font-weight:normal}
+span.sansserif {font-family:sans-serif; font-weight:normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Mathematics-_0028statistics_0029"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_28.html#Mathematics-_0028special-functions_0029" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#statistical-data" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section">3.23 Mathematics (statistics)</h2>
+
+<p>Procedures for statistics.
+</p>
+<hr>
+<a name="statistical-data"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Mathematics-_0028statistics_0029" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Mathematics-_0028statistics_0029" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Distribution-functions" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">3.23.1 statistical data</h3>
+
+<dl>
+<dt><a name="index-statistics_002ddata"></a>Function: <strong>statistics-data</strong><em> real &hellip;</em></dt>
+<dd><p>creates a statistical data from the given numbers.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-histogram"></a>Function: <strong>histogram</strong><em> real &hellip;</em></dt>
+<dd><p>creates a histogram from the given numbers.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dstatistics_002dxy_002ddata"></a>Function: <strong>make-statistics-xy-data</strong><em> (x &hellip;) (y &hellip;)</em></dt>
+<dd><p>creates an XY data from the given numbers.
+</p></dd></dl>
+
+<hr>
+<a name="Distribution-functions"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#statistical-data" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Mathematics-_0028statistics_0029" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Statistical-hypothesis-testing" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">3.23.2 Distribution functions</h3>
+
+<dl>
+<dt><a name="index-make_002dnormal_002ddistribution"></a>Function: <strong>make-normal-distribution</strong><em> mu sigma</em></dt>
+<dd><p>creates a normal distribution function whose mean is <em>\mu</em> and variance is <em>\sigma^2</em>.<br>
+The result can use as a function which has one argument.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dbinormal_002ddistribution"></a>Function: <strong>make-binormal-distribution</strong><em> n p</em></dt>
+<dd><p>creates a binomial distribution function whose number of trials is <var>i</var> and success probability in each trial is <var>p</var>(0&lt;p&lt;1).
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dchi_002dsquared_002ddistribution"></a>Function: <strong>make-chi-squared-distribution</strong><em> k</em></dt>
+<dd><p>creates a chi-squared distribution whose degrees of freedom is <var>k</var>.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dcontinuous_002duniform_002ddistribution"></a>Function: <strong>make-continuous-uniform-distribution</strong><em> a b</em></dt>
+<dd><p>creates a continuous uniform distribution whose range is [a, b].
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002ddiscrete_002duniform_002ddistribution"></a>Function: <strong>make-discrete-uniform-distribution</strong><em> a b</em></dt>
+<dd><p>creates a discrete uniform distribution whose range is [a, b].
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002derlang_002ddistribution"></a>Function: <strong>make-erlang-distribution</strong><em> k lambda</em></dt>
+<dd><p>creates a Erlang distribution whose shape is <var>k</var> and rate is <var>\lambda</var>.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dexponential_002ddistribution"></a>Function: <strong>make-exponential-distribution</strong><em> lambda</em></dt>
+<dd><p>creates a exponential distribution whose rate is <var>\lambda</var>.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dgamma_002ddistribution"></a>Function: <strong>make-gamma-distribution</strong><em> k theta</em></dt>
+<dd><p>creates a gamma distribution whose shape is <var>k</var> and rate is <var>\theta</var>.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dpoisson_002ddistribution"></a>Function: <strong>make-poisson-distribution</strong><em> lambda</em></dt>
+<dd><p>creates a Poisson distribution whose parameter is <var>\lambda</var>.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dt_002ddistribution"></a>Function: <strong>make-t-distribution</strong><em> nu</em></dt>
+<dd><p>creates a Student&rsquo;s t-distribution whose degrees of freedom is <var>\nu</var>.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-distribution_002dexpected_002dvalue"></a>Function: <strong>distribution-expected-value</strong><em> distribution</em></dt>
+<dt><a name="index-distribution_002dmedian"></a>Function: <strong>distribution-median</strong><em> distribution</em></dt>
+<dt><a name="index-distribution_002dmode"></a>Function: <strong>distribution-mode</strong><em> distribution</em></dt>
+<dt><a name="index-distribution_002dvariance"></a>Function: <strong>distribution-variance</strong><em> distribution</em></dt>
+<dt><a name="index-distribution_002dskewness"></a>Function: <strong>distribution-skewness</strong><em> distribution</em></dt>
+<dt><a name="index-distribution_002dkurtosis"></a>Function: <strong>distribution-kurtosis</strong><em> distribution</em></dt>
+<dd><p>computes expected value, median, mode, variance, skewness and kurtosis, respectively.<br>
+The argument must be a distribution function or data which is created by statistics-data.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-distribution_002dp_002deq"></a>Function: <strong>distribution-p-eq</strong><em> distribution a</em></dt>
+<dt><a name="index-distribution_002dp_002dlt"></a>Function: <strong>distribution-p-lt</strong><em> distribution a</em></dt>
+<dt><a name="index-distribution_002dp_002dgt"></a>Function: <strong>distribution-p-gt</strong><em> distribution a</em></dt>
+<dd><p>computes probability of a distribution function where <em>P(x=a)</em>, <em>P(x&lt;a)</em> and <em>P(x&gt;a)</em> respectively.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-pdf_002dto_002dlist"></a>Function: <strong>pdf-to-list</strong><em> distribution distribution min max dx</em></dt>
+<dt><a name="index-cdf_002dto_002dlist"></a>Function: <strong>cdf-to-list</strong><em> distribution distribution min max dx</em></dt>
+<dd><p>gets a list of values of probability density function
+(cumulative distribution function) in [min, max].
+</p></dd></dl>
+
+<hr>
+<a name="Statistical-hypothesis-testing"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Distribution-functions" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Mathematics-_0028statistics_0029" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#XY-data" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">3.23.3 Statistical hypothesis testing</h3>
+
+<dl>
+<dt><a name="index-test_002dfit_002dchi_002dsquared_003f"></a>Function: <strong>test-fit-chi-squared?</strong><em> (observed &hellip;) (expeceted &hellip;) critical-value</em></dt>
+<dd><p>tests the arguments by chi-squared test.<br>
+This procedure returns #f if the null hypothesis is rejected.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-test_002dt_002d1sample"></a>Function: <strong>test-t-1sample</strong><em> (observed &hellip;) expected side critical-value</em></dt>
+<dd><p>tests the arguments by one-sample Student&rsquo;s t-test.<br>
+Arguemt <var>side</var> must be a symbol shown as follows.
+</p><table>
+<tr><td width="18%">&lt;</td><td width="50%">lower</td></tr>
+<tr><td width="18%">&gt;</td><td width="50%">upper</td></tr>
+<tr><td width="18%">=</td><td width="50%">both</td></tr>
+</table>
+<p>This procedure returns #f if the null hypothesis is rejected.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-test_002dt_002d1sample-1"></a>Function: <strong>test-t-1sample</strong><em> (observed &hellip;) (observed2 &hellip;) side critical-value</em></dt>
+<dd><p>tests the arguments by two-sample Student&rsquo;s t-test.<br>
+This procedure returns #f if the null hypothesis is rejected.
+</p></dd></dl>
+
+<hr>
+<a name="XY-data"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Statistical-hypothesis-testing" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Mathematics-_0028statistics_0029" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_30.html#One_002dvariable-polynomials" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">3.23.4 XY data</h3>
+
+<dl>
+<dt><a name="index-covariance"></a>Function: <strong>covariance</strong><em> xy-data</em></dt>
+<dt><a name="index-covariance-1"></a>Function: <strong>covariance</strong><em> (x &hellip;)(y &hellip;)</em></dt>
+<dd><p>computes covariance of the given data.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-correlation_002dcoefficient"></a>Function: <strong>correlation-coefficient</strong><em> xy-data</em></dt>
+<dt><a name="index-correlation_002dcoefficient-1"></a>Function: <strong>correlation-coefficient</strong><em> (x &hellip;)(y &hellip;)</em></dt>
+<dd><p>computes correlation coefficient of the given data.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-linear_002dregression"></a>Function: <strong>linear-regression</strong><em> xy-data</em></dt>
+<dt><a name="index-linear_002dregression-1"></a>Function: <strong>linear-regression</strong><em> (x &hellip;)(y &hellip;)</em></dt>
+<dd><p>computes a polynomial by linear regression.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-error_002dterm"></a>Function: <strong>error-term</strong><em> xy-data</em></dt>
+<dt><a name="index-error_002dterm-1"></a>Function: <strong>error-term</strong><em> (x &hellip;)(y &hellip;)</em></dt>
+<dd><p>computes error term of the XY data as a statistical data.
+</p></dd></dl>
+
+<hr>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Statistical-hypothesis-testing" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Mathematics-_0028statistics_0029" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_30.html#One_002dvariable-polynomials" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated on <i>August 9, 2012</i> using <a href="http://www.nongnu.org/texi2html/"><i>texi2html 5.0</i></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

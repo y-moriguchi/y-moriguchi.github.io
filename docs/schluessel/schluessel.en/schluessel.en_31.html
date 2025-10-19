@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created on August 9, 2012 by texi2html 5.0
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Schluessel: 3.25 2-dimensional linear and affine transformations</title>
+
+<meta name="description" content="Schluessel: 3.25 2-dimensional linear and affine transformations">
+<meta name="keywords" content="Schluessel: 3.25 2-dimensional linear and affine transformations">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 5.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smalllisp {margin-left: 3.2em}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nocodebreak {white-space:pre}
+span.nolinebreak {white-space:pre}
+span.roman {font-family:serif; font-weight:normal}
+span.sansserif {font-family:sans-serif; font-weight:normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="g_t2_002ddimensional-linear-and-affine-transformations"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_30.html#One_002dvariable-polynomials" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_32.html#Linear-algebra" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section">3.25 2-dimensional linear and affine transformations</h2>
+
+<p>Procedures for 2-dimensional linear and affine transformations.
+Linear and affine transform objects can use
+as an invariant matrix object.<br>
+</p>
+<dl>
+<dt><a name="index-make_002dlinear_002dtransform_002d2d"></a>Function: <strong>make-linear-transform-2d</strong><em> xscale xshear yshear yscale</em></dt>
+<dd><p>creates a 2-dimensional linear transformation shown as follows.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002daffine_002dtransform_002d2d"></a>Function: <strong>make-affine-transform-2d</strong><em> xscale xshear yshear yscale xtranslate ytranslate</em></dt>
+<dd><p>creates a 2-dimensional affine transformation shown as follows.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002drotation_002dby_002ddegree_002d2d"></a>Function: <strong>make-rotation-by-degree-2d</strong><em> degree</em></dt>
+<dd><p>creates a rotate transformation,
+i.e. linear transformation shown as follows.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002drotation_002dby_002dradian_002d2d"></a>Function: <strong>make-rotation-by-radian-2d</strong><em> radian</em></dt>
+<dd><p>creates a rotate transformation,
+i.e. linear transformation shown as follows.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dscaling_002d2d"></a>Function: <strong>make-scaling-2d</strong><em> xscale yscale</em></dt>
+<dd><p>creates a scaling transformation,
+i.e. linear transformation shown as follows.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dshearing_002d2d"></a>Function: <strong>make-shearing-2d</strong><em> xshear yshear</em></dt>
+<dd><p>creates a shearing transformation,
+i.e. linear transformation shown as follows.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dsqueeze_002d2d"></a>Function: <strong>make-squeeze-2d</strong><em> k</em></dt>
+<dd><p>creates a squeeze transformation,
+i.e. linear transformation shown as follows.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dtranslate_002d2d"></a>Function: <strong>make-translate-2d</strong><em> xtranslate ytranslate</em></dt>
+<dd><p>creates a translate transformation,
+i.e. affine transformation shown as follows.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-concatenate_002d2d"></a>Function: <strong>concatenate-2d</strong><em> translation &hellip;</em></dt>
+<dd><p>concatenates the given transformations.<br>
+You should use this procedure for multipling 2-dimensional transformations.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-reflect_002dx_002d2d"></a>Function: <strong>reflect-x-2d</strong><em> transformation</em></dt>
+<dd><p>applies x-axis reflection,
+i.e. linear transformation shown as follows.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-reflect_002dy_002d2d"></a>Function: <strong>reflect-y-2d</strong><em> transformation</em></dt>
+<dd><p>applies y-axis reflection,
+i.e. linear transformation shown as follows.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-rotate_002dby_002ddegree_002d2d"></a>Function: <strong>rotate-by-degree-2d</strong><em> transformation degree</em></dt>
+<dt><a name="index-rotate_002dby_002dradian_002d2d"></a>Function: <strong>rotate-by-radian-2d</strong><em> transformation radian</em></dt>
+<dd><p>rotates the transformation by degree(radian).
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-scale_002d2d"></a>Function: <strong>scale-2d</strong><em> transformation scale-x scale-y</em></dt>
+<dd><p>applies the scaling transformation to the given transformation. 
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-shear_002d2d"></a>Function: <strong>shear-2d</strong><em> transformation shear-x shear-y</em></dt>
+<dd><p>applies the shearing transformation to the given transformation. 
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-squeeze_002d2d"></a>Function: <strong>squeeze-2d</strong><em> transformation k</em></dt>
+<dd><p>applies the squeeze transformation to the given transformation. 
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-translate_002d2d"></a>Function: <strong>translate-2d</strong><em> transformation translate-x translate-y</em></dt>
+<dd><p>applies the translation to the given transformation. 
+</p></dd></dl>
+
+
+<hr>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_30.html#One_002dvariable-polynomials" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_32.html#Linear-algebra" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated on <i>August 9, 2012</i> using <a href="http://www.nongnu.org/texi2html/"><i>texi2html 5.0</i></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

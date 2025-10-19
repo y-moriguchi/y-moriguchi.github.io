@@ -1,0 +1,37 @@
+.title {
+  font-size: xx-large;
+}
+.title2 {
+  font-size: x-large;
+}
+.bold {
+  font-weight: bold;
+}
+pre {
+  border-style: dotted;
+  border-width: 1px;
+  font-family: "Courier New",Courier,monospace;
+  background-color: #99ff99;
+  width: 680px;
+}
+.lib1 {
+  font-family: "Courier New",Courier,monospace;
+}
+.lib2 {
+  font-weight: bold;
+}
+.arg1 {
+  font-family: "Courier New",Courier,monospace;
+  font-style: italic;
+}
+.title3 {
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: large;
+}
+.commandment {
+  background-color: #ffcccc;
+  font-weight: bold;
+  max-width: 700px;
+  margin-left: 40px;
+}

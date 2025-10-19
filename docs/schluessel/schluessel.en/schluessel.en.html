@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created on August 9, 2012 by texi2html 5.0
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Schluessel: 1 What is Schluessel</title>
+
+<meta name="description" content="Schluessel: 1 What is Schluessel">
+<meta name="keywords" content="Schluessel: 1 What is Schluessel">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 5.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smalllisp {margin-left: 3.2em}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nocodebreak {white-space:pre}
+span.nolinebreak {white-space:pre}
+span.roman {font-family:serif; font-weight:normal}
+span.sansserif {font-family:sans-serif; font-weight:normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<h1>Schluessel User Reference</h1>
+<h3 align="right">version 0.4.2</h3>
+<strong>Yuichiro Moriguchi</strong><br>
+
+
+<p>Copyright &copy; 2009-2012 Yuichiro Moriguchi
+</p><hr>
+<a name="Top"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[ &lt;&lt; ]</td>
+<td valign="middle" align="left">[ &lt; ]</td>
+<td valign="middle" align="left">[ Up ]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_1.html#SRFI-supports" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_2.html#Starting-Schluessel" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+
+
+<p>This is the Schluessel reference manual version 0.4.2.
+</p>
+
+
+<a name="What-is-Schluessel"></a>
+<h1 class="chapter">1 What is Schluessel</h1>
+
+<p>Schluessel is an R5RS Scheme implementation based on Java. Schluessel can manipulate Java libraries by using reflection. Scheme applications written by Schluessel can also embed in Java applications.
+</p>
+<p>Schluessel runs on JRE 6.0 or above.
+</p>
+<p>Features of Schluessel are shown as follows.
+</p>
+<dl compact="compact">
+<dt><b>Numbers</b></dt>
+<dd><p>Schluessel can treat mathematical objects shown as follows.
+You can use Schluessel as a &quot;programmable function calculator&quot;
+or a &quot;tiny computer algebra system&quot;.
+</p><ul>
+<li> integers/rational numbers (R5RS standard)
+</li><li> half/single/double float numbers (R5RS)
+</li><li> decimal float numbers(Decimal32/Decimal64)
+</li><li> exact and inexact complex numbers (R5RS)
+</li><li> exact and inexact quaternions/octonions
+</li><li> matrices/numeric vectors
+</li><li> one-variable polynomials
+</li><li> exact pi/Nepier&rsquo;s number/square roots(partially)
+</li></ul>
+
+</dd>
+<dt><b>use of Java libraries</b></dt>
+<dd><p>Schluessel can use Java libraries.
+A Java instance can be bound as a Scheme variable.
+Methods of the Java instances can also be invoked from Schluessel.
+Types of Scheme are converted to types of Java as possible and vice versa.
+</p>
+</dd>
+<dt><b>Multibyte support</b></dt>
+<dd><p>Schluessel can treat multibyte characters.
+</p>
+</dd>
+<dt><b>Graphics support</b></dt>
+<dd><p>Schluessel supports graphics as language standard.
+Painting language like
+&quot;Structure and Interpretation of Computer Programs&quot; is supported.
+</p>
+</dd>
+<dt><b>GUI applications</b></dt>
+<dd><p>Schluessel can write GUI applications with Swing.
+You can write Java GUI applications easier than Java language.
+</p>
+</dd>
+<dt><b>Networking</b></dt>
+<dd><p>Schluessel can communicate by HTTP, FTP, SMTP, LDAP and SNMP agents.
+Sockets is also avaliable.
+</p>
+</dd>
+<dt><b>Turtle graphics</b></dt>
+<dd><p>Schluessel supports a turtle graphics like LOGO.
+</p></dd>
+</dl>
+
+<hr>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[ &lt;&lt; ]</td>
+<td valign="middle" align="left">[ &lt; ]</td>
+<td valign="middle" align="left">[ Up ]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_1.html#SRFI-supports" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_2.html#Starting-Schluessel" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated on <i>August 9, 2012</i> using <a href="http://www.nongnu.org/texi2html/"><i>texi2html 5.0</i></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

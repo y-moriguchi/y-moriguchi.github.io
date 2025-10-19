@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created on August 9, 2012 by texi2html 5.0
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Schluessel: 3.35 Turtle graphics</title>
+
+<meta name="description" content="Schluessel: 3.35 Turtle graphics">
+<meta name="keywords" content="Schluessel: 3.35 Turtle graphics">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 5.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smalllisp {margin-left: 3.2em}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nocodebreak {white-space:pre}
+span.nolinebreak {white-space:pre}
+span.roman {font-family:serif; font-weight:normal}
+span.sansserif {font-family:sans-serif; font-weight:normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Turtle-graphics"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_40.html#Picture-language-and-graphics" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_42.html#Swing-support" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section">3.35 Turtle graphics</h2>
+
+<p>Procedures for turtle graphics like LOGO.
+</p>
+<p>For example, the following code paints Koch curve.
+</p><div class="example">
+<pre class="example">(define w (make-window-frame 600 600 -1 -1 21 21))
+(define t (make-turtle w 0 0))
+
+(define (koch len times)
+  (if (= times 0)
+    (turtle-draw t len)
+    (begin
+      (koch (/ len 3.0) (- times 1))
+      (turtle-turn-right t 60)
+      (koch (/ len 3.0) (- times 1))
+      (turtle-turn-left t 120)
+      (koch (/ len 3.0) (- times 1))
+      (turtle-turn-right t 60)
+      (koch (/ len 3.0) (- times 1)))))
+
+(koch 20 7)
+</pre></div>
+
+<dl>
+<dt><a name="index-make_002dturtle"></a>Function: <strong>make-turtle</strong><em> frame init-x init-y [turtle-image]</em></dt>
+<dd><p>creates a turtle.<br>
+<var>frame</var> specifies a frame to draw a turtle,
+<var>init-x</var> and <var>init-y</var> specify a initial coordinate of the turtle
+and <var>turtle-image</var> specifies an image of the turtle.<br>
+The default image is used if <var>turtle-image</var> is not specified.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-turtle_002ddraw"></a>Function: <strong>turtle-draw</strong><em> turtle length</em></dt>
+<dd><p>draws a line whose size is the given length along current direction.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-turtle_002dturn_002dleft"></a>Function: <strong>turtle-turn-left</strong><em> turtle degree</em></dt>
+<dt><a name="index-turtle_002dturn_002dright"></a>Function: <strong>turtle-turn-right</strong><em> turtle degree</em></dt>
+<dd><p>rotates the turtle to left(right).
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-turtle_002dmove"></a>Function: <strong>turtle-move</strong><em> turtle length</em></dt>
+<dd><p>moves the turtle along current direction without drawing.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-turtle_002dchange_002dcolor"></a>Function: <strong>turtle-change-color</strong><em> turtle color</em></dt>
+<dd><p>changes the color in which the turtle draws.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-turtle_002dclear"></a>Function: <strong>turtle-clear</strong><em> turtle</em></dt>
+<dd><p>clears what the turtle has been drawn.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-turtle_002dundo"></a>Function: <strong>turtle-undo</strong><em> turtle</em></dt>
+<dd><p>undoes one action which the turtle has been drawn.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-turtle_002dhide"></a>Function: <strong>turtle-hide</strong><em> turtle</em></dt>
+<dt><a name="index-turtle_002dshow"></a>Function: <strong>turtle-show</strong><em> turtle</em></dt>
+<dd><p>hides(shows) the turtle.
+</p></dd></dl>
+
+<hr>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_40.html#Picture-language-and-graphics" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_42.html#Swing-support" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated on <i>August 9, 2012</i> using <a href="http://www.nongnu.org/texi2html/"><i>texi2html 5.0</i></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

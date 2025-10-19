@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created on 12月 15, 2012 by texi2html 5.0
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Schluessel: 5.16 算術</title>
+
+<meta name="description" content="Schluessel: 5.16 算術">
+<meta name="keywords" content="Schluessel: 5.16 算術">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 5.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smalllisp {margin-left: 3.2em}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nocodebreak {white-space:pre}
+span.nolinebreak {white-space:pre}
+span.roman {font-family:serif; font-weight:normal}
+span.sansserif {font-family:sans-serif; font-weight:normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="ja" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="g_t_7b97_8853-1"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_53.html#JNDI_64cd_4f5c" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_55.html#g_t_56db_5143_6570_30fb_516b_5143_6570" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section">5.16 算術</h2>
+
+<p>算術関連の手続きです。
+</p>
+<dl>
+<dt><a name="index-nnn_003ammm"></a>Reader Syntax: <strong>nnn:mmm</strong></dt>
+<dd><p>比<em>n:m</em>を生成します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-_003a"></a>Function: <strong>:</strong><em> real1 real2</em></dt>
+<dd><p>比<em>real1:real2</em>を生成します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-ratio_002dto"></a>Function: <strong>ratio-to</strong><em> ratio real</em></dt>
+<dd><p>比を<em>a:b</em>とするとき、<em>a:b=real:x</em>の<em>x</em>を計算します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-inverted_002dratio_002dto"></a>Function: <strong>inverted-ratio-to</strong><em> ratio real</em></dt>
+<dd><p>比を<em>a:b</em>とするとき、<em>a:b=x:real</em>の<em>x</em>を計算します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-ratio_002dvalue"></a>Function: <strong>ratio-value</strong><em> ratio</em></dt>
+<dd><p>比を<em>a:b</em>とするとき、<em>a/b</em>を計算します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-nnn_002emmx_002e_002e_002e"></a>Reader Syntax: <strong>nnn.mmx...</strong></dt>
+<dd><p>最後の数字xが循環する小数nnn.mmx&hellip;を入力します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-nnn_002emm"></a>Reader Syntax: <strong>nnn.mm</strong><em>{xx}</em></dt>
+<dd><p>かっこの中の数字xxが循環する小数nnn.mmxx&hellip;を入力します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-a_002fb_002b_002fc"></a>Reader Syntax: <strong>a/b+/c</strong><em> &hellip; +/d</em></dt>
+<dd><p>次のような連分数を記述します。
+a / (b + 1 / (c + &hellip; + 1 / d))
+</p></dd></dl>
+
+<hr>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_53.html#JNDI_64cd_4f5c" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_55.html#g_t_56db_5143_6570_30fb_516b_5143_6570" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  この文書は<em>12月 15, 2012</em>に<a href="http://www.nongnu.org/texi2html/"><em>texi2html 5.0</em></a>を用いて生成されました。
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

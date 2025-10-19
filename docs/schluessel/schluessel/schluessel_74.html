@@ -1,0 +1,1554 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created on 12月 15, 2012 by texi2html 5.0
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Schluessel: 5.36 Swing連携機能</title>
+
+<meta name="description" content="Schluessel: 5.36 Swing連携機能">
+<meta name="keywords" content="Schluessel: 5.36 Swing連携機能">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 5.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smalllisp {margin-left: 3.2em}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nocodebreak {white-space:pre}
+span.nolinebreak {white-space:pre}
+span.roman {font-family:serif; font-weight:normal}
+span.sansserif {font-family:sans-serif; font-weight:normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="ja" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Swing_9023_643a_6a5f_80fd"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_73.html#g_t_30bf_30fc_30c8ru_30b0_30e9_30d5_30a3_30c3_30af_30b9_6a5f_80fd" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30b3_30f3_30dd_30fc_30cd_30f3_30c8Yi_822c" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section">5.36 Swing連携機能</h2>
+
+<p>Swingと連携してSchemeでGUIを構築するためのライブラリです。
+</p>
+
+<hr>
+<a name="g_t_30b3_30f3_30dd_30fc_30cd_30f3_30c8Yi_822c"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing_9023_643a_6a5f_80fd" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing_9023_643a_6a5f_80fd" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30dc_30bf_30f3" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">5.36.1 コンポーネント一般</h3>
+
+<dl>
+<dt><a name="index-get_002dgui_002delement_002dwidth"></a>Function: <strong>get-gui-element-width</strong><em> gui-component</em></dt>
+<dd><p>戻り値: GUIコンポーネントの幅<br>
+指定されたGUIコンポーネントの幅を取得します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-get_002dgui_002delement_002dheight"></a>Function: <strong>get-gui-element-height</strong><em> gui-component</em></dt>
+<dd><p>戻り値: GUIコンポーネントの高さ<br>
+指定されたGUIコンポーネントの幅を取得します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-set_002dbackground_002dcolor_0021"></a>Function: <strong>set-background-color!</strong><em> gui-component color</em></dt>
+<dd><p>戻り値: 未定義<br>
+指定されたGUIコンポーネントの背景色を設定します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-set_002dpreferred_002dwidth_0021"></a>Function: <strong>set-preferred-width!</strong><em> gui-component width</em></dt>
+<dd><p>戻り値: 未定義<br>
+指定されたGUIコンポーネントの幅の推奨値を設定します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-set_002dpreferred_002dheight_0021"></a>Function: <strong>set-preferred-height!</strong><em> gui-component height</em></dt>
+<dd><p>戻り値: 未定義<br>
+指定されたGUIコンポーネントの高さの推奨値を設定します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-get_002dbounds_002dx"></a>Function: <strong>get-bounds-x</strong><em> gui-component</em></dt>
+<dd><p>戻り値: コンポーネントのX座標<br>
+指定されたGUIコンポーネントのX座標を取得します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-get_002dbounds_002dy"></a>Function: <strong>get-bounds-y</strong><em> gui-component</em></dt>
+<dd><p>戻り値: コンポーネントのY座標<br>
+指定されたGUIコンポーネントのY座標を取得します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-set_002dbounds_002dx_0021"></a>Function: <strong>set-bounds-x!</strong><em> gui-component x</em></dt>
+<dd><p>戻り値: 未定義<br>
+指定されたGUIコンポーネントのX座標を設定します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-set_002dbounds_002dy_0021"></a>Function: <strong>set-bounds-y!</strong><em> gui-component y</em></dt>
+<dd><p>戻り値: 未定義<br>
+指定されたGUIコンポーネントのY座標を設定します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-get_002dtext"></a>Function: <strong>get-text</strong><em> has-text</em></dt>
+<dd><p>戻り値: 文字列<br>
+テキストフィールド等のテキストを持つコンポーネントからテキストを取り出します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-set_002dtext_0021"></a>Function: <strong>set-text!</strong><em> has-text str</em></dt>
+<dd><p>戻り値: 未定義<br>
+テキストフィールド等のテキストを持つコンポーネントにテキストを設定します。
+</p></dd></dl>
+
+
+<hr>
+<a name="g_t_30dc_30bf_30f3"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30b3_30f3_30dd_30fc_30cd_30f3_30c8Yi_822c" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing_9023_643a_6a5f_80fd" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30ad_30e3_30f3_30d0_30b9" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">5.36.2 ボタン</h3>
+
+<dl>
+<dt><a name="index-make_002dbutton"></a>Function: <strong>make-button</strong><em> text action</em></dt>
+<dd><p>戻り値: ボタンコンポーネント<br>
+指定されたtextのボタンを生成します。
+ボタンが押下されたときに実行される手続きをactionで指定します。この手続きは引数を1つもつ必要があります。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dbutton_002dwith_002daction"></a>Function: <strong>make-button-with-action</strong><em> accelerator-key: accelerator-key long-description: long-description mnemonic-key: mnemonic-key name: name short-description: short-description small-icon: small-icon</em></dt>
+<dd><p>戻り値: ボタンコンポーネント<br>
+アクションを伴うボタンを生成します。<br>
+アクションの意味は以下の通りです。キーを指定するシンボルについてはこちらを参照してください。
+</p><table>
+<tr><td width="25%">action</td><td width="70%">アクションを指定する手続きを指定します。アクション手続きの引数は1つです</td></tr>
+<tr><td width="25%">accelerator-key</td><td width="70%">アクセラレータキーを指定するシンボルを指定します</td></tr>
+<tr><td width="25%">long-description</td><td width="70%">長い記述を指定します</td></tr>
+<tr><td width="25%">mnemonic-key</td><td width="70%">ニーモニックキーを指定します</td></tr>
+<tr><td width="25%">name</td><td width="70%">名称を指定します</td></tr>
+<tr><td width="25%">short-description</td><td width="70%">短い記述を指定します</td></tr>
+<tr><td width="25%">small-icon</td><td width="70%">アイコンを指定します</td></tr>
+</table>
+</dd></dl>
+
+
+<hr>
+<a name="g_t_30ad_30e3_30f3_30d0_30b9"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30dc_30bf_30f3" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing_9023_643a_6a5f_80fd" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30e9_30d9ru" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">5.36.3 キャンバス</h3>
+
+<dl>
+<dt><a name="index-make_002dcanvas"></a>Function: <strong>make-canvas</strong><em> [x1 y1 x2 y2]</em></dt>
+<dd><p>戻り値: キャンバスコンポーネント<br>
+ペインタフレームワークにより描画できるキャンバスを生成します。
+引数がないときはシステムの座標系に従います。引数が与えられているときはキャンバスの左上を(x1, y1)、右下を(x2, y2)とした座標系に変換します。そのとき、座標系の方向は数学等で使用されているものになります。(通常コンピュータで使用されている座標系とは異なります
+</p></dd></dl>
+
+
+<hr>
+<a name="g_t_30e9_30d9ru"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30ad_30e3_30f3_30d0_30b9" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing_9023_643a_6a5f_80fd" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30b3_30f3_30c6_30ca" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">5.36.4 ラベル</h3>
+
+<dl>
+<dt><a name="index-make_002dlabel"></a>Function: <strong>make-label</strong><em> name</em></dt>
+<dd><p>戻り値: ラベルコンポーネント<br>
+nameのテキストをもつラベルを生成します。
+</p></dd></dl>
+
+
+<hr>
+<a name="g_t_30b3_30f3_30c6_30ca"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30e9_30d9ru" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing_9023_643a_6a5f_80fd" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30c6_30ad_30b9_30c8_30d5_30a3_30fcru_30c9" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">5.36.5 コンテナ</h3>
+
+<dl>
+<dt><a name="index-make_002dpanel"></a>Function: <strong>make-panel</strong></dt>
+<dd><p>戻り値: パネルコンポーネント<br>
+パネルを生成します。パネルはSwingオブジェクトを複数格納するコンテナとして使用できます。
+</p></dd></dl>
+
+
+<hr>
+<a name="g_t_30c6_30ad_30b9_30c8_30d5_30a3_30fcru_30c9"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30b3_30f3_30c6_30ca" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing_9023_643a_6a5f_80fd" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30a6_30a3_30f3_30c9_30a6" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">5.36.6 テキストフィールド</h3>
+
+<dl>
+<dt><a name="index-make_002dtext_002dfield"></a>Function: <strong>make-text-field</strong><em> size [text]</em></dt>
+<dd><p>戻り値: テキストフィールドコンポーネント<br>
+指定されたテキストサイズをもつテキストフィールドを生成します。 textで指定された初期テキストを指定することもできます。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dtext_002darea"></a>Function: <strong>make-text-area</strong><em> [row col]</em></dt>
+<dd><p>戻り値: テキストエリアコンポーネント<br>
+指定された行幅と列幅をもつテキストエリアを生成します。
+</p></dd></dl>
+
+
+<hr>
+<a name="g_t_30a6_30a3_30f3_30c9_30a6"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30c6_30ad_30b9_30c8_30d5_30a3_30fcru_30c9" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing_9023_643a_6a5f_80fd" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30c0_30a4a_30ed_30b0" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">5.36.7 ウィンドウ</h3>
+
+<dl>
+<dt><a name="index-make_002dwindow"></a>Function: <strong>make-window</strong><em> title [xsize ysize [menus]]</em></dt>
+<dd><p>戻り値: ウィンドウ(フレーム)コンポーネント<br>
+ウィンドウ(フレーム)を生成します。この呼び出しでウィンドウは表示されません。
+menusにてメニューバーを指定できます。指定方法は以下の通りです。
+</p>
+<table>
+<tr><td width="35%">(&quot;menu1&quot; proc)</td><td width="60%">1つの引数をもつprocを実行するメニューです。</td></tr>
+<tr><td width="35%">(&quot;menu1&quot; proc key key2)</td><td width="60%">1つの引数をもつprocを実行するメニューです。ショートカットキーが使用できます</td></tr>
+<tr><td width="35%">(&quot;menu1&quot; seperator)</td><td width="60%">メニュー区切りです</td></tr>
+<tr><td width="35%">(&quot;menu1&quot; (submenu))</td><td width="60%">子メニューを指定します</td></tr>
+</table>
+</dd></dl>
+
+<dl>
+<dt><a name="index-show_002dwindow"></a>Function: <strong>show-window</strong><em> window</em></dt>
+<dd><p>戻り値: 未定義<br>
+ウィンドウを表示します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-hide_002dwindow"></a>Function: <strong>hide-window</strong><em> window</em></dt>
+<dd><p>戻り値: 未定義<br>
+ウィンドウを隠します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-exec_002dwindow"></a>Function: <strong>exec-window</strong><em> window</em></dt>
+<dd><p>戻り値: 未定義<br>
+ウィンドウを表示します。ウィンドウが閉じられたときにはプログラムを終了します。
+</p></dd></dl>
+
+
+<hr>
+<a name="g_t_30c0_30a4a_30ed_30b0"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30a6_30a3_30f3_30c9_30a6" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing_9023_643a_6a5f_80fd" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30b3_30f3_30dc_30dc_30c3_30af_30b9_002f_30ea_30b9_30c8_30dc_30c3_30af_30b9" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">5.36.8 ダイアログ</h3>
+
+<dl>
+<dt><a name="index-make_002dmodal_002ddialog"></a>Function: <strong>make-modal-dialog</strong><em> parent-window title x y</em></dt>
+<dd><p>戻り値: ダイアログコンポーネント<br>
+モーダルダイアログコンポーネントを生成します。この呼び出しでダイアログは表示されません。show-windowを使用してください。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dmodeless_002ddialog"></a>Function: <strong>make-modeless-dialog</strong><em> parent-window title x y</em></dt>
+<dd><p>戻り値: ダイアログコンポーネント<br>
+モードレスダイアログコンポーネントを生成します。この呼び出しでダイアログは表示されません。show-windowを使用してください。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-show_002dyes_002dno_002ddialog"></a>Function: <strong>show-yes-no-dialog</strong><em> parent-component message title message-type</em></dt>
+<dd><p>戻り値: はいのときは#t、いいえのときは#f<br>
+はい/いいえを選択するダイアログを表示します。
+parent-componentは親コンポーネントを設定します。親コンポーネントを指定しないときは#fを指定します。
+message-typeはエラー・警告・情報等のメッセージ種類をシンボルで指定します。<br>
+指定できる種類は以下の通りです。
+</p>
+<ul>
+<li> error: エラー
+</li><li> information: 情報
+</li><li> warning: 警告
+</li><li> question: 質問
+</li><li> plain: アイコンなし
+</li></ul>
+</dd></dl>
+
+<dl>
+<dt><a name="index-show_002dyes_002dno_002dcancel_002ddialog"></a>Function: <strong>show-yes-no-cancel-dialog</strong><em> parent-component message title message-type</em></dt>
+<dd><p>戻り値: はいのときは#t、いいえのときは#f、キャンセルされたときはシンボルcanceled<br>
+はい/いいえ/キャンセルを選択するダイアログを表示します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-show_002dinput_002ddialog"></a>Function: <strong>show-input-dialog</strong><em> parent-component message title message-type</em></dt>
+<dd><p>戻り値: 入力された文字列、キャンセルされたときは#f<br>
+文字列の入力を促すダイアログを表示します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-show_002dmessage_002ddialog"></a>Function: <strong>show-message-dialog</strong><em> parent-component message title message-type</em></dt>
+<dd><p>戻り値: 未定義<br>
+メッセージを表示するダイアログを表示します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-set_002ddialog_002dresizable_0021"></a>Function: <strong>set-dialog-resizable!</strong><em> dialog resize?</em></dt>
+<dd><p>戻り値: 未定義<br>
+ダイアログのサイズ変更を許可するかを指定します。
+</p></dd></dl>
+
+
+<hr>
+<a name="g_t_30b3_30f3_30dc_30dc_30c3_30af_30b9_002f_30ea_30b9_30c8_30dc_30c3_30af_30b9"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30c0_30a4a_30ed_30b0" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing_9023_643a_6a5f_80fd" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30c1_30a7_30c3_30af_30dc_30c3_30af_30b9_002f_30e9_30b8_30aa_30dc_30bf_30f3" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">5.36.9 コンボボックス/リストボックス</h3>
+
+<dl>
+<dt><a name="index-make_002dcombobox"></a>Function: <strong>make-combobox</strong><em> item-list</em></dt>
+<dd><p>戻り値: コンボボックスコンポーネント<br>
+指定されたitem-listのリストの内容を持つコンボボックスを生成します。値は編集可能です。
+リストは(表示される値 . get-selected-item-valueで取得される値)のalistです。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dlistbox"></a>Function: <strong>make-listbox</strong><em> item-list</em></dt>
+<dd><p>戻り値: リストボックスコンポーネント<br>
+指定されたitem-listのリストの内容を持つコンボボックスを生成します。値は編集不可能です。
+リストは(表示される値 . オブジェクトとして取得される値)のalistです。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-get_002dselected_002ditem_002dvalue"></a>Function: <strong>get-selected-item-value</strong><em> selectable</em></dt>
+<dd><p>戻り値: Schemeオブジェクト<br>
+リストボックスやコンボボックス等の選択可能なコンポーネントから値を取得します。
+</p></dd></dl>
+
+
+<hr>
+<a name="g_t_30c1_30a7_30c3_30af_30dc_30c3_30af_30b9_002f_30e9_30b8_30aa_30dc_30bf_30f3"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30b3_30f3_30dc_30dc_30c3_30af_30b9_002f_30ea_30b9_30c8_30dc_30c3_30af_30b9" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing_9023_643a_6a5f_80fd" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30d5_30a1_30a4ru_30c1yu_30fc_30b6_30fc" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">5.36.10 チェックボックス/ラジオボタン</h3>
+
+<dl>
+<dt><a name="index-make_002dcheckbox"></a>Function: <strong>make-checkbox</strong><em> text</em></dt>
+<dd><p>戻り値: チェックボックスコンポーネント<br>
+チェックボックスコンポーネントを生成します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-checkbox_002dchecked_003f"></a>Function: <strong>checkbox-checked?</strong><em> checkbox</em></dt>
+<dd><p>戻り値: チェックされていれば#t、そうでなければ#f<br>
+チェックボックスにチェック状態を取得します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-set_002dcheckbox_002dchecked_0021"></a>Function: <strong>set-checkbox-checked!</strong><em> checkbox check</em></dt>
+<dd><p>戻り値: 未定義<br>
+チェックボックスのチェック状態を変更します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dradio_002dbutton"></a>Function: <strong>make-radio-button</strong><em> text [action-proc]</em></dt>
+<dd><p>戻り値: ラジオボタンコンポーネント<br>
+ラジオボタンコンポーネントを生成します。
+action-procは1つの引数を持つ手続きを与えます。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dbutton_002dgroup"></a>Function: <strong>make-button-group</strong><em> radio-button-list</em></dt>
+<dd><p>戻り値: ボタングループ<br>
+ボタングループを生成します。グループに含まれるボタンはradio-button-listで指定します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-get_002dselected_002dbutton_002dvalue"></a>Function: <strong>get-selected-button-value</strong><em> button-group</em></dt>
+<dd><p>戻り値: ボタングループで選択された値<br>
+指定されたボタングループで選択された値を取得します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-set_002dselected_002dbutton_002dvalue_0021"></a>Function: <strong>set-selected-button-value!</strong><em> button-group datum</em></dt>
+<dd><p>戻り値: 未定義<br>
+指定されたボタングループの選択されている値を変更します。
+</p></dd></dl>
+
+
+<hr>
+<a name="g_t_30d5_30a1_30a4ru_30c1yu_30fc_30b6_30fc"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30c1_30a7_30c3_30af_30dc_30c3_30af_30b9_002f_30e9_30b8_30aa_30dc_30bf_30f3" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing_9023_643a_6a5f_80fd" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30ab_30e9_30fc_30c1yu_30fc_30b6_30fc" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">5.36.11 ファイルチューザー</h3>
+
+<dl>
+<dt><a name="index-make_002dfile_002dchooser"></a>Function: <strong>make-file-chooser</strong><em> extension-filters</em></dt>
+<dd><p>戻り値: ファイルチューザコンポーネント<br>
+ファイルチューザを生成します。引数extension-filtersでフィルタリングする拡張子のリストを与えます。書式は以下の通りです。
+</p>
+<div class="example">
+<pre class="example">((&quot;拡張子[,拡張子&hellip;]&quot; . ファイルチューザに表示する文字列
+ &hellip;)
+</pre></div>
+
+<p>この手続きの呼び出しではファイルチューザは表示されません。
+show-xxx-file-chooserを呼び出してください。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-set_002dfile_002dselection_002dmode_0021"></a>Function: <strong>set-file-selection-mode!</strong><em> filechooser mode</em></dt>
+<dd><p>戻り値: 未定義<br>
+ファイルチューザの取得モードを変更します。モードは以下の通りです。
+</p><table>
+<tr><td width="30%">files</td><td width="60%">ファイルのみ</td></tr>
+<tr><td width="30%">directories</td><td width="60%">ディレクトリのみ</td></tr>
+<tr><td width="30%">files-and-directories</td><td width="60%">ファイルとディレクトリ</td></tr>
+</table>
+</dd></dl>
+
+<dl>
+<dt><a name="index-set_002daccept_002dall_002dfile_002dfilter_002dused_0021"></a>Function: <strong>set-accept-all-file-filter-used!</strong><em> filechooser use?</em></dt>
+<dd><p>戻り値: 未定義<br>
+「すべてのファイルを選択する」をフィルタとして使用するかを設定します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-show_002dopen_002dfile_002dchooser"></a>Function: <strong>show-open-file-chooser</strong><em> filechooser parent-component</em></dt>
+<dd><p>戻り値: 選択されたファイル、キャンセルされたときは#f<br>
+ファイルチューザを「開く」として表示します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-show_002dsave_002dfile_002dchooser"></a>Function: <strong>show-save-file-chooser</strong><em> filechooser parent-component</em></dt>
+<dd><p>戻り値: 選択されたファイル、キャンセルされたときは#f<br>
+ファイルチューザを「保存」として表示します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-show_002dfile_002dchooser"></a>Function: <strong>show-file-chooser</strong><em> filechooser parent-component approve-button-text</em></dt>
+<dd><p>戻り値: 選択されたファイル、キャンセルされたときは#f<br>
+ファイルチューザを表示します。選択時のボタンをapprove-button-textで指定します。
+</p></dd></dl>
+
+
+<hr>
+<a name="g_t_30ab_30e9_30fc_30c1yu_30fc_30b6_30fc"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30d5_30a1_30a4ru_30c1yu_30fc_30b6_30fc" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing_9023_643a_6a5f_80fd" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30e1niyu_30fc" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">5.36.12 カラーチューザー</h3>
+<dl>
+<dt><a name="index-show_002dcolor_002dchooser"></a>Function: <strong>show-color-chooser</strong><em> [color] [parent-component]</em></dt>
+<dd><p>カラーチューザを表示します。
+</p></dd></dl>
+
+
+<hr>
+<a name="g_t_30e1niyu_30fc"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30ab_30e9_30fc_30c1yu_30fc_30b6_30fc" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing_9023_643a_6a5f_80fd" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30af_30ea_30c3_30d7_30dc_30fc_30c9" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">5.36.13 メニュー</h3>
+
+<dl>
+<dt><a name="index-make_002dmenu_002ditem"></a>Function: <strong>make-menu-item</strong><em> title action-proc [mnenomic-key mnenomic-key-modifier]</em></dt>
+<dd><p>戻り値: メニューアイテムコンポーネント<br>
+メニューアイテムコンポーネントを生成します。
+action-procは1つの引数を持つ手続きを与えます。
+mnenomic-key mnenomic-key-modifierはニーモニックキーを与えます。キーを指定するシンボルについてはこちらを参照してください。
+</p></dd></dl>
+
+
+<hr>
+<a name="g_t_30af_30ea_30c3_30d7_30dc_30fc_30c9"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30e1niyu_30fc" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing_9023_643a_6a5f_80fd" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30b9_30af_30ed_30fcru_30d0_30fc" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">5.36.14 クリップボード</h3>
+
+<dl>
+<dt><a name="index-copy_002dto_002dsystem_002dclipboard_0021"></a>Function: <strong>copy-to-system-clipboard!</strong><em> datum</em></dt>
+<dd><p>戻り値: 未定義<br>
+指定されたSchemeオブジェクトをシステムクリップボードに転送します。
+</p></dd></dl>
+
+
+<hr>
+<a name="g_t_30b9_30af_30ed_30fcru_30d0_30fc"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30af_30ea_30c3_30d7_30dc_30fc_30c9" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing_9023_643a_6a5f_80fd" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30b9_30d4_30ca_30fc" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">5.36.15 スクロールバー</h3>
+
+<dl>
+<dt><a name="index-make_002dhorizontal_002dscroll_002dbar"></a>Function: <strong>make-horizontal-scroll-bar</strong><em> value extent min max [real-min real-max]</em></dt>
+<dd><p>戻り値: 水平スクロールバーコンポーネント<br>
+水平スクロールバーコンポーネントを生成します。
+引数は以下のような意味を持ちます。real-min, real-maxが指定されているときはその値でスケールされます。
+</p><table>
+<tr><td width="20%">value</td><td width="70%">初期値</td></tr>
+<tr><td width="20%">extent</td><td width="70%">増分</td></tr>
+<tr><td width="20%">min</td><td width="70%">最小値</td></tr>
+<tr><td width="20%">max</td><td width="70%">最大値</td></tr>
+<tr><td width="20%">real-min</td><td width="70%">スケールされた最小値</td></tr>
+<tr><td width="20%">real-max</td><td width="70%">スケールされた最小値</td></tr>
+</table>
+</dd></dl>
+
+<dl>
+<dt><a name="index-make_002dvertical_002dscroll_002dbar"></a>Function: <strong>make-vertical-scroll-bar</strong><em> value extent min max [real-min real-max]</em></dt>
+<dd><p>戻り値: 垂直スクロールバーコンポーネント<br>
+水平スクロールバーコンポーネントを生成します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-get_002dscroll_002dbar_002dvalue"></a>Function: <strong>get-scroll-bar-value</strong><em> scroll-bar</em></dt>
+<dd><p>戻り値: スクロールバーの値<br>
+スクロールバーの示す値を取得します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-get_002dscroll_002dbar_002drelative_002dvalue"></a>Function: <strong>get-scroll-bar-relative-value</strong><em> scroll-bar</em></dt>
+<dd><p>戻り値: スクロールバーの相対値<br>
+最小値を0、最大値を1としたスクロールバーの示す相対値を取得します。
+</p></dd></dl>
+
+
+<hr>
+<a name="g_t_30b9_30d4_30ca_30fc"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30b9_30af_30ed_30fcru_30d0_30fc" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing_9023_643a_6a5f_80fd" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30bf_30d6_9818_57df" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">5.36.16 スピナー</h3>
+
+<dl>
+<dt><a name="index-make_002dnumber_002dspinner"></a>Function: <strong>make-number-spinner</strong><em> value min max step [format]</em></dt>
+<dd><p>戻り値: 数値スピナーコンポーネント<br>
+数値スピナーコンポーネントを取得します。
+min,maxを#fにしたときは上限(下限)がなくなります。
+formatはjava.text.DecimalFormatの形式に従います。
+</p></dd></dl>
+
+
+<hr>
+<a name="g_t_30bf_30d6_9818_57df"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30b9_30d4_30ca_30fc" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing_9023_643a_6a5f_80fd" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#a_30a4_30b3_30f3" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">5.36.17 タブ領域</h3>
+
+<dl>
+<dt><a name="index-make_002dtabbed_002dpane"></a>Function: <strong>make-tabbed-pane</strong><em> component &hellip;</em></dt>
+<dd><p>戻り値: タブ領域コンポーネント<br>
+タブ領域コンポーネントを生成します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-get_002dselected_002dtab"></a>Function: <strong>get-selected-tab</strong><em> tabbed-pane</em></dt>
+<dd><p>戻り値: GUIコンポーネント<br>
+タブ領域コンポーネントにおいて現在選択されているコンポーネントを取得します。
+</p></dd></dl>
+
+
+<hr>
+<a name="a_30a4_30b3_30f3"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30bf_30d6_9818_57df" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing_9023_643a_6a5f_80fd" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30c6_30ad_30b9_30c8_9818_57df" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">5.36.18 アイコン</h3>
+
+<dl>
+<dt><a name="index-make_002dimage_002dicon"></a>Function: <strong>make-image-icon</strong><em> image-file-name</em></dt>
+<dd><p>戻り値: アイコン<br>
+画像アイコンを生成します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dframe_002dicon"></a>Function: <strong>make-frame-icon</strong><em> width height [x1 y1 x2 y2]</em></dt>
+<dd><p>戻り値: アイコン<br>
+ペインタにて描画可能なアイコンを生成します。
+x1,y1,x2,y2が指定されたときは描画領域の左上を(x1, y1)、右下を(x2, y2)とします。座標は数学等で使用されるものと同じです。
+</p></dd></dl>
+
+
+<hr>
+<a name="g_t_30c6_30ad_30b9_30c8_9818_57df"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#a_30a4_30b3_30f3" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing_9023_643a_6a5f_80fd" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30ec_30a4a_30a6_30c8" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">5.36.19 テキスト領域</h3>
+
+<dl>
+<dt><a name="index-make_002dtext_002dpane"></a>Function: <strong>make-text-pane</strong></dt>
+<dd><p>戻り値: テキスト領域コンポーネント<br>
+テキスト領域コンポーネントを生成します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-set_002ddefault_002dkey_002daction_0021"></a>Function: <strong>set-default-key-action!</strong><em> text-pane action &hellip;</em></dt>
+<dd><p>戻り値: 未定義<br>
+テキスト領域においてキーが押下されたときのデフォルトの動作を指定します。
+actionの指定についてはmake-button-with-actionを参照してください。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-add_002dkey_002daction_0021"></a>Function: <strong>add-key-action!</strong><em> text-pane key key-modifier action &hellip;</em></dt>
+<dd><p>戻り値: 未定義<br>
+テキスト領域において指定されたキーが押下されたときの動作を指定します。
+actionの指定についてはmake-button-with-actionを参照してください。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-set_002dstyle_0021"></a>Function: <strong>set-style!</strong><em> text-pane offset length [[attribute-key attribute] &hellip;]</em></dt>
+<dd><p>戻り値: 未定義<br>
+テキスト領域における文字のスタイルを指定します。テキスト領域のoffsetからlength文字までのテキストが対象になります。
+</p>
+<table>
+<tr><td width="25%">キーワード</td><td width="70%">内容</td></tr>
+<tr><td width="25%">font-family</td><td width="70%">後に続く引数でフォントの種類を指定します</td></tr>
+<tr><td width="25%">font-size</td><td width="70%">後に続く引数でフォントサイズを指定します</td></tr>
+<tr><td width="25%">bold</td><td width="70%">太文字であることを指定します</td></tr>
+<tr><td width="25%">italic</td><td width="70%">斜体であることを指定します</td></tr>
+<tr><td width="25%">underline</td><td width="70%">下線を引くことを指定します</td></tr>
+<tr><td width="25%">strike</td><td width="70%">取消線を引くことを指定します</td></tr>
+<tr><td width="25%">superscript</td><td width="70%">上付き文字を指定します</td></tr>
+<tr><td width="25%">subscript</td><td width="70%">下付き文字を指定します</td></tr>
+<tr><td width="25%">color</td><td width="70%">後に続く引数で文字の色を指定します</td></tr>
+<tr><td width="25%">background-color</td><td width="70%">後に続く引数で背景色を指定します</td></tr>
+</table>
+</dd></dl>
+
+
+<hr>
+<a name="g_t_30ec_30a4a_30a6_30c8"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30c6_30ad_30b9_30c8_9818_57df" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing_9023_643a_6a5f_80fd" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_9032_6357_30d0_30fc_002f_9032_6357_30e2ni_30bf" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">5.36.20 レイアウト</h3>
+
+<dl>
+<dt><a name="index-layout_002dgrid_002dbag"></a>Function: <strong>layout-grid-bag</strong><em> panel constraint</em></dt>
+<dd><p>戻り値: 未定義<br>
+指定されたパネルをGridBagLayoutに従って整列します。constraintの指定方法は以下の通りです。
+</p>
+<div class="example">
+<pre class="example">(((GUIコンポーネント [(属性 . 値) &hellip;])
+  &hellip;
+ [((GUIコンポーネント [(属性 . 値) &hellip;])
+  &hellip;)]
+ &hellip;)
+</pre></div>
+
+<p>属性は以下の通りです。GridBagの詳細はこちらを参照してください。
+</p><table>
+<tr><td width="15%">属性</td><td width="80%">内容</td></tr>
+<tr><td width="15%">weightx</td><td width="80%">セルに対するコンポーネントの幅の比率を指定します</td></tr>
+<tr><td width="15%">weighty</td><td width="80%">セルに対するコンポーネントの高さの比率を指定します</td></tr>
+<tr><td width="15%">fill</td><td width="80%">コンポーネントを拡大するかを指定します。以下のシンボルが指定できます</td></tr>
+<tr><td width="15%">none</td><td width="80%">拡大しない</td></tr>
+<tr><td width="15%">horizontal</td><td width="80%">水平方向へ拡大する</td></tr>
+<tr><td width="15%">vertical</td><td width="80%">垂直方向へ拡大する</td></tr>
+<tr><td width="15%">both</td><td width="80%">水平・垂直方向へ拡大する</td></tr>
+<tr><td width="15%">gridx</td><td width="80%">x座標の位置を指定します</td></tr>
+<tr><td width="15%">gridwidth</td><td width="80%">x方向の併合セルを指定します (HTMLの&lt;table&gt;タグにおけるcolspanと同じです</td></tr>
+<tr><td width="15%">gridheight</td><td width="80%">y方向の併合セルを指定します (HTMLの&lt;table&gt;タグにおけるrowspanと同じです</td></tr>
+</table>
+</dd></dl>
+
+<dl>
+<dt><a name="index-layout_002dgrid"></a>Function: <strong>layout-grid</strong><em> panel layout [xgap ygap]</em></dt>
+<dd><p>戻り値: 未定義<br>
+指定されたパネルをGridLayoutに従ってマス目状に整列します。並べたいコンポーネントはlayoutを以下のように並べて指定します。
+</p>
+<div class="example">
+<pre class="example">(((1列目コンポーネント 2列目コンポーネント &hellip;) ;この列が1行目
+ ((1列目コンポーネント 2列目コンポーネント &hellip;) ;この列が2行目
+ &hellip;)
+</pre></div>
+
+<p>GridLayoutについてはこちらを参照してください。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-layout_002dborder"></a>Function: <strong>layout-border</strong><em> panel layout [xgap ygap]</em></dt>
+<dd><p>戻り値: 未定義<br>
+指定されたパネルをBorderLayoutに従ってマス目状に整列します。並べたいコンポーネントはlayoutにalistの形で指定します。 alistの値は並べたいコンポーネントを指定します。alistのキーは以下のように指定します。
+</p><table>
+<tr><td width="22%">キーのシンボル</td><td width="70%">内容</td></tr>
+<tr><td width="22%">center</td><td width="70%">値のコンポーネントを中央に配置する</td></tr>
+<tr><td width="22%">north</td><td width="70%">値のコンポーネントを上に配置する</td></tr>
+<tr><td width="22%">south</td><td width="70%">値のコンポーネントを下に配置する</td></tr>
+<tr><td width="22%">east</td><td width="70%">値のコンポーネントを右に配置する</td></tr>
+<tr><td width="22%">west</td><td width="70%">値のコンポーネントを左に配置する</td></tr>
+</table>
+<p>BorderLayoutについてはこちらを参照してください。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-layout_002dflow"></a>Function: <strong>layout-flow</strong><em> component &hellip;</em></dt>
+<dd><p>戻り値: 未定義<br>
+引数のコンポーネントをFlowLayoutに従って整列します。
+FlowLayoutについてはこちらを参照してください。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-layout_002dgroup"></a>Function: <strong>layout-group</strong><em> component layout</em></dt>
+<dd><p>戻り値: 未定義<br>
+引数のコンポーネントをGroupLayoutに従って整列します。
+</p>
+<p>layoutはコンポーネントをリストの形に並べることにより指定します。
+コンポーネントにベクタを指定することによりギャップを指定することができます。
+</p>
+<p>垂直方向へのギャップはvertical min prefer max、
+水平方向のギャップはhorizontal min prefer maxと指定します。
+</p>
+<p>例を以下に示します。
+</p><div class="example">
+<pre class="example">(layout-group
+  *window1*
+  `((,a #(,b vertical 20 25 30))
+    (,c ((,d ,e)
+         (,f ,g)))
+    (,h #(horizontal 5 10 20 vertical 20 25 30))))
+</pre></div>
+</dd></dl>
+
+<dl>
+<dt><a name="index-layout_002dnull"></a>Function: <strong>layout-null</strong><em> component layout</em></dt>
+<dd><p>戻り値: 未定義<br>
+引数のコンポーネントをレイアウトマネージャを使用せずに整列します。<br>
+この手続きは可能な限り使用を控えてください。
+</p>
+<p>座標を指定することによりコンポーネントを配置します。
+例を以下に示します。
+</p><div class="example">
+<pre class="example">(layout-null
+  *window1*
+  `((,a 100 100 50 30)    ; x座標 y座標 幅 高さ
+    (,b 200 200 100 20)))
+</pre></div>
+</dd></dl>
+
+
+<hr>
+<a name="g_t_9032_6357_30d0_30fc_002f_9032_6357_30e2ni_30bf"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30ec_30a4a_30a6_30c8" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing_9023_643a_6a5f_80fd" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#Swing_30ea_30b9_30c8" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">5.36.21 進捗バー/進捗モニタ</h3>
+
+<dl>
+<dt><a name="index-make_002dprogress_002dbar"></a>Function: <strong>make-progress-bar</strong><em> [orientation] [max min]</em></dt>
+<dd><p>進捗バーを作成します。orientationはシンボルhorizontalまたはverticalを指定します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-prograss_002dbar_002dmaximum"></a>Function: <strong>prograss-bar-maximum</strong><em> progress-bar</em></dt>
+<dt><a name="index-prograss_002dbar_002dminimum"></a>Function: <strong>prograss-bar-minimum</strong><em> progress-bar</em></dt>
+<dd><p>進捗バーの最大値(最小値)を取得します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-progress_002dbar_002dvalue"></a>Function: <strong>progress-bar-value</strong><em> progress-bar</em></dt>
+<dd><p>進捗バーの現在値を取得します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-progress_002dbar_002dpercent_002dcomplete"></a>Function: <strong>progress-bar-percent-complete</strong><em> progress-bar</em></dt>
+<dd><p>進捗バーの割合を不正確な数で取得します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-progress_002dbar_002dstring"></a>Function: <strong>progress-bar-string</strong><em> progress-bar</em></dt>
+<dd><p>進捗バーに表示する文字列を取得します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-progress_002dbar_002dorientation"></a>Function: <strong>progress-bar-orientation</strong><em> progress-bar</em></dt>
+<dd><p>進捗バーの向きを取得します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-prograss_002dbar_002dmaximum_002dset_0021"></a>Function: <strong>prograss-bar-maximum-set!</strong><em> progress-bar value</em></dt>
+<dt><a name="index-prograss_002dbar_002dminimum_002dset_0021"></a>Function: <strong>prograss-bar-minimum-set!</strong><em> progress-bar value</em></dt>
+<dd><p>進捗バーの最大値(最小値)を設定します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-progress_002dbar_002dvalue_002dset_0021"></a>Function: <strong>progress-bar-value-set!</strong><em> progress-bar value</em></dt>
+<dd><p>進捗バーの現在値を設定します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-progress_002dbar_002dstring_002dset_0021"></a>Function: <strong>progress-bar-string-set!</strong><em> progress-bar string</em></dt>
+<dd><p>進捗バーに表示する文字列を設定します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-progress_002dbar_002dindeterminate_002dset_0021"></a>Function: <strong>progress-bar-indeterminate-set!</strong><em> progress-bar</em></dt>
+<dd><p>進捗バーを不定状態にします。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dprogress_002dmonitor"></a>Function: <strong>make-progress-monitor</strong><em> millis component message note max min</em></dt>
+<dd><p>進捗モニタを生成します。<br>
+進捗モニタは最初は表示されないが、ある時間がたっても処理が終わらないときに表示されるダイアログウィンドウです。<br>
+引数に表示までのミリ秒数、親コンポーネント(または#f)、メッセージ、ノート、最大値、最小値をそれぞれ指定します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-progress_002dmonitor_002dprogress_002dset_0021"></a>Function: <strong>progress-monitor-progress-set!</strong><em> progress-monitor value</em></dt>
+<dd><p>進捗モニタに進捗の度合いを設定します。
+進捗の度合いが最大値を超えたときには自動的に進捗モニタは閉じられます。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-progress_002dmonitor_002dnote"></a>Function: <strong>progress-monitor-note</strong><em> progress-monitor</em></dt>
+<dd><p>進捗モニタのノートを取得します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-progress_002dmonitor_002dnote_002dset_0021"></a>Function: <strong>progress-monitor-note-set!</strong><em> progress-monitor string</em></dt>
+<dd><p>進捗モニタのノートを設定します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-progress_002dmonitor_002dclose"></a>Function: <strong>progress-monitor-close</strong><em> progress-monitor</em></dt>
+<dd><p>進捗モニタを閉じます。
+</p></dd></dl>
+
+
+<hr>
+<a name="Swing_30ea_30b9_30c8"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_9032_6357_30d0_30fc_002f_9032_6357_30e2ni_30bf" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing_9023_643a_6a5f_80fd" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#Swing_30c4_30ea_30fc" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">5.36.22 Swingリスト</h3>
+
+<dl>
+<dt><a name="index-make_002djlist"></a>Function: <strong>make-jlist</strong><em> vector</em></dt>
+<dt><a name="index-make_002djlist-1"></a>Function: <strong>make-jlist</strong><em> list</em></dt>
+<dd><p>Swingリストを生成します。引数でリストに与える値を指定します。<br>
+ベクタで与えられたときはSwingリストの内容は動的に変更できません。<br>
+リストで与えられたときはSwingリストの内容を動的に変更することができます。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-jlist_002dselected_002dvalue_002dlist"></a>Function: <strong>jlist-selected-value-list</strong><em> jlist</em></dt>
+<dd><p>Swingリストにおいて選択されたオブジェクトをリストの形で取得します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-jlist_002dselection_002dmode_002dset_0021"></a>Function: <strong>jlist-selection-mode-set!</strong><em> jlist mode</em></dt>
+<dd><p>Swingリストの選択モードを設定します。modeは以下のシンボルを指定します。
+</p><table>
+<tr><td width="22%">キーのシンボル</td><td width="70%">内容</td></tr>
+<tr><td width="22%">single</td><td width="70%">単一の値のみ選択できます</td></tr>
+<tr><td width="22%">interval</td><td width="70%">連続した値のみ選択できます</td></tr>
+<tr><td width="22%">multiple</td><td width="70%">複数の値を選択できます</td></tr>
+</table>
+</dd></dl>
+
+<dl>
+<dt><a name="index-jlist_002dselection_002dmode"></a>Function: <strong>jlist-selection-mode</strong><em> jlist</em></dt>
+<dd><p>Swingリストの選択モードを取得します。
+</p></dd></dl>
+
+
+<hr>
+<a name="Swing_30c4_30ea_30fc"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing_30ea_30b9_30c8" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing_9023_643a_6a5f_80fd" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#ru_30c3_30afa_30f3_30c9_30d5_30a3_30fcru_306e_5909_66f4" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">5.36.23 Swingツリー</h3>
+
+<p>SwingツリーはWindowsエクスプローラのフォルダ構造を表示するようなコントロールを与えます。
+</p>
+<p>Swingツリーのノード・葉は抽象化されたノードオブジェクトからなります。
+構造の変更は抽象化されたオブジェクトを通してします。
+</p>
+<dl>
+<dt><a name="index-make_002djtree"></a>Function: <strong>make-jtree</strong><em> tree-structure</em></dt>
+<dd><p>Swingツリーを生成します。<br>
+引数には初期のツリー構造をリストまたはベクタで指定します。ベクタで指定したときは動的にツリーを変更することはできません。形式は以下の通りです。
+</p><div class="example">
+<pre class="example">(node
+ (node leaf1
+      leaf2
+      (node subleaf1 subleaf2 subleaf3)
+      leaf3)
+ (node leaf1 leaf2))
+</pre></div>
+</dd></dl>
+
+<dl>
+<dt><a name="index-jtree_002dselected_002dlast_002dpath"></a>Function: <strong>jtree-selected-last-path</strong><em> jtree</em></dt>
+<dd><p>Swingツリーで選択された最初のオブジェクトを含むノードを取得します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-jtree_002dselected_002dlast_002dpaths"></a>Function: <strong>jtree-selected-last-paths</strong><em> jtree</em></dt>
+<dd><p>Swingツリーで選択されたオブジェクトを含むノードのリストを取得します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-jtree_002dselected_002dpath_002dlist"></a>Function: <strong>jtree-selected-path-list</strong><em> jtree</em></dt>
+<dd><p>Swingツリーで選択された最初のオブジェクトを含むツリーのルートからのパスをリストで取得します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-jtree_002dselected_002dpath_002dlists"></a>Function: <strong>jtree-selected-path-lists</strong><em> jtree</em></dt>
+<dd><p>Swingツリーで選択されたオブジェクトを含むツリーのルートからのパスのリストのリストを取得します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-jtree_002droot"></a>Function: <strong>jtree-root</strong><em> jtree</em></dt>
+<dd><p>Swingツリーのルートオブジェクトを取得します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-jtree_002droot_002dnode"></a>Function: <strong>jtree-root-node</strong><em> jtree</em></dt>
+<dd><p>Swingツリーのルートノードを取得します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-jtree_002droot_002dset_0021"></a>Function: <strong>jtree-root-set!</strong><em> jtree tree-structure</em></dt>
+<dd><p>Swingツリーの構造をすべて入れ替えます。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-jtree_002dlast_002dpath_002dfor_002dlocation"></a>Function: <strong>jtree-last-path-for-location</strong><em> jtree x y</em></dt>
+<dd><p>コンポーネント座標で(x, y)にあるSwingツリーのオブジェクトを取得します。オブジェクトがないときは#fを得ます。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-jtree_002dpath_002dlist_002dfor_002dlocation"></a>Function: <strong>jtree-path-list-for-location</strong><em> jtree x y</em></dt>
+<dd><p>コンポーネント座標で(x, y)にあるSwingツリーのパスのリストを取得します。オブジェクトがないときは#fを得ます。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-jtree_002drenderer_002dset_0021"></a>Function: <strong>jtree-renderer-set!</strong><em> jtree renderer</em></dt>
+<dd><p>Swingツリーのレンダラを指定します。<br>
+レンダラによりカスタムアイコンを表示するなど、オブジェクトの描画をカスタマイズできます。<br>
+rendererは6変数の手続きであり、引数にラベル、対象のSwingツリー、ノードが選択されているか、ノードが展開されているか、ノードが葉か、ノードがフォーカスされているかがそれぞれ与えられます。<br>
+ノードのオブジェクトが整数のときに別のアイコンを表示する例を以下に示します。
+</p><div class="example">
+<pre class="example">(jtree-renderer-set!
+  tr
+  (lambda (l t node sel expn leaf hasf)
+    (if (integer? (jtree-node-&gt;datum node))
+        (label-icon-set! l icon1))))
+</pre></div>
+</dd></dl>
+
+<dl>
+<dt><a name="index-jtree_002dnode_002d_003edatum"></a>Function: <strong>jtree-node-&gt;datum</strong><em> jtree-node</em></dt>
+<dd><p>Swingツリーのノード(以下Swingノード)からオブジェクトに変換します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-jtree_002dnode_002d_003edatum_002dtree"></a>Function: <strong>jtree-node-&gt;datum-tree</strong><em> jtree-node</em></dt>
+<dd><p>Swingノードの配下のノードをSchemeのリストによるツリーに変換します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-jtree_002dnode_002dinsert_0021"></a>Function: <strong>jtree-node-insert!</strong><em> jtree jtree-node datum row</em></dt>
+<dd><p>Swingノードのrow番目の次にオブジェクトまたはツリーを追加します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-jtree_002dnode_002dadd_0021"></a>Function: <strong>jtree-node-add!</strong><em> jtree jtree-node datum</em></dt>
+<dd><p>Swingノードの配下にオブジェクトまたはツリーを追加します。
+</p></dd></dl>
+
+
+<hr>
+<a name="ru_30c3_30afa_30f3_30c9_30d5_30a3_30fcru_306e_5909_66f4"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing_30c4_30ea_30fc" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing_9023_643a_6a5f_80fd" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#Swing_30bf_30a4ma" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">5.36.24 ルックアンドフィールの変更</h3>
+
+<dl>
+<dt><a name="index-installed_002dlook_002dand_002dfeel_002dnames"></a>Function: <strong>installed-look-and-feel-names</strong></dt>
+<dd><p>インストールされているルックアンドフィールの名称のリストを取得します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-look_002dand_002dfeel_002dset_0021"></a>Function: <strong>look-and-feel-set!</strong><em> look-and-feel-name</em></dt>
+<dd><p>ルックアンドフィールを指定された名称のものに変更します。
+</p></dd></dl>
+
+
+<hr>
+<a name="Swing_30bf_30a4ma"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#ru_30c3_30afa_30f3_30c9_30d5_30a3_30fcru_306e_5909_66f4" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing_9023_643a_6a5f_80fd" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30b9_30ec_30c3_30c9" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">5.36.25 Swingタイマ</h3>
+
+<dl>
+<dt><a name="index-make_002dswing_002dtimer"></a>Function: <strong>make-swing-timer</strong><em> init-delay listener [delay]</em></dt>
+<dd><p>Swingタイマを生成します。<br>
+init-delayは初期遅延とdelayが省略されたときは定期遅延を指定します。
+delayは定期遅延を指定します。delayに#fが指定されたときは1回のみのタイマ起動となります。<br>
+listenerはイベントオブジェクトを持つ1変数の手続きです。タイマが起動するごとに呼び出されます。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-swing_002dtimer_002dstart"></a>Function: <strong>swing-timer-start</strong><em> swing-timer</em></dt>
+<dd><p>Swingタイマを起動します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-swing_002dtimer_002dstop"></a>Function: <strong>swing-timer-stop</strong><em> swing-timer</em></dt>
+<dd><p>Swingタイマを停止します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-swing_002dtimer_002drestart"></a>Function: <strong>swing-timer-restart</strong><em> swing-timer</em></dt>
+<dd><p>Swingタイマを再起動します。
+</p></dd></dl>
+
+
+<hr>
+<a name="g_t_30b9_30ec_30c3_30c9"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing_30bf_30a4ma" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing_9023_643a_6a5f_80fd" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30a4_30d9_30f3_30c8" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">5.36.26 スレッド</h3>
+
+<dl>
+<dt><a name="index-swing_002dinvoke_002dlater"></a>Function: <strong>swing-invoke-later</strong><em> thread</em></dt>
+<dd><p>指定されたスレッドを後で起動します。<br>
+Swingはマルチスレッドを完全にサポートしていないため、スレッドからGUIコンポーネントを操作するためにはこの手続きを使用する必要があります。
+</p></dd></dl>
+
+
+<hr>
+<a name="g_t_30a4_30d9_30f3_30c8"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30b9_30ec_30c3_30c9" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing_9023_643a_6a5f_80fd" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_305d_306e_4ed6" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">5.36.27 イベント</h3>
+
+<dl>
+<dt><a name="index-action_002dlistener_002dadd_0021"></a>Function: <strong>action-listener-add!</strong><em> has-action action-proc</em></dt>
+<dd><p>戻り値: 未定義<br>
+アクションを持つコンポーネントにアクションを追加します。 action-procはアクションイベントを引数に1つ持つ手続きを指定します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-mouse_002dlistener_002dadd_0021"></a>Function: <strong>mouse-listener-add!</strong><em> has-mouse-event event-proc</em></dt>
+<dd><p>戻り値: 未定義<br>
+マウスイベントを持つコンポーネントにアクションを追加します。 action-procはマウスイベントを引数に1つ持つ手続きを指定します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-item_002dlistener_002dadd_0021"></a>Function: <strong>item-listener-add!</strong><em> has-item-event event-proc</em></dt>
+<dd><p>戻り値: 未定義<br>
+アイテムイベントを持つコンポーネントにアクションを追加します。 action-procはアイテムイベントを引数に1つ持つ手続きを指定します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-adjustment_002dlistener_002dadd_0021"></a>Function: <strong>adjustment-listener-add!</strong><em> has-adjustment-event event-proc</em></dt>
+<dd><p>戻り値: 未定義<br>
+調整イベントを持つコンポーネントにアクションを追加します。 action-procは調整イベントを引数に1つ持つ手続きを指定します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-change_002dlistener_002dadd_0021"></a>Function: <strong>change-listener-add!</strong><em> has-change-event event-proc</em></dt>
+<dd><p>戻り値: 未定義<br>
+変更イベントを持つコンポーネントにアクションを追加します。 action-procは変更イベントを引数に1つ持つ手続きを指定します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-window_002dlistener_002dadd_0021"></a>Function: <strong>window-listener-add!</strong><em> has-window-event event-proc</em></dt>
+<dd><p>戻り値: 未定義<br>
+ウィンドウイベントを持つコンポーネントにアクションを追加します。 action-procはウィンドウイベントを引数に1つ持つ手続きを指定します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-get_002daction_002dcommand"></a>Function: <strong>get-action-command</strong><em> action-event-object</em></dt>
+<dd><p>戻り値: アクションコマンドの文字列<br>
+アクションの手続きの引数で渡されるイベントオブジェクトからアクションのコマンドを取り出します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-get_002dwhen"></a>Function: <strong>get-when</strong><em> action-event-object</em></dt>
+<dd><p>戻り値: アクションが実行された時間(SRFI-19形式)<br>
+アクションの手続きの引数で渡されるイベントオブジェクトからアクションが実行された時間を取り出します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-get_002dparam_002dstring"></a>Function: <strong>get-param-string</strong><em> action-event-object</em></dt>
+<dd><p>戻り値: パラメータの文字列<br>
+アクションの手続きの引数で渡されるイベントオブジェクトからパラメータの文字列を取り出します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-get_002dmouse_002dbutton"></a>Function: <strong>get-mouse-button</strong><em> mouse-event-object</em></dt>
+<dd><p>戻り値: 下記参照<br>
+マウスイベントの手続きの引数で渡されるイベントオブジェクトからクリックされたマウスボタンを取得します。戻り値は以下の通りです。
+</p><table>
+<tr><td width="25%">ボタンのシンボル</td><td width="70%">内容</td></tr>
+<tr><td width="25%">no-button</td><td width="70%">ボタンはクリックされていません</td></tr>
+<tr><td width="25%">button1</td><td width="70%">1番目のボタンがクリックされました(Windows,Linux環境では左ボタン)</td></tr>
+<tr><td width="25%">button2</td><td width="70%">2番目のボタンがクリックされました(Windows,Linux環境では右ボタン)</td></tr>
+<tr><td width="25%">button3</td><td width="70%">3番目のボタンがクリックされました(UNIXワークステーション等で使用)</td></tr>
+<tr><td width="25%">unknown-button</td><td width="70%">値のコンポーネントを左に配置する</td></tr>
+</table>
+</dd></dl>
+
+<dl>
+<dt><a name="index-get_002dmouse_002dclick_002dcount"></a>Function: <strong>get-mouse-click-count</strong><em> mouse-event-object</em></dt>
+<dd><p>戻り値: クリックされた回数<br>
+マウスイベントの手続きの引数で渡されるイベントオブジェクトからクリックされた回数を取得します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-get_002dmouse_002dx"></a>Function: <strong>get-mouse-x</strong><em> mouse-event-object</em></dt>
+<dd><p>戻り値: クリックされたマウスX座標<br>
+マウスイベントの手続きの引数で渡されるイベントオブジェクトからクリックされた場所のX座標を取得します。座標はシステムの座標系で渡されます。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-get_002dmouse_002dy"></a>Function: <strong>get-mouse-y</strong><em> mouse-event-object</em></dt>
+<dd><p>戻り値: クリックされたマウスY座標<br>
+マウスイベントの手続きの引数で渡されるイベントオブジェクトからクリックされた場所のY座標を取得します。座標はシステムの座標系で渡されます。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-popup_002dtrigger_003f"></a>Function: <strong>popup-trigger?</strong><em> mouse-event-object</em></dt>
+<dd><p>戻り値: ポップアップトリガのとき#t<br>
+マウスイベントの手続きの引数で渡されるイベントオブジェクトがポップアップトリガかを調べます。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-get_002devent_002dselected_002ditem_002dvalue"></a>Function: <strong>get-event-selected-item-value</strong><em> item-event-object</em></dt>
+<dd><p>戻り値: 選択された項目<br>
+選択イベントの手続きの引数で渡されるイベントオブジェクトから選択された項目を取得します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-get_002devent_002dadjustment_002dvalue"></a>Function: <strong>get-event-adjustment-value</strong><em> adjustment-event-object</em></dt>
+<dd><p>戻り値: 選択された値<br>
+調整イベントの手続きの引数で渡されるイベントオブジェクトから選択された値を取得します。 
+</p></dd></dl>
+
+
+<hr>
+<a name="g_t_305d_306e_4ed6"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30a4_30d9_30f3_30c8" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing_9023_643a_6a5f_80fd" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_75.html#Applet_9023_643a_6a5f_80fd" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">5.36.28 その他</h3>
+
+<dl>
+<dt><a name="index-beep"></a>Function: <strong>beep</strong></dt>
+<dd><p>戻り値: 未定義<br>
+ビープ音を鳴らします。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-update_002dcomponent_002dtree_002dui"></a>Function: <strong>update-component-tree-ui</strong><em> component</em></dt>
+<dd><p>コンポーネントを更新します。
+</p></dd></dl>
+
+<hr>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_30a4_30d9_30f3_30c8" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Swing_9023_643a_6a5f_80fd" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_75.html#Applet_9023_643a_6a5f_80fd" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  この文書は<em>12月 15, 2012</em>に<a href="http://www.nongnu.org/texi2html/"><em>texi2html 5.0</em></a>を用いて生成されました。
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

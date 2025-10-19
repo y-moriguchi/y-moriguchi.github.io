@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created on August 9, 2012 by texi2html 5.0
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Schluessel: 3.1 File manipulation</title>
+
+<meta name="description" content="Schluessel: 3.1 File manipulation">
+<meta name="keywords" content="Schluessel: 3.1 File manipulation">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 5.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smalllisp {margin-left: 3.2em}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nocodebreak {white-space:pre}
+span.nolinebreak {white-space:pre}
+span.roman {font-family:serif; font-weight:normal}
+span.sansserif {font-family:sans-serif; font-weight:normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="File-manipulation"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_8.html#Java-VM-Information-and-instance-reference" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section">3.1 File manipulation</h2>
+
+<p>Procedures which manipulates the files.
+</p>
+<dl>
+<dt><a name="index-chdir"></a>Function: <strong>chdir</strong><em> [dir]</em></dt>
+<dd><p>Changes the working directory.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-directory_003f"></a>Function: <strong>directory?</strong><em> path</em></dt>
+<dd><p>Returns true if the given path is a directory.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-file_003f"></a>Function: <strong>file?</strong><em> path</em></dt>
+<dd><p>Returns true if the given path is a valid file.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-exist_003f"></a>Function: <strong>exist?</strong><em> path</em></dt>
+<dd><p>Returns true if the given path exists.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-directory_002dlist"></a>Function: <strong>directory-list</strong><em> directory [wildcard-filter-expr]</em></dt>
+<dd><p>Gets the files in the given directory. This procedure don&rsquo;t evaluate recursively.
+wildcard-filter-expr can be specified as follows.
+</p>
+<table>
+<tr><td width="25%">(and [expr &hellip;])</td><td width="70%">selects the paths about which the given propositions are true.</td></tr>
+<tr><td width="25%">(or [expr &hellip;])</td><td width="70%">selects the paths about which at least one of the given propositions is true.</td></tr>
+<tr><td width="25%">(not expr)</td><td width="70%">selects the paths about which the given condition is false.</td></tr>
+<tr><td width="25%">exist</td><td width="70%">selects the valid paths.</td></tr>
+<tr><td width="25%">directory</td><td width="70%">selects the valid directories.</td></tr>
+<tr><td width="25%">file</td><td width="70%">selects the valid files.</td></tr>
+<tr><td width="25%"><i>wildcard</i></td><td width="70%">selects the paths which matches the given wildcard. The valid metacharacters are shown as follows.
+<table>
+<tr><td width="10%">*</td><td width="70%">any characters</td></tr>
+<tr><td width="10%">.</td><td width="70%">any character</td></tr>
+</table></td></tr>
+<tr><td width="25%">[&hellip;]</td><td width="70%">character set</td></tr>
+</table>
+</dd></dl>
+
+<dl>
+<dt><a name="index-directory_002dfold"></a>Function: <strong>directory-fold</strong><em> path proc seed [wild-card]</em></dt>
+<dd><p>apply fold to subdirectories of the given path (which filtered the wildcard).
+The given procedure needs two arguments. A file name is given as the first argument, and result is given as the second.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dpath_002dname"></a>Function: <strong>make-path-name</strong><em> path file</em></dt>
+<dd><p>combinates a path and a file name. This procedure avoids OS Dependencies.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-expand_002dpath"></a>Function: <strong>expand-path</strong><em> path</em></dt>
+<dd><p>converts the given path to an absolute path.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-absolute_002dpath_003f"></a>Function: <strong>absolute-path?</strong><em> path</em></dt>
+<dd><p>return true if the path is an absolute path.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-relative_002dpath_003f"></a>Function: <strong>relative-path?</strong><em> path</em></dt>
+<dd><p>return true if the path is a relative path.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-file_002dmtime_003d_003f"></a>Function: <strong>file-mtime=?</strong><em> time1 time2</em></dt>
+<dd><p>checks the timestamp of <i>time1</i> is equals to one of <i>time2</i>.
+File paths, SRFI-19 time objects and seconds from the UNIX epoch are avaliable as arguments.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-file_002dmtime_003e_003d_003f"></a>Function: <strong>file-mtime&gt;=?</strong><em> time1 time2</em></dt>
+<dd><p>checks timestamp of <i>time1</i> &gt;= timestamp of <i>time2</i>.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-file_002dmtime_003e_003f"></a>Function: <strong>file-mtime&gt;?</strong><em> time1 time2</em></dt>
+<dd><p>checks timestamp of <i>time1</i> &gt; timestamp of <i>time2</i>.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-file_002dmtime_003c_003d_003f"></a>Function: <strong>file-mtime&lt;=?</strong><em> time1 time2</em></dt>
+<dd><p>checks timestamp of <i>time1</i> &lt;= timestamp of <i>time2</i>.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-file_002dmtime_003c_003f"></a>Function: <strong>file-mtime&lt;?</strong><em> time1 time2</em></dt>
+<dd><p>checks timestamp of <i>time1</i> &lt; timestamp of <i>time2</i>.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-mkdir"></a>Function: <strong>mkdir</strong><em> path</em></dt>
+<dd><p>creates a directory.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-copy_002dfile"></a>Function: <strong>copy-file</strong><em> src-file dest-file</em></dt>
+<dd><p>copies <i>src-file</i> to <i>dest-file</i>
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-move_002dfile"></a>Function: <strong>move-file</strong><em> src-file dest-file</em></dt>
+<dd><p>moves <i>src-file</i> to <i>dest-file</i>
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-remove_002dfile"></a>Function: <strong>remove-file</strong><em> file &hellip;</em></dt>
+<dd><p>removes the given files.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-rmdir"></a>Function: <strong>rmdir</strong><em> path</em></dt>
+<dd><p>removes the given directory.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-touch_002dfile"></a>Function: <strong>touch-file</strong><em> file &hellip;</em></dt>
+<dd><p>sets timestamps of the files to time when applied the procedure.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-chmod"></a>Function: <strong>chmod</strong><em> mode file &hellip;</em></dt>
+<dd><p>changes privilege of the files. Avail <i>mode</i> are shown as follows, which is like chmod(1).<br>
+1. specfication by three characters<br>
+The valid characters are shown as follows.<br>
+the first character:
+</p><table>
+<tr><td width="18%">u</td><td width="50%">current user</td></tr>
+<tr><td width="18%">a</td><td width="50%">all users</td></tr>
+</table>
+
+<p>the second character:
+</p><table>
+<tr><td width="18%">+</td><td width="50%">add privilege which specified by the third character.</td></tr>
+<tr><td width="18%">-</td><td width="50%">remove privilege privilege which specified by the third.</td></tr>
+</table>
+
+<p>the third character:
+</p><table>
+<tr><td width="18%">r</td><td width="50%">readable</td></tr>
+<tr><td width="18%">w</td><td width="50%">writable</td></tr>
+<tr><td width="18%">x</td><td width="50%">executable</td></tr>
+</table>
+
+<p>2. specification by two octal numbers<br>
+specifies two numbers. Meaning the number is shown as follows.
+The first number is applied for current user, and the second is applied for all users.
+(Though tree numbers are specified as chmod(1), only two numbers are specified as this procedure.)<br>
+Bits of the number means as follows.
+</p><table>
+<tr><td width="18%">1</td><td width="50%">privilege for execute</td></tr>
+<tr><td width="18%">2</td><td width="50%">privilege for writing</td></tr>
+<tr><td width="18%">4</td><td width="50%">privilege for reading</td></tr>
+</table>
+</dd></dl>
+
+<dl>
+<dt><a name="index-partition_002dfree_002dspace"></a>Function: <strong>partition-free-space</strong><em> path</em></dt>
+<dt><a name="index-partition_002dtotal_002dspace"></a>Function: <strong>partition-total-space</strong><em> path</em></dt>
+<dt><a name="index-partition_002dusable_002dspace"></a>Function: <strong>partition-usable-space</strong><em> path</em></dt>
+<dd><p>gets free space, total space and usable space of the given partition by bytes, respectively.
+</p></dd></dl>
+
+<hr>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_8.html#Java-VM-Information-and-instance-reference" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated on <i>August 9, 2012</i> using <a href="http://www.nongnu.org/texi2html/"><i>texi2html 5.0</i></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

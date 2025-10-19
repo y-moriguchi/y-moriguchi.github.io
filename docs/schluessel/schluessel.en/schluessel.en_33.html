@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created on August 9, 2012 by texi2html 5.0
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Schluessel: 3.27 Mathematics (others)</title>
+
+<meta name="description" content="Schluessel: 3.27 Mathematics (others)">
+<meta name="keywords" content="Schluessel: 3.27 Mathematics (others)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 5.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smalllisp {margin-left: 3.2em}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nocodebreak {white-space:pre}
+span.nolinebreak {white-space:pre}
+span.roman {font-family:serif; font-weight:normal}
+span.sansserif {font-family:sans-serif; font-weight:normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Mathematics-_0028others_0029"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_32.html#Linear-algebra" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_34.html#Matrices-of-non_002dnumeric-objects_002e" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section">3.27 Mathematics (others)</h2>
+
+<p>Procedures for mathematics.
+</p>
+<dl>
+<dt><a name="index-sin_002ddeg"></a>Function: <strong>sin-deg</strong><em> degree</em></dt>
+<dt><a name="index-cos_002ddeg"></a>Function: <strong>cos-deg</strong><em> degree</em></dt>
+<dt><a name="index-tan_002ddeg"></a>Function: <strong>tan-deg</strong><em> degree</em></dt>
+<dd><p>computes trigonometric function by degree.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-asin_002ddeg"></a>Function: <strong>asin-deg</strong><em> value</em></dt>
+<dt><a name="index-acos_002ddeg"></a>Function: <strong>acos-deg</strong><em> value</em></dt>
+<dt><a name="index-atan_002ddeg"></a>Function: <strong>atan-deg</strong><em> value</em></dt>
+<dd><p>computes inverted trigonometric function by degree.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-sinc"></a>Function: <strong>sinc</strong><em> rad</em></dt>
+<dd><p>computes the sinc function.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-kronecker_002ddelta"></a>Function: <strong>kronecker-delta</strong><em> a b</em></dt>
+<dd><p>computes Kronecker&rsquo;s delta <em>\delta_{a,b}</em>.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-kronecker_002ddelta_002dproc"></a>Function: <strong>kronecker-delta-proc</strong><em> equiv? o1 o2</em></dt>
+<dd><p>returns 1 if (equiv? o1 o2) is #t, otherwise returns 0
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-kronecker_002ddelta_002deq"></a>Function: <strong>kronecker-delta-eq</strong><em> o1 o2</em></dt>
+<dt><a name="index-kronecker_002ddelta_002deqv"></a>Function: <strong>kronecker-delta-eqv</strong><em> o1 o2</em></dt>
+<dt><a name="index-kronecker_002ddelta_002dequal"></a>Function: <strong>kronecker-delta-equal</strong><em> o1 o2</em></dt>
+<dd><p>equivalent with (kronecker-delta eq? o1 o2),
+(kronecker-delta eqv? o1 o2) and (kronecker-delta equal? o1 o2),
+respectively.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-iverson_002dfunction"></a>Function: <strong>iverson-function</strong><em> obj</em></dt>
+<dd><p>returns 1 if the object is #t, otherwise returns 0.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-antisymmetric_002depsilon"></a>Function: <strong>antisymmetric-epsilon</strong><em> num &hellip;</em></dt>
+<dd><p>returns 1 if the parity of num&hellip; is even,
+-1 if the parity is odd,
+0 if more than two numbers equal in num&hellip; each other.<br>
+Values in num&hellip; must be between 0 to number of num - 1.<br>
+This procedure is equivalent
+with computing antisymmetric tensor <em>\epsilon_{ij\dots{}n}</em>.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-factorial"></a>Function: <strong>factorial</strong><em> n</em></dt>
+<dd><p>computes the factorial of n <em>n!</em>.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-binomial_002dcoefficient"></a>Function: <strong>binomial-coefficient</strong><em> n k</em></dt>
+<dd><p>computes the binomial coefficient.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-permutation"></a>Function: <strong>permutation</strong><em> num &hellip;</em></dt>
+<dd><p>creates a permutation group.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-_002a-3"></a>Function: <strong>*</strong><em> permutaion &hellip;</em></dt>
+<dd><p>[R5RS+]
+multiplies all given arguments.
+This procedure extends for the permutation group.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-permutation_002dinvert"></a>Function: <strong>permutation-invert</strong><em> permutation</em></dt>
+<dd><p>computes invert of the permutation group.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-permutation_002dref"></a>Function: <strong>permutation-ref</strong><em> permutation n</em></dt>
+<dd><p>gets <var>n</var>th value of the permutation group.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-factorize_002dfixnum"></a>Function: <strong>factorize-fixnum</strong><em> n</em></dt>
+<dd><p>factorize <var>n</var> to prime numbers
+and returns a list of the prime numbers.<br>
+<var>n</var> must be a fixnum.
+</p></dd></dl>
+
+<hr>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_32.html#Linear-algebra" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_34.html#Matrices-of-non_002dnumeric-objects_002e" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated on <i>August 9, 2012</i> using <a href="http://www.nongnu.org/texi2html/"><i>texi2html 5.0</i></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

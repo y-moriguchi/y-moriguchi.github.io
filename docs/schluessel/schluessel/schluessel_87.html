@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created on 12月 15, 2012 by texi2html 5.0
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Schluessel: 5.49 ゲーム</title>
+
+<meta name="description" content="Schluessel: 5.49 ゲーム">
+<meta name="keywords" content="Schluessel: 5.49 ゲーム">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 5.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smalllisp {margin-left: 3.2em}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nocodebreak {white-space:pre}
+span.nolinebreak {white-space:pre}
+span.roman {font-family:serif; font-weight:normal}
+span.sansserif {font-family:sans-serif; font-weight:normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="ja" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="g_t_30b2_30fc_30e0"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_86.html#Servlet_9023_643a_6a5f_80fd" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_88.html#g_t_305d_306e_4ed6_306e_95a2_6570" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.html#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section">5.49 ゲーム</h2>
+
+<dl>
+<dt><a name="index-compute_002djapanese_002dmahjong_002dscore_002drong"></a>Function: <strong>compute-japanese-mahjong-score-rong</strong><em> 符 翻</em></dt>
+<dt><a name="index-compute_002djapanese_002dmahjong_002dscore_002drong-1"></a>Function: <strong>compute-japanese-mahjong-score-rong</strong><em> 符 翻 親?</em></dt>
+<dt><a name="index-compute_002djapanese_002dmahjong_002dscore_002drong-2"></a>Function: <strong>compute-japanese-mahjong-score-rong</strong><em> 符 翻 親? unlimited?</em></dt>
+<dd><p>(日本)麻雀でロン上がりのときの点数を計算します。
+unlimited?を#tにすると「青天井」ルールで計算します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-compute_002djapanese_002dmahjong_002dscore_002dzimo"></a>Function: <strong>compute-japanese-mahjong-score-zimo</strong><em> 符 翻</em></dt>
+<dt><a name="index-compute_002djapanese_002dmahjong_002dscore_002dzimo-1"></a>Function: <strong>compute-japanese-mahjong-score-zimo</strong><em> 符 翻 親?</em></dt>
+<dt><a name="index-compute_002djapanese_002dmahjong_002dscore_002dzimo-2"></a>Function: <strong>compute-japanese-mahjong-score-zimo</strong><em> 符 翻 親? unlimited?</em></dt>
+<dd><p>(日本)麻雀でツモ上がりのときの点数を計算します。点数の3値を返します。
+3値の内容は親のときは子の点数、子のときは親、子、子を表します。
+unlimited?を#tにすると「青天井」ルールで計算します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-play_002dtic_002dtac_002dtoe"></a>Function: <strong>play-tic-tac-toe</strong></dt>
+<dt><a name="index-play_002dtic_002dtac_002dtoe-1"></a>Function: <strong>play-tic-tac-toe</strong><em> turn</em></dt>
+<dd><p>○×ゲームで遊びます。
+turnが真のときは先手、#fのときは後手になります。
+指定されていないときはランダムに選ばれます。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dtic_002dtac_002dtoe_002dboard"></a>Function: <strong>make-tic-tac-toe-board</strong></dt>
+<dd><p>○×ゲームの盤面を作成します。
+○×ゲームの盤面オブジェクトはイミュータブルなオブジェクトです。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-tic_002dtac_002dtoe_002dboard_003f"></a>Function: <strong>tic-tac-toe-board?</strong><em> obj</em></dt>
+<dd><p>○×ゲームの盤面のとき#tを得ます。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-put_002dtic_002dtac_002dtoe_002dboard"></a>Function: <strong>put-tic-tac-toe-board</strong><em> board x y</em></dt>
+<dd><p>○×ゲームの盤面に(x,y)で指定された場所に○×を置きます。
+○か×かは自動的に判別します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-think_002dtic_002dtac_002dtoe"></a>Function: <strong>think-tic-tac-toe</strong><em> board</em></dt>
+<dd><p>○×ゲームの次の手をコンピュータに考えさせます。
+次の手があるときはその手の盤面を返します。
+そうでないときは、シンボルo-win, x-win, evenを返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-tic_002dtac_002dtoe_002dwin"></a>Function: <strong>tic-tac-toe-win</strong><em> board</em></dt>
+<dd><p>○×ゲームの勝負が決定していないときは#fを返します。
+勝負が決定しているときはo-win(○の勝利)、x-win(×の勝利)、even(引き分け)を
+返します。
+</p></dd></dl>
+
+<hr>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_86.html#Servlet_9023_643a_6a5f_80fd" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_38.html#g_t_62e1_5f35_6a5f_80fd_30ea_30d5_30a1_30ec_30f3_30b9" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_88.html#g_t_305d_306e_4ed6_306e_95a2_6570" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_89.html#g_t_30b5_30f3_30d7ru_30d7_30ed_30b0_30e9_30e0" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  この文書は<em>12月 15, 2012</em>に<a href="http://www.nongnu.org/texi2html/"><em>texi2html 5.0</em></a>を用いて生成されました。
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

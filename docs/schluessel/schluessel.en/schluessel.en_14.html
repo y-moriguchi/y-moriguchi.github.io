@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created on August 9, 2012 by texi2html 5.0
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Schluessel: 3.8 HTTP</title>
+
+<meta name="description" content="Schluessel: 3.8 HTTP">
+<meta name="keywords" content="Schluessel: 3.8 HTTP">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 5.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smalllisp {margin-left: 3.2em}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nocodebreak {white-space:pre}
+span.nolinebreak {white-space:pre}
+span.roman {font-family:serif; font-weight:normal}
+span.sansserif {font-family:sans-serif; font-weight:normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="HTTP"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_13.html#FTP" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_15.html#Mails" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section">3.8 HTTP</h2>
+
+<p>Procedures for connecting via HTTP
+</p>
+<p>An example of using these procedures is shown as follows.
+</p><div class="example">
+<pre class="example">; when you will establish a connection by GET method
+(define con
+  (make-http-connection &quot;http://localhost/path&quot;))
+(http-properties-set! con '((request-method . get)))
+(http-connect con)
+(define pp
+  (open-http-input-port
+    con
+    (buffer-mode block)
+    (make-transcoder (utf-8-codec) (eol-style crlf))))
+(get-line pp)
+(close-port pp)
+(disconnect-http con)
+
+; when you will establish a connection by POST method
+(define con
+  (make-http-connection &quot;http://localhost/path&quot;))
+(http-properties-set! con '((request-method . post)))
+(post-http-parameter  ; setting parameters
+  con
+  '((&quot;test1&quot; . &quot;aaaaaa&quot;)
+    (&quot;test2&quot; . &quot;bbbbb&quot;)))
+(http-connect con)
+(define pp
+  (open-http-input-port
+    con
+    (buffer-mode block)
+    (make-transcoder (utf-8-codec) (eol-style crlf))))
+(get-line pp)
+(close-port pp)
+(disconnect-http con)
+</pre></div>
+
+<dl>
+<dt><a name="index-make_002dhttp_002dconnection"></a>Function: <strong>make-http-connection</strong><em> url</em></dt>
+<dd><p>creates an HTTP connection.<br>
+raises an exception when a protocol of the URL is not HTTP(S).
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-http_002dproperties_002dset_0021"></a>Function: <strong>http-properties-set!</strong><em> connection properties</em></dt>
+<dd><p>sets properties to the connection.<br>
+Syntax for setting properties is shown as follows.
+</p><div class="example">
+<pre class="example">((property-name . string)
+ ...)
+</pre></div>
+
+<p>property-name is a symbol or a string shown as follows.
+</p><table>
+<tr><td width="35%">request-method</td><td width="60%">an HTTP method (GET or POST)</td></tr>
+<tr><td width="35%">allow-user-interatction</td><td width="60%">allow-user-interatction</td></tr>
+<tr><td width="35%">if-modified-since</td><td width="60%">if-modified-since</td></tr>
+<tr><td width="35%">use-caches</td><td width="60%">use-caches</td></tr>
+<tr><td width="35%">chunked-streaming-mode</td><td width="60%">chunked-streaming-mode</td></tr>
+<tr><td width="35%">fixed-length-streaming-mode</td><td width="60%">fixed-length-streaming-mode</td></tr>
+</table>
+</dd></dl>
+
+<dl>
+<dt><a name="index-post_002dhttp_002dparameter"></a>Function: <strong>post-http-parameter</strong><em> connection parameters</em></dt>
+<dd><p>posts parameters to the connection.<br>
+Parameters must be an associative list of strings.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-http_002dconnect"></a>Function: <strong>http-connect</strong><em> connection</em></dt>
+<dd><p>establishs the HTTP connection.<br>
+This procedure returns two values, the first argument is #t if establishing a connection is succeed and the second is an HTTP request code such as 400.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-http_002dcontent_002dencoding"></a>Function: <strong>http-content-encoding</strong><em> connection</em></dt>
+<dt><a name="index-http_002dcontent_002dlength"></a>Function: <strong>http-content-length</strong><em> connection</em></dt>
+<dt><a name="index-http_002dcontent_002dtype"></a>Function: <strong>http-content-type</strong><em> connection</em></dt>
+<dt><a name="index-http_002ddate"></a>Function: <strong>http-date</strong><em> connection</em></dt>
+<dt><a name="index-http_002dexpiration"></a>Function: <strong>http-expiration</strong><em> connection</em></dt>
+<dt><a name="index-http_002dlast_002dmodified"></a>Function: <strong>http-last-modified</strong><em> connection</em></dt>
+<dd><p>gets a encoding, length, content-type, date, expiration date, last modified date of the connection, respectively.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-http_002dheaders"></a>Function: <strong>http-headers</strong><em> connection</em></dt>
+<dd><p>gets all header informations by the associative list.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-open_002dhttp_002dinput_002dport"></a>Function: <strong>open-http-input-port</strong><em> connection buffer-mode transcoder</em></dt>
+<dd><p>creates an input port of the connection.<br>
+<i>buffer-mode</i> and <i>transcoder</i> specifies the R6RS buffer mode and transcoder, respectively.
+If <i>trancoder</i> is #f, a port to be created will be a binary port.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-disconnect_002dhttp"></a>Function: <strong>disconnect-http</strong><em> connection</em></dt>
+<dd><p>closes the HTTP connection.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-web_002dget"></a>Function: <strong>web-get</strong><em> url filename</em></dt>
+<dd><p>gets a file from the URL via HTTP.
+</p></dd></dl>
+
+<hr>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_13.html#FTP" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_15.html#Mails" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated on <i>August 9, 2012</i> using <a href="http://www.nongnu.org/texi2html/"><i>texi2html 5.0</i></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created on 12月 15, 2012 by texi2html 5.0
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Schluessel: 1 Schluesselとは</title>
+
+<meta name="description" content="Schluessel: 1 Schluesselとは">
+<meta name="keywords" content="Schluessel: 1 Schluesselとは">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 5.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smalllisp {margin-left: 3.2em}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nocodebreak {white-space:pre}
+span.nolinebreak {white-space:pre}
+span.roman {font-family:serif; font-weight:normal}
+span.sansserif {font-family:sans-serif; font-weight:normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="ja" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<h1>Schluessel ユーザリファレンス</h1>
+<h3 align="right">version 0.4.3</h3>
+<strong>Yuichiro Moriguchi</strong><br>
+
+
+<p>Copyright &copy; 2009-2012 Yuichiro Moriguchi
+</p><hr>
+<a name="Top"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[ &lt;&lt; ]</td>
+<td valign="middle" align="left">[ &lt; ]</td>
+<td valign="middle" align="left">[上]</td>
+<td valign="middle" align="left">[<a href="schluessel_1.html#SRFI_306e_30b5_30dd_30fc_30c8" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_2.html#Schluessel_306e_8d77_52d5" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_toc.html#SEC_Contents" title="Table of contents">目次</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_98.html#g_t_7d22_5f15" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+
+
+<p>本書は、R5RS準拠のScheme処理系、Schluesselのリファレンスマニュアルです。
+Schluesselのバージョン0.4.3に対応します。
+</p>
+<a name="Schluessel_3068_306f"></a>
+<h1 class="chapter">1 Schluesselとは</h1>
+
+<p>Schluessel(シュリュッセル)は Java SE 6.0以上のJREで動作することを目的としたR5RS準拠のSchemeのインタプリタです。R5RSの機能以外にもJavaのライブラリをリフレクションを用いて使用する機能や、SchemeのプログラムをJava側から操作する機能も備えています。
+</p>
+<p>SchluesselはScheme言語の標準である&quot;Revised^5 Report on the Algorithmic Language Scheme&quot;(R5RS)に準拠しています。また、Scheme拡張の標準である&quot;Scheme Requests for Implementation&quot;(SRFI)にも対応しています。
+</p>
+<p>Schluesselの主な特徴として以下のことがあげられます。
+</p>
+<dl compact="compact">
+<dt><b>数の自然な活用</b></dt>
+<dd><p>Schluesselにより数を自然に活用することができます。Schluesselは以下のオブジェクトを数(代数)の対象として扱うことができます。つまり、Schluesselを&quot;高機能関数電卓&quot;または&quot;簡易数式処理システム&quot;として使用することができます。
+</p><ul>
+<li> 整数/有理数
+</li><li> 半精度/単精度/倍精度浮動小数
+</li><li> 10進浮動小数(Decimal32/Decimal64); 仮数部は正確に10進数を保持します
+</li><li> 正確および不正確な複素数
+</li><li> 正確および不正確な四元数(クオータニオン)/八元数
+</li><li> 行列/数ベクトル
+</li><li> 1変数の多項式
+</li><li> 厳密な円周率・自然対数の底・平方根(一部)
+</li></ul>
+
+</dd>
+<dt><b>豊富なJava資産の活用</b></dt>
+<dd><p>SchluesselによりJavaで記述されたライブラリを活用することができます。JavaのインスタンスはScheme変数として束縛することができます。メソッドも簡単に呼び出すことができます。また、Schemeの主要な型とJavaの主要な型は自然に変換されます。
+</p>
+</dd>
+<dt><b>マルチバイト文字列</b></dt>
+<dd><p>Schluesselはマルチバイト文字列を自然に扱うことができます。文字についてはUnicode拡張領域にも対応しています。文字列は16ビットの文字(Unicodeの基本多言語面)までですが(これでも実用では十分である)、Unicode拡張領域にも対応予定です。
+</p>
+</dd>
+<dt><b>グラフィックスの標準サポート</b></dt>
+<dd><p>Schluesselはグラフィックスを標準でサポートします。グラフィックスは&quot;Structure and Interpretation of Computer Programs&quot;(SICP)にあるような図形言語により記述されます。
+</p>
+</dd>
+<dt><b>GUIアプリケーションの容易な記述</b></dt>
+<dd><p>SchluesselはSwingと連携したGUIアプリケーションを容易に記述できます。JavaによるSwingアプリケーションの記述は約束事が多く簡単には記述できませんが、Schluesselを使用すれば1つのソースファイルで記述できます。
+</p>
+</dd>
+<dt><b>Appletとの連携</b></dt>
+<dd><p>SchluesselはJava Appletを連携できます。Appletに対してSchluesselはBASICのように簡単な言語環境を用意します。
+</p>
+</dd>
+<dt><b>ネットワークサポート</b></dt>
+<dd><p>SchluesselによりHTTP、FTP、SMTP、LDAPサーバ、SNMPエージェント等と容易に通信することができます。TCPによるソケットの接続も可能です。
+</p>
+</dd>
+<dt><b>タートルグラフィックス機能</b></dt>
+<dd><p>LOGOのようなタートルグラフィックス機能をサポートしています。
+</p></dd>
+</dl>
+
+<hr>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[ &lt;&lt; ]</td>
+<td valign="middle" align="left">[ &lt; ]</td>
+<td valign="middle" align="left">[上]</td>
+<td valign="middle" align="left">[<a href="schluessel_1.html#SRFI_306e_30b5_30dd_30fc_30c8" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel_2.html#Schluessel_306e_8d77_52d5" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  この文書は<em>12月 15, 2012</em>に<a href="http://www.nongnu.org/texi2html/"><em>texi2html 5.0</em></a>を用いて生成されました。
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

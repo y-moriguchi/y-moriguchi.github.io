@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created on August 9, 2012 by texi2html 5.0
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Schluessel: 3.39 Sounds</title>
+
+<meta name="description" content="Schluessel: 3.39 Sounds">
+<meta name="keywords" content="Schluessel: 3.39 Sounds">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 5.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smalllisp {margin-left: 3.2em}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nocodebreak {white-space:pre}
+span.nolinebreak {white-space:pre}
+span.roman {font-family:serif; font-weight:normal}
+span.sansserif {font-family:sans-serif; font-weight:normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Sounds"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_44.html#Changing-the-shape-of-cursur" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_46.html#Systems" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="schluessel.en.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section">3.39 Sounds</h2>
+
+<p>Procedures for sounds.
+Please (use sound) if you wish to use these procedures.
+</p>
+<dl>
+<dt><a name="index-make_002daudio_002dformat"></a>Function: <strong>make-audio-format</strong><em> encoding sample-rate sample-size-in-bits channels frame-size frame-rate endianness</em></dt>
+<dd><p>creates a audio format object.
+</p><table>
+<tr><td width="25%"><var>encoding</var></td><td width="70%">specifies an encoding by a symbol shown as follows.
+<ul>
+<li> alaw: a-law
+</li><li> pcm-signed: signed linear PCM
+</li><li> pcm-unsigned: unsigned linear PCM
+</li><li> ulaw: u-law
+</li></ul></td></tr>
+<tr><td width="25%"><var>sample-rate</var></td><td width="70%">specifies sampling frequency(Hz).</td></tr>
+<tr><td width="25%"><var>sample-size-in-bits</var></td><td width="70%">specifies sampling bits.</td></tr>
+<tr><td width="25%"><var>channels</var></td><td width="70%">specifies number of channels (monoral: 1, stereo: 2).</td></tr>
+<tr><td width="25%"><var>frame-size</var></td><td width="70%">specifies bytes of the frames.</td></tr>
+<tr><td width="25%"><var>frame-rate</var></td><td width="70%">specifies frames per second.</td></tr>
+<tr><td width="25%"><var>endianness</var></td><td width="70%">specifies endianness.
+this must be a symbol big-endian or little-endian.<br></td></tr>
+</table>
+</dd></dl>
+
+<dl>
+<dt><a name="index-make_002dtarget_002ddata_002dline"></a>Function: <strong>make-target-data-line</strong><em> audio-format</em></dt>
+<dd><p>creates a target(input) data line.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dsource_002ddata_002dline"></a>Function: <strong>make-source-data-line</strong><em> audio-format</em></dt>
+<dd><p>creates a source(output) data line.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-open_002ddata_002dline"></a>Function: <strong>open-data-line</strong><em> data-line</em></dt>
+<dd><p>creates a data line.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-start_002ddata_002dline"></a>Function: <strong>start-data-line</strong><em> data-line</em></dt>
+<dd><p>starts the data line and data will be transfered from the device.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-stop_002ddata_002dline"></a>Function: <strong>stop-data-line</strong><em> data-line</em></dt>
+<dd><p>stops transferring the data line.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-flush_002ddata_002dline"></a>Function: <strong>flush-data-line</strong><em> data-line</em></dt>
+<dd><p>flushs the data line.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-close_002ddata_002dline"></a>Function: <strong>close-data-line</strong><em> data-line</em></dt>
+<dd><p>closes the data line.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-read_002ddata_002dline_002drelative"></a>Function: <strong>read-data-line-relative</strong><em> target-data-line sample-num</em></dt>
+<dd><p>reads data from the target data line.<br>
+Intensity is normalized by maximum value
+and each value is in [0, 1.0](unsigned) or [-1.0 1.0](signed).<br>
+The result is returned as f32 uniform vector (see SRFI-4).<br>
+This procedure returns one value(monoral) or two values(stereo).
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-write_002ddata_002dline_002drelative"></a>Function: <strong>write-data-line-relative</strong><em> source-data-line data-to-write [&hellip;]</em></dt>
+<dd><p>writes data to the source data line.<br>
+Intensity is normalized by maximum value
+and each value is in [0, 1.0](unsigned) or [-1.0 1.0](signed).<br>
+Data must be an f32 uniform vector (see SRFI-4).<br>
+This procedure requires one argument(monoral) or two arguments(stereo).
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dplayable"></a>Function: <strong>make-playable</strong><em> sound-file-name repeat</em></dt>
+<dd><p>creates a sound playable object.<br>
+Format of the sound file depends on your Java environment.
+WAV file format is available in the Java standard environment.
+MP3 file is available if you use an MP3 plug-in.<br>
+<var>repeat</var> specifies times when the sound file is played.
+If <var>repeat</var> is #f the sound file is played eternally.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-play_002dsound"></a>Function: <strong>play-sound</strong><em> playable</em></dt>
+<dd><p>plays the sound object.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-stop_002dplay_002dsound"></a>Function: <strong>stop-play-sound</strong><em> playable</em></dt>
+<dd><p>stops the sound object.
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-pause_002dplay_002dsound"></a>Function: <strong>pause-play-sound</strong><em> playable</em></dt>
+<dd><p>pauses the sound object.
+To restart playing the sound, you should call procedure play-sound.
+</p></dd></dl>
+
+<hr>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_44.html#Changing-the-shape-of-cursur" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_6.html#Reference-Manual" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_46.html#Systems" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="schluessel.en_54.html#Index" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated on <i>August 9, 2012</i> using <a href="http://www.nongnu.org/texi2html/"><i>texi2html 5.0</i></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>
